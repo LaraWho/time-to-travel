@@ -1,0 +1,42 @@
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    /* 45% { transform: translate(1px, 0px); } */
+    65%  { transform: translate(0, 15px); }
+    /* 85% { transform: translate(1px, 0px); } */
+    to   { transform: translate(0, -0px); } 
+}
+
+.space-bg {
+    background-color: #000814;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.home-tardis-box {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-tardis {
+    height: 80%;
+    width: auto;
+    margin: auto;
+    position: relative;
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.home-heading h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Futura';
+    font-size: 48px;
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
