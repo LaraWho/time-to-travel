@@ -38,8 +38,6 @@ class Map extends Component {
                     height: '650px',
                     width: '450px',
                     margin: 'auto'
-                    // position: 'relative'
-                    // zIndex: '2'
                 }}>
                 <div className="map-tardis-box">
                     <div className="sv-map">
