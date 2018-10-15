@@ -2,16 +2,21 @@
     from { transform: translate(0px,  -0px); }
     45%  { transform: translate(2px, 4px); }
     65%  { transform: translate(3px, 2px); }
-    85% { transform: translate(-3px, 8px); }
+    85% { transform: translate(-3px, 6px); }
     to   { transform: translate(0px, -0px); } 
 }
+
+    @keyframes materialize {
+    0% { opacity: 100%; }
+    50% { opacity: 0; }
+    100% { opacity: 100%; }
+    }
 
 
 .space-bg {
     background-color: #000814;
     height: 100vh;
     width: 100vw;
-    
 }
 
 .home-tardis-box {
@@ -25,16 +30,14 @@
     width: auto;
     margin: auto;
     position: relative;
-    animation: floating 6s infinite ease-in-out;
-    animation-direction: alternate;
-
+    animation: materialize 2s 5 alternate ease-in-out, floating 6s 10s infinite alternate ease-in-out;
 }
 
 .home-heading h1 {
     text-align: center;
     color: #ffffff;
     font-family: 'Futura';
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 48px;
     padding-top: 5%;
     display: flex;

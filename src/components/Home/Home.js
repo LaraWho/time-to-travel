@@ -3,6 +3,7 @@ import Particles from 'react-particles-js';
 import './home.css';
 import tardis from './best-tardis-full.svg';
 import particleConfig from '../../particlesjs-config.json';
+import tardisSound from '../../assets/tardis-landing.mp3';
 
 class Home extends Component {
 
@@ -26,6 +27,10 @@ class Home extends Component {
                      </div>
                     <div className="home-tardis-box">
                         <img className="home-tardis" src={tardis} alt="TARDIS"/>
+                    </div>
+
+                    <div>
+                        <audio src={tardisSound} type="audio/mp3" controls autoPlay></audio>
                     </div>
 
             </div>

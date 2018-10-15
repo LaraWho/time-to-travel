@@ -45,11 +45,10 @@ class Map extends Component {
                     <ReactStreetview
                         apiKey={googleMapsApiKey}
                         streetViewPanoramaOptions={streetViewPanoramaOptions}
-                        // container={mapTardis}
                     />
                     </div>
                         <img className="map-tardis" src={mapTardis} alt=""/>
-                        <img className="who" src={question} alt=""/>
+                        {/* <img className="who" src={question} alt=""/> */}
                 </div>
 
                 </div>
