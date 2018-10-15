@@ -1,38 +1,44 @@
-.map-tardis-box {
-    height: 115%;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    position: relative;
+.map-bg {
+    background-color: #003B6F;
+    height: 100vh;
+    width: 100vw;
 }
-
-.map-tardis {
-    height: 100%;
-    width: auto;
-    margin: auto;
-    padding-top: 5%;
-}
-
 .sv-map {
-    height: 69%;
-    width: 70%;
+    height: 70%;
+    width: 95%;
     margin: auto;
     position: absolute;
-    top: 220px;
+    top: 60px;
+    right: 10px;
     z-index: 1;
 }
+.map-question-btn-box {
+    padding: 15px;
+    z-index: 2;
+    cursor: pointer;
+    padding-left: 50px;
+}
+
+.map-random-btn-text {
+    position: absolute;
+    color: #ffffff;
+    font-family: 'Futura';
+    padding-top: 40px;
+    font-size: 18px;
+    text-align: right;
+    line-height: 26px;
+    padding-left: 20px;
+    }
+    
+    .map-question-mark {
+        position: relative;
+        padding-left: 115px;
+        z-index: 2;
+        height: 120px;
+    }
 
 
 @media all and (min-width: 920px) {
-    .map-tardis-box {
-        height: 100%;
-        padding-top: 8%;
-    }
-
-    .sv-map {
-        height: 65%;
-        width: 62%;
-        top: 233px;
-    }
+  
 
 }

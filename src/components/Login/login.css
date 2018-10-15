@@ -1,10 +1,10 @@
 .login-box {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 70px;
     position: relative;
     text-align: center;
     padding: 20px;
-    height: 280px;
+    height: 350px;
     width: 200px;
     background: #003B6F;
     border-radius: 20px;
@@ -12,11 +12,11 @@
 .login-text {
     color: #ffffff;
     font-family: 'Futura';
-
+    margin-top: 20px;
 }
 
 .username {
-    margin: 5px 0px;
+    margin: 10px 0px;
     color: #000814;
     height: 20px;
     width: 180px;
@@ -27,7 +27,7 @@
 }
 
 .password {
-    margin: 5px 0px;
+    margin: 10px 0px;
     color: #000814;
     height: 20px;
     width: 180px;
@@ -39,7 +39,7 @@
 }
 
 .login-btn {
-    margin-top: 20px;
+    margin-top: 25px;
     height: 20px;
     width: 180px;
     background-color: #0563B6;
@@ -51,7 +51,7 @@
 }
 
 .or-text {
-    margin-top: 10px;
+    margin: 15px 0px;
     padding: 10px;
     height: 20px;
     width: 180px;
@@ -67,4 +67,25 @@
     opacity: 0.8;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.login-heading {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Futura';
+    /* font-weight: bold; */
+    font-size: 48px;
+    padding-top: 15%;
+    line-height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+@media all and (min-width: 920px) {
+    .login-heading {
+        padding-top: 8%;
+    }
+
+
+
 }

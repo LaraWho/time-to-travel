@@ -4,6 +4,8 @@ import particleConfig from '../../particlesjs-config.json';
 import './home.css';
 import tardis from '../best-tardis-full.svg';
 import tardisSound from '../../assets/tardis-landing.mp3';
+import Media from "react-media";
+
 
 class Home extends Component {
 
@@ -27,9 +29,21 @@ class Home extends Component {
                         params={particleConfig}                        
                     />
 
-                     <div className="home-heading">
-                         <h1>TIME TO TRAVEL</h1>
-                     </div>
+                    <Media query="(min-width: 920px)">
+                            {matches =>
+                            matches ? (
+                            <div className="home-heading">
+                                <h1>TIME TO TRAVEL</h1>
+                            </div>
+
+                            ) : (
+                            <div className="home-heading">
+                                <h1>TIME TO<br />TRAVEL</h1>
+                            </div>
+                            )}
+                    </Media>
+
+                    
                     <div className="home-tardis-box">
                         <img className="home-tardis" src={tardis} alt="TARDIS"/>
                         <div className="button">

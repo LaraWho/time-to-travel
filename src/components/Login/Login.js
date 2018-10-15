@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import particleConfig from '../../particlesjs-config.json';
 import './login.css';
+import Media from "react-media";
+
 
 
 class Login extends Component {
@@ -24,9 +26,21 @@ class Login extends Component {
                         params={particleConfig}                        
                     />
 
-                    <div className="home-heading">
-                         <h1>TIME TO TRAVEL</h1>
-                     </div>
+                    <Media query="(min-width: 920px)">
+                            {matches =>
+                            matches ? (
+                            <div className="login-heading">
+                                <h1>TIME TO TRAVEL</h1>
+                            </div>
+
+                            ) : (
+                            <div className="login-heading">
+                                <h1>TIME TO<br />TRAVEL</h1>
+                            </div>
+                            )}
+                        </Media>
+
+                    
 
                 <div className="login-box">
                     <div className="login-text">

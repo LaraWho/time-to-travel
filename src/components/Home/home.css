@@ -13,7 +13,7 @@
     }
 
 .space-bg {
-    background-color: #000814;
+    background-color: #021D34;
     height: 100vh;
     width: 100vw;
 }
@@ -28,6 +28,7 @@
     height: 80%;
     width: auto;
     margin: auto;
+    margin-top: 20px;
     position: relative;
     animation: materialize 2s 5 alternate ease-in-out, floating 6s 10s infinite alternate ease-in-out;
 }
@@ -38,7 +39,8 @@
     font-family: 'Futura';
     /* font-weight: bold; */
     font-size: 48px;
-    padding-top: 5%;
+    padding-top: 10%;
+    line-height: 60px;
     display: flex;
     justify-content: center;
 }
@@ -46,26 +48,16 @@
 .home-tardis-box h2 {
     position: absolute;
     width: 103px;
-    height: 54px;
-
-    font-family: Futura;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 29px;
+    font-family: 'Futura';
     font-size: 24px;
     text-align: center;
-    
     color: #FFFFFF;
-    
 }
 
 .button {
     cursor: pointer;
     position: absolute;
-   
-    top: 478.17px;
-    
-    background: #0563B6;
+    top: 480px;
     transform: rotate(15deg);
 }
 
