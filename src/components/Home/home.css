@@ -12,7 +12,6 @@
     100% { opacity: 100%; }
     }
 
-
 .space-bg {
     background-color: #000814;
     height: 100vh;
@@ -42,5 +41,31 @@
     padding-top: 5%;
     display: flex;
     justify-content: center;
+}
+
+.home-tardis-box h2 {
+    position: absolute;
+    width: 103px;
+    height: 54px;
+
+    font-family: Futura;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    font-size: 24px;
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+}
+
+.button {
+    cursor: pointer;
+    position: absolute;
+   
+    top: 478.17px;
+    
+    background: #0563B6;
+    transform: rotate(15deg);
 }
 

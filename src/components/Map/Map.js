@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactStreetview from 'react-streetview';
 import mapTardis from './the-one-to-use-2d.svg';
-import question from './who.svg';
+import question from '../who.svg';
 import Particles from 'react-particles-js';
 import particleConfig from '../../particlesjs-config.json';
 import './map.css';

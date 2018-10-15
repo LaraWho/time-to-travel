@@ -1,0 +1,100 @@
+.landing-tardis-box {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.landing-tardis {
+    height: 90%;
+    width: auto;
+    margin: auto;
+    padding-top: 8%;
+    position: relative;
+    animation: floating 6s infinite alternate ease-in-out;
+}
+
+.question-btn-box {
+    position: absolute;
+    padding: 20px;
+    z-index: 2;
+    margin-top: 105%;
+    background-color: #0563B6;
+    height: 155px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000814;
+}
+
+.random-btn-text {
+position: absolute;
+color: #ffffff;
+font-family: 'Futura';
+padding-top: 55px;
+    font-size: 24px;
+    text-align: right;
+    line-height: 33px;
+}
+
+.question-mark {
+    position: relative;
+    padding-left: 120px;
+    z-index: 2;
+    height: 150px;
+}
+
+@media all and (min-width: 490px) and (max-width: 590px) {
+    .question-btn-box {
+        margin-top: 90%;
+    }
+}
+
+@media all and (min-width: 590px) and (max-width: 690px) {
+    .question-btn-box {
+        margin-top: 75%;
+    }
+}
+
+@media all and (min-width: 690px) and (max-width: 790px) {
+    .question-btn-box {
+        margin-top: 70%;
+    }
+}
+
+@media all and (min-width: 790px) and (max-width: 920px) {
+    .question-btn-box {
+        margin-top: 60%;
+    }
+}
+@media all and (min-width: 920px) and (max-width: 1100px) {
+    .question-btn-box {
+        margin-top: 40%;
+    }
+}
+
+
+@media all and (min-width: 1101px) {
+
+    .landing-tardis {
+    padding-top: 8%;
+
+    }
+
+.question-btn-box {
+    margin-top: 42%;
+    height: 155px;
+}
+
+.random-btn-text {
+padding-top: 55px;
+    font-size: 24px;
+    text-align: right;
+    line-height: 33px;
+}
+
+.question-mark {
+    position: relative;
+    padding-left: 120px;
+    height: 150px;
+}
+
+}

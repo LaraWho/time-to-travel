@@ -1,0 +1,70 @@
+.login-box {
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    height: 280px;
+    width: 200px;
+    background: #003B6F;
+    border-radius: 20px;
+}
+.login-text {
+    color: #ffffff;
+    font-family: 'Futura';
+
+}
+
+.username {
+    margin: 5px 0px;
+    color: #000814;
+    height: 20px;
+    width: 180px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.password {
+    margin: 5px 0px;
+    color: #000814;
+    height: 20px;
+    width: 180px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.login-btn {
+    margin-top: 20px;
+    height: 20px;
+    width: 180px;
+    background-color: #0563B6;
+    padding: 12px;
+    padding-top: 14px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.or-text {
+    margin-top: 10px;
+    padding: 10px;
+    height: 20px;
+    width: 180px;
+}
+
+.register-btn {
+    margin-top: 10px;
+    height: 20px;
+    width: 180px;
+    background-color: #000814;
+    padding: 12px;
+    padding-top: 14px;
+    opacity: 0.8;
+    border-radius: 20px;
+    cursor: pointer;
+}

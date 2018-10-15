@@ -14,7 +14,8 @@
     "react-particles-js": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
-    "react-streetview": "^1.1.1"
+    "react-streetview": "^1.1.1",
+    "swup": "^1.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
