@@ -5,6 +5,7 @@
 }
 .menu-enter.map {
     padding: 15px;
+    cursor: pointer;
 }
 .sv-map {
     height: 70%;

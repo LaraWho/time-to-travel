@@ -1,0 +1,5 @@
+.menu-enter.nb {
+position: absolute;
+z-index: 2;
+right: 0;
+}

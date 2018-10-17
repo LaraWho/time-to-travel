@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './reset.css';
 import './App.css';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import PageTransition from 'react-router-page-transition';
 import Home from './components/Home/Home';
 import Notebook from './components/Notebook/Notebook';
 import GMap from './components/Map/Map';
@@ -17,8 +16,7 @@ class App extends Component {
       <div>
 
         <HashRouter>
-          <PageTransition timeout={500}>
-            <Switch location={this.props.location}>
+            <Switch>
               <Route component={Home} path='/' exact />
               <Route component={Login} path='/login' />
               <Route component={Landing} path='/landing' />
@@ -26,7 +24,6 @@ class App extends Component {
               <Route component={Menu} path='/menu' />
               <Route component={Notebook} path='/notebook' />
             </Switch>
-          </PageTransition>
         </HashRouter>
         
       </div>

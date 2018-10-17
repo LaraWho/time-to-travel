@@ -1,0 +1,17 @@
+.note-bg {
+    background-image: url('./bg-images/eleventh11.jpeg');
+    height: 100vh;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+@media all and (min-width: 500px) {
+
+    .note-bg {
+        background-size: contain;
+    }
+
+}

@@ -11,6 +11,9 @@ class Landing extends Component {
     toMap = () => {
         this.props.history.push('/map');
     }
+    enterMenu = () => {
+        this.props.history.push('/menu');
+    }
 
     render() {
         return(
@@ -26,9 +29,9 @@ class Landing extends Component {
                         params={particleConfig}                        
                     />
                     
-                    <div className="menu-enter" onClick={this.props.history.push('/menu')}>
+                    <div className="menu-enter">
                         <p>TIME TO<br />TRAVEL</p>
-                        <img src={open} alt="enter menu"/>
+                        <img src={open} onClick={this.enterMenu} alt="enter menu"/>
                     </div>
 
                     <div className="landing-tardis-box">

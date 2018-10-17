@@ -15,8 +15,8 @@
 
 .menu-enter>img {
     height: 36px;
-    padding-top: 2px;
-
+    /* padding-top: 2px; */
+    cursor: pointer;
 }
 
 .landing-tardis-box {

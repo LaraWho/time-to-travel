@@ -5,6 +5,10 @@ import close from '../../assets/menu-close.svg';
 class Menu extends Component {
 
 
+    toNotes = () => {
+        this.props.history.push('/notebook');
+    }
+
     render() {
         return(
             <div className="menu-bg">
@@ -16,7 +20,7 @@ class Menu extends Component {
                 <div className="menu-items">
                     <div className="menu-h3">
                         <div className="line"></div>
-                        <h3>SEE ALL NOTES</h3>
+                        <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
                     </div>
                     <div className="menu-note">
                         <div className="line2"></div>

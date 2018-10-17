@@ -50,7 +50,7 @@ class Map extends Component {
               }
           })
         //   this.refreshMap()
-        MapBox.forceUpdate()
+        // MapBox.forceUpdate()
         }).catch((err) => {
             console.log(err)
         })
@@ -67,6 +67,14 @@ class Map extends Component {
         //   let newStreetView = this.refs.streetview.cloneNode(true);
         //   this.refs.streetview.parentNode.replaceChild(newStreetView, this.refs.streetview)
     //   }
+
+    enterMenu = () => {
+        this.props.history.push('/menu')
+    }
+    goBack = () => {
+        this.props.history.push('/landing')
+    }
+
     render() {
        
         return(
@@ -81,8 +89,8 @@ class Map extends Component {
             {/* <RenderReactStreetView apiKey={googleMapsApiKey} options={streetViewPanoramaOptions}/> */}
                 
                 <div className="menu-enter map">
-                    <p>TIME TO<br />TRAVEL</p>
-                    <img src={open} alt="enter menu"/>
+                    <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
+                    <img src={open} onClick={this.enterMenu} alt="enter menu"/>
                 </div>
             </div>
             </div>
