@@ -3,6 +3,7 @@ import Particles from 'react-particles-js';
 import particleConfig from '../../particlesjs-config.json';
 import './home.css';
 import tardis from '../best-tardis-full.svg';
+import key from '../../assets/tardis-key.svg';
 import tardisSound from '../../assets/tardis-landing.mp3';
 import Media from "react-media";
 
@@ -47,7 +48,7 @@ class Home extends Component {
                     <div className="home-tardis-box">
                         <img className="home-tardis" src={tardis} alt="TARDIS"/>
                         <div className="button">
-                            <h2 onClick={this.enter}>ENTER</h2>
+                            <img onClick={this.enter} src={key} alt="enter button"/>
                         </div>
                     </div>
 

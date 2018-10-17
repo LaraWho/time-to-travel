@@ -46,19 +46,16 @@
     justify-content: center;
 }
 
-.home-tardis-box h2 {
+.button>img {
     position: absolute;
-    width: 103px;
-    font-family: 'Futura';
-    font-size: 24px;
-    text-align: center;
-    color: #FFFFFF;
+    width: 110px;
+    left: 20px;
 }
 
 .button {
     cursor: pointer;
     position: absolute;
-    top: 470px;
+    top: 450px;
     transform: rotate(15deg);
 }
 
