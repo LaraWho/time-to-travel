@@ -4,7 +4,7 @@ import particleConfig from '../../particlesjs-config.json';
 import './landing.css';
 import tardis from '../best-tardis-full.svg';
 import question from '../who.svg';
-
+import open from '../../assets/menu-open.svg';
 
 class Landing extends Component {
 
@@ -25,6 +25,11 @@ class Landing extends Component {
                     }}
                         params={particleConfig}                        
                     />
+                    
+                    <div className="menu-enter" onClick={this.props.history.push('/menu')}>
+                        <p>TIME TO<br />TRAVEL</p>
+                        <img src={open} alt="enter menu"/>
+                    </div>
 
                     <div className="landing-tardis-box">
                     <div className="question-btn-box" onClick={this.toMap}>

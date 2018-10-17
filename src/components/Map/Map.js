@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ReactStreetview from 'react-streetview';
-import question from '../who.svg';
 import './map.css';
 import axios from 'axios';
+import MapBox from './MapBox';
+import open from '../../assets/menu-open.svg';
 
 
 class Map extends Component {
@@ -11,21 +11,28 @@ class Map extends Component {
 
         this.state = {
             position: {
-                lat: 28.5383355,
-                lng: -81.3792365
-            }
+                lat: 0,
+                lng: 0
+            },
+            refreshMap: false
         }
     }
    
     componentDidMount() {
-        navigator.geolocation.getCurrentPosition(e => {
-            this.setState({
-                position: {
-                    lat: e.coords.latitude,
-                    lng: e.coords.longitude
-                }
+        // navigator.geolocation.getCurrentPosition(e => {
+            axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
+            .then(e => {
+        console.log('e.data.location in DidMount: ', e.data.location)
+                this.setState({
+                    position: {
+                        lat: e.data.location.lat,
+                        lng: e.data.location.lng
+                    }
             })
-        })
+            }).catch((err) => {
+                console.log(err)
+            })
+        // })
     }
     
     getLocation = () => {
@@ -42,29 +49,26 @@ class Map extends Component {
                   lng: Number(location.data.data.longitude)
               }
           })
-        //   this.forceUpdate()         
+        //   this.refreshMap()
+        MapBox.forceUpdate()
         }).catch((err) => {
             console.log(err)
         })
       }
 
-      componentDidUpdate(...args){
-          console.log('streetview ref: ', this.refs.streetview)
+      refreshMap = () => 
+        this.setState({
+            refreshMap: true
+        })
+
+    //   componentDidUpdate(...args){
+        //   console.log('streetview ref: ', this.refs.streetview)
         //   this.refs.streetview.updater.enqueueForceUpdate();
         //   let newStreetView = this.refs.streetview.cloneNode(true);
         //   this.refs.streetview.parentNode.replaceChild(newStreetView, this.refs.streetview)
-      }
+    //   }
     render() {
-        const googleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-
-        const streetViewPanoramaOptions = {
-          position: this.state.position,
-          pov: {heading: -80, pitch: 0},
-          zoom: 0,
-      };
-      console.log(this.state.position)
-      console.log(streetViewPanoramaOptions)
-      
+       
         return(
 
             <div className="map-bg">
@@ -73,22 +77,16 @@ class Map extends Component {
                     width: '95%',
                     margin: 'auto'
                 }}>
-                <div className="map-tardis-box">
-                    <div className="sv-map">
-
-                    <ReactStreetview ref="streetview"
-                        apiKey={googleMapsApiKey}
-                        streetViewPanoramaOptions={streetViewPanoramaOptions}
-                    />
-                    {/* <RenderReactStreetView apiKey={googleMapsApiKey} options={streetViewPanoramaOptions}/> */}
-                    <div className="map-question-btn-box" onClick={this.getLocation}>
-                        <h2 className="map-random-btn-text">WHERE WILL<br /> THE TARDIS<br /> TAKE YOU</h2>
-                        <img className="map-question-mark" src={question} alt=""/>
-                    </div>
-                    </div>
-                </div>
+                <MapBox position={this.state.position} locationF={this.getLocation} refresh={this.refreshMap}/>
+            {/* <RenderReactStreetView apiKey={googleMapsApiKey} options={streetViewPanoramaOptions}/> */}
+                
+                <div className="menu-enter map">
+                    <p>TIME TO<br />TRAVEL</p>
+                    <img src={open} alt="enter menu"/>
                 </div>
             </div>
+            </div>
+
 
         )
     }

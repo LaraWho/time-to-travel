@@ -1,3 +1,24 @@
+.menu-enter {
+    font-family: 'Futura';
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    color: #ffffff;
+}
+
+.menu-enter>p {
+    text-align: right;
+    padding-right: 10px; 
+}
+
+.menu-enter>img {
+    height: 36px;
+    padding-top: 2px;
+
+}
+
 .landing-tardis-box {
     height: 90%;
     display: flex;
@@ -8,7 +29,8 @@
     height: 90%;
     width: auto;
     margin: auto;
-    padding-top: 8%;
+    margin-top: 0;
+    /* padding-top: 8%; */
     position: relative;
     animation: floating 6s infinite alternate ease-in-out;
 }
@@ -20,6 +42,7 @@
     margin-top: 105%;
     background-color: #0563B6;
     height: 155px;
+    /* width: 55%; */
     border-radius: 20px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #021D34;
@@ -49,11 +72,11 @@ padding-top: 55px;
     }
 }
 
-@media all and (min-width: 490px) and (max-width: 590px) {
+/* @media all and (min-width: 490px) and (max-width: 590px) {
     .question-btn-box {
         margin-top: 65%;
     }
-}
+} */
 
 @media all and (min-width: 590px) and (max-width: 690px) {
     .question-btn-box {
