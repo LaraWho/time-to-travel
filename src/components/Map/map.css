@@ -7,7 +7,28 @@
 .menu-enter.map {
     padding: 15px;
     cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    cursor: pointer;
+    font-family: 'Futura';
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    color: #ffffff;
 }
+
+.menu-enter.map>p {
+    padding-right: 10px;
+}
+.menu-enter.map>img {
+    height: 36px;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
 .sv-map {
     height: 70%;
     width: 95%;

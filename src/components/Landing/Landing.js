@@ -29,9 +29,9 @@ class Landing extends Component {
                         params={particleConfig}                        
                     />
                     
-                    <div className="menu-enter">
+                    <div className="landing-enter">
                         <p>TIME TO<br />TRAVEL</p>
-                        <img src={open} onClick={this.enterMenu} alt="enter menu"/>
+                        <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                     </div>
 
                     <div className="landing-tardis-box">

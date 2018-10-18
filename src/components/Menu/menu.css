@@ -14,9 +14,11 @@
     padding: 30px;
 }
 
-.menu-exit>p {
+.menu-exit>p{
     text-align: right;
     padding-right: 10px; 
+    font-family: 'Futura';
+    color: #021D34;
 }
 
 .menu-exit>img {

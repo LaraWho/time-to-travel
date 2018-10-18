@@ -1,4 +1,4 @@
-.menu-enter {
+.landing-enter {
     font-family: 'Futura';
     font-size: 18px;
     line-height: 20px;
@@ -8,14 +8,13 @@
     color: #ffffff;
 }
 
-.menu-enter>p {
+.landing-enter>p {
     text-align: right;
     padding-right: 10px; 
-    color: #021D34;
-    font-weight: bold;
+    color: #ffffff;
 }
 
-.menu-enter>img {
+.landing-enter>img {
     height: 36px;
     /* padding-top: 2px; */
     cursor: pointer;

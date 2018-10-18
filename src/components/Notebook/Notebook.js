@@ -96,7 +96,7 @@ class Notebook extends Component {
             <div >
                 <div className="menu-enter nb">
                     <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
-                    <img src={open} onClick={this.enterMenu} alt="enter menu"/>
+                    <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
                 <NotebookBackground />
 

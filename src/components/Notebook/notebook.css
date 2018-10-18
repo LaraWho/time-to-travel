@@ -3,6 +3,24 @@ position: absolute;
 z-index: 2;
 right: 0;
 cursor: pointer;
+font-family: 'Futura';
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    color: #021D34;
+    text-align: right;
+    font-weight: bold;
+
+}
+.menu-enter.nb>p {
+    padding-right: 10px;
+}
+.menu-enter.nb>img {
+    height: 36px;
+    padding-top: 2px;
+    cursor: pointer;
 }
 
 .onenote-bg {
