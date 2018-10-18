@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
 import './notebook.css';
 import NotebookBackground from './Notebookbackground';
+import axios from 'axios';
 // import sweetie from 'sweetalert2';
 
 class Notebook extends Component {
@@ -12,10 +13,24 @@ class Notebook extends Component {
             title: '',
             location: '',
             content: '',
+            allNotes: [],
             showSave: false,
             canEdit: false,
             disabled: true,
         }
+    }
+
+    componentDidMount() {
+        this.getNotes()
+    }
+
+    getNotes = () => {
+        axios.get('/allnotes')
+        .then(res => {
+            this.setState({
+                allNotes: res.data
+            })
+        })
     }
 
     updateTitle = (e) => {
@@ -63,7 +78,7 @@ class Notebook extends Component {
         // })
       }
 
-    //   deleteNote() {
+    //   deleteNote(note_id) {
     //       sweetie({
     //         title: 'Are you sure you want to delete this?',
     //         text: 'Also, would you like a jellybaby?',
@@ -76,7 +91,7 @@ class Notebook extends Component {
 
     //     }).then((result) => {
     //         if(result.value) {
-    //     axios.delete(`/note/${this.props.match.params.id}`)
+    //     axios.delete(`/note/${note_id}`)
     //                   .then(res => {
     //                       this.getNotes()
     //                   })
@@ -92,22 +107,22 @@ class Notebook extends Component {
     // }
 
     render() {
-        return(
-            <div >
-                <div className="menu-enter nb">
-                    <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
-                    <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
-                </div>
-                <NotebookBackground />
-
-                <div className="onenote-bg">
+        let mappedInfo = this.state.allNotes.map((note, i) => {
+            return(
+                <div key={i} className="onenote-bg">
                     <div className="note">
+
                         <input className={this.state.canEdit ? "note-inputs" : "note-inputs cannot-edit"} 
-                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}/>
+                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}
+                        value={note.title}/>
+
                         <input className={this.state.canEdit ? "note-inputs2" : "note-inputs2 cannot-edit"} 
-                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}/>
+                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}
+                        value={note.location}/>
+
                         <input className={this.state.canEdit ? "note-text" : "note-text cannot-edit"}
-                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}/>
+                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}
+                        value={note.content}/>
 
 
                     {this.state.showSave ?
@@ -125,6 +140,21 @@ class Notebook extends Component {
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote()}>DELETE NOTE</h3>
                 </div>
+
+            )})
+        console.log(mappedInfo)
+        return(
+            <div >
+                <div className="menu-enter nb">
+                    <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
+                    <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
+                </div>
+                <NotebookBackground />
+            <div>
+
+                    {mappedInfo}
+            </div>
+                
             </div>
         )
     }

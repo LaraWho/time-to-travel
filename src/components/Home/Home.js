@@ -12,7 +12,7 @@ class Home extends Component {
 
 
     enter = () => {
-        this.props.history.push('/landing')
+        this.props.history.push('/login')
     }
 
     render() {

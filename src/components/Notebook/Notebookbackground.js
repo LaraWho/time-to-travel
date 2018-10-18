@@ -37,7 +37,6 @@ class NotebookBackground extends Component {
     }
     
     render() {
-        console.log(this.state.bgImage)
         
         return(
             <div className="book-body">

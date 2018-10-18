@@ -4,22 +4,22 @@ import axios from 'axios';
 import MapBtn from './MapBtn';
 import open from '../../assets/menu-open.svg';
 import ReactStreetview from 'react-streetview';
-
+import StreetView from 'react-google-map-street-view';
 
 class Map extends Component {
     constructor(props) {
         super(props) 
 
         this.state = {
-            // position: {
-            //     lat: 0,
-            //     lng: 0
-            // }
-            lat: 0,
-            lng: 0
+            position: {
+                lat: 0,
+                lng: 0
+            }
+            // lat: 0,
+            // lng: 0
         }
 
-        this.newView = this.newView.bind(this)
+        // this.newView = this.newView.bind(this)
     }
    
     componentDidMount() {
@@ -28,13 +28,14 @@ class Map extends Component {
         console.log('componentDidMount: ', e.coords)
 
                 this.setState({
-                    // position: {
+                    position: {
                         lat: e.coords.latitude,
                         lng: e.coords.longitude
-                    // }
-            }, this.newView)
+                    }
+            // }, this.newView)
             })
-        }
+        })
+    }
     
     getLocation = () => {
         let min = 4167147;
@@ -69,28 +70,33 @@ class Map extends Component {
         this.props.history.push('/landing')
     }
 
-    newView = () => {
-        console.log('newView firing')
-        const googleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+    // newView = () => {
+    //     console.log('newView firing')
+    //     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
         
-        const { lat, lng } = this.state
-        const streetViewPanoramaOptions = {
-            position: {lat, lng},
-            pov: {heading: -80, pitch: 0},
-            zoom: 0,
-        };
-        let view = <ReactStreetview
-                apiKey={googleMapsApiKey}
-                streetViewPanoramaOptions={streetViewPanoramaOptions}
-                />
-        return view
-    }
-
-    render() {
-
+    //     const { lat, lng } = this.state
+    //     const streetViewPanoramaOptions = {
+    //         position: {lat, lng},
+    //         pov: {heading: -80, pitch: 0},
+    //         zoom: 0,
+    //     };
+    //     let view = <ReactStreetview
+    //         ref='streetview'
+    //             apiKey={googleMapsApiKey}
+    //             streetViewPanoramaOptions={streetViewPanoramaOptions}
+    //             />
+    //             return view
+    //         }
+            
+            render() {
+                // console.log(this.refs.streetview)
         console.log('this.state.lat: ', this.state.lat)
         console.log('this.state.lng: ', this.state.lng)
        
+        const googleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
+        let num = Math.floor(Math.random()*90000) + 10000
+        console.log(num)
        
         return(
 
@@ -107,7 +113,9 @@ class Map extends Component {
                 </div>
             <div className="sv-map">
                 
-                {this.newView()}
+                {/* {this.newView()} */}
+                {/* <StreetView zip={'Provo'} APIkey={googleMapsApiKey} streetView={true} zoomLevel={15}/> */}
+
                 
             
                 {/* <RenderReactStreetView apiKey={googleMapsApiKey} options={streetViewPanoramaOptions}/> */}

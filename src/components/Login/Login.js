@@ -52,12 +52,8 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password
         }).then(res => {
-            console.log(res.data)
-            // this.getUser(res.data)
-            // sweetie({
-            //     text: "LOGGING IN!",
-            //     timer: 500,
-            //     buttons: false})
+            console.log('res.data: ', res.data)
+           
             setTimeout(() => {
                 this.props.history.push('/landing');
                 }, 500)
@@ -69,15 +65,11 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password
         }).then(res => {
-            this.getUser()
-            sweetie({
-                text: "REGISTERED!",
-                timer: 500,
-                buttons: false})
+            console.log(res.data[0])
             setTimeout(() => {
-            this.props.history.push('/dashboard');
+            this.props.history.push('/landing');
             }, 500)
-        }).catch(() => sweetie("woops"))
+        }).catch(err => console.log(err))
     }
 
     render() {

@@ -1,23 +1,24 @@
 const express = require('express'),
 axios = require('axios'),
 massive = require('massive'),
-session = require('express-session');
-var bcrypt = require('bcryptjs');
+session = require('express-session'),
+bodyParser = require('body-parser'),
+bcrypt = require('bcryptjs');
 
 require('dotenv').config();
 const app = express();
 
 let {
     SERVER_PORT,
-    REACT_APP_CLIENT_ID,
-    CLIENT_SECRET,
-    REACT_APP_DOMAIN,
+    ENVIRONMENT,
     SESSION_SECRET,
     CONNECTION_STRING
 } = process.env
 
+app.use(bodyParser.json());
+
 const login_cntrl = require('./login_controller');
-// const note_cntrl = require('./note_controller');
+const note_cntrl = require('./note_controller');
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -33,6 +34,18 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
 }).catch( error => console.error('ERROR!', error))
 
+app.use((req, res, next) => {
+        if(ENVIRONMENT === 'dev') {
+            req.app.get('db').set_data().then(userData => {
+                req.session.user = userData[0]
+                
+                next()
+            })    
+        } else {
+            next();
+        }    
+        })
+
 // authorisation endpoints
 // app.get('/api/user', login_cntrl.getUser);
 app.post('/auth/login', login_cntrl.login);
@@ -41,7 +54,7 @@ app.delete('/auth/logout', login_cntrl.logout);
 
 // note endpoints
 // app.post('/allnotes/:id', note_cntrl.create);
-// app.get('/allnotes', note_cntrl.read);
+app.get('/allnotes', note_cntrl.read);
 // app.patch('/allnotes/:id', note_cntrl.update);
 // app.delete('/allnotes/:id', note_cntrl.delete);
 

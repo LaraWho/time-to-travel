@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 module.exports = {
 
     // getUser: (req, res) => {
@@ -16,13 +18,11 @@ module.exports = {
         dbInstance.get_password([username])
         .then(hash => {
             let myHash = hash[0].password
-            console.log(myHash)
             bcrypt.compare(password, myHash, function(err, response) {
                 if(response) {
                     dbInstance.login_user([username, myHash])
                         .then(loginResults => {
                         if(loginResults[0]) {
-                            console.log('login controller!', loginResults[0])
                             req.session.user = loginResults[0]
                             res.status(200).send(loginResults[0]);
             
@@ -41,14 +41,13 @@ module.exports = {
         const dbInstance = req.app.get('db')
         let {username, password} = req.body;
 
-        bcrypt.hash(password, null, null, function(err, hash) {
+        bcrypt.hash(password, 8, function(err, hash) {
             dbInstance.register_user( [username, hash] )
             .then( user => {
                     req.session.username = username
                     req.session.password = password
                     req.session.user = user[0]
                     res.status(200).send(user)
-                    console.log('register in controller', username)
                 }).catch( err => res.sendStatus(500))
             })
         },
