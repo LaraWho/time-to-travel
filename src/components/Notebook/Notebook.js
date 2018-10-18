@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
 import './notebook.css';
 import NotebookBackground from './Notebookbackground';
+// import sweetie from 'sweetalert2';
 
 class Notebook extends Component {
     constructor(props) {
@@ -49,9 +50,9 @@ class Notebook extends Component {
       }
 
       saveEdit = () => {
-        // let { name, price, image } = this.state
-        // axios.put(`/shelf/${this.props.match.params.id}/bin/${this.props.match.params.number}`, 
-        // { name, price, image })
+        // let { title, location, content } = this.state
+        // axios.patch(`/note/${this.props.match.params.id}`, 
+        // { title, location, content })
         // .then( res => {
         //   this.setState({
         //     disabled: !this.state.disabled,
@@ -62,13 +63,33 @@ class Notebook extends Component {
         // })
       }
 
-      deleteNote() {
-          console.log('delete')
-        // axios.delete(`/shelf/${this.props.match.params.id}/bin/${this.props.match.params.number}`)
-        //   .then(res => {
-        //     this.getNotes()
-        //   })
-        }
+    //   deleteNote() {
+    //       sweetie({
+    //         title: 'Are you sure you want to delete this?',
+    //         text: 'Also, would you like a jellybaby?',
+    //         showCancelButton: true,
+    //           confirmButtonColor: '#FF9770',
+    //         cancelButtonColor: '#ccc3c3',
+    //         cancelButtonText: 'No!',
+    //         confirmButtonText: 'Exterminate!',
+    //         padding: '2.5rem',
+
+    //     }).then((result) => {
+    //         if(result.value) {
+    //     axios.delete(`/note/${this.props.match.params.id}`)
+    //                   .then(res => {
+    //                       this.getNotes()
+    //                   })
+    //               sweetie({
+    //                   title: 'Exterminated!',
+    //                   text: 'No second chances',
+    //                   showConfirmButton: false,
+    //                   timer: 500,
+    //                   padding: '2.5rem'
+    //               })
+    //         }
+    //     })
+    // }
 
     render() {
         return(
@@ -100,7 +121,6 @@ class Notebook extends Component {
                     <button className="note-edit">EDIT</button>
                 </div>
                 }
-                        {/* <button className="note-save">EDIT</button> */}
                     </div>
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote()}>DELETE NOTE</h3>

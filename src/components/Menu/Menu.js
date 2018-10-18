@@ -6,11 +6,11 @@ import sweetie from 'sweetalert2';
 
 class Menu extends Component {
 
-    logout() {
+    logout = () => {
         axios.delete('/auth/logout')
           .then(res => {
             sweetie({
-                text: "Logging out",
+                text: "Re-locating!",
                 timer: 500,
                 buttons: false})
             setTimeout(() => {

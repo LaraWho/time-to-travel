@@ -2,6 +2,7 @@ const express = require('express'),
 axios = require('axios'),
 massive = require('massive'),
 session = require('express-session');
+var bcrypt = require('bcryptjs');
 
 require('dotenv').config();
 const app = express();
@@ -15,7 +16,7 @@ let {
     CONNECTION_STRING
 } = process.env
 
-// const login_cntrl = require('./login_controller');
+const login_cntrl = require('./login_controller');
 // const note_cntrl = require('./note_controller');
 
 app.use(session({
@@ -33,9 +34,10 @@ massive(CONNECTION_STRING).then(db => {
 }).catch( error => console.error('ERROR!', error))
 
 // authorisation endpoints
-// app.post('/auth/login', login_cntrl.login);
-// app.post('/auth/register', login_cntrl.register);
-// app.delete('/auth/logout', login_cntrl.logout);
+// app.get('/api/user', login_cntrl.getUser);
+app.post('/auth/login', login_cntrl.login);
+app.post('/auth/register', login_cntrl.register);
+app.delete('/auth/logout', login_cntrl.logout);
 
 // note endpoints
 // app.post('/allnotes/:id', note_cntrl.create);

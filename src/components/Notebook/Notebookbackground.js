@@ -52,12 +52,11 @@ class NotebookBackground extends Component {
                     }}
                         params={particleConfig}                        
                     />
-                    
                 <div className="note-bg" style={{
                     backgroundImage: `url(${this.state.bgImage})`,
-                }}>
+                }}></div>
+                
                
-            </div>
         </div>
         )
     }
