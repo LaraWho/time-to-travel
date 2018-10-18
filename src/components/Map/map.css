@@ -1,5 +1,6 @@
 .map-bg {
     background-color: #003B6F;
+    /* background: radial-gradient(#4378a7 ,#0e487a, #003B6F); */
     height: 100vh;
     width: 100vw;
 }

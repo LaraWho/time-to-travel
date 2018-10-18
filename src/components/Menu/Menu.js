@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import './menu.css';
 import close from '../../assets/menu-close.svg';
+import axios from 'axios';
+import sweetie from 'sweetalert2';
 
 class Menu extends Component {
 
+    logout() {
+        axios.delete('/auth/logout')
+          .then(res => {
+            sweetie({
+                text: "Logging out",
+                timer: 500,
+                buttons: false})
+            setTimeout(() => {
+            this.props.history.push('/');
+            }, 500)
+          }).catch((err) => console.log(err))
+      }
 
     toNotes = () => {
         this.props.history.push('/notebook');
     }
+
 
     render() {
         return(
@@ -30,9 +45,13 @@ class Menu extends Component {
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."></textarea>
                         <button className="menu-save">SAVE</button>
                     </div>
+                    <div className="money-box">
+                        <div className="line3"></div>
+                        <h3>CURRENCY INFO</h3>
+                    </div>
                     <div className="menu-h3 logout">
                         <div className="line logout"></div>
-                        <h3>LOGOUT</h3>
+                        <h3 onClick={this.logout}>LOGOUT</h3>
                     </div>
 
                 </div>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './map.css';
 import axios from 'axios';
-import MapBox from './MapBox';
+import MapBtn from './MapBtn';
 import open from '../../assets/menu-open.svg';
+import ReactStreetview from 'react-streetview';
 
 
 class Map extends Component {
@@ -10,30 +11,30 @@ class Map extends Component {
         super(props) 
 
         this.state = {
-            position: {
-                lat: 0,
-                lng: 0
-            },
-            refreshMap: false
+            // position: {
+            //     lat: 0,
+            //     lng: 0
+            // }
+            lat: 0,
+            lng: 0
         }
+
+        this.newView = this.newView.bind(this)
     }
    
     componentDidMount() {
-        // navigator.geolocation.getCurrentPosition(e => {
-            axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.REACT_APP_GOOGLE_API_KEY}`)
-            .then(e => {
-        console.log('e.data.location in DidMount: ', e.data.location)
+        console.log('componentDidMount should be doing its thing')
+        navigator.geolocation.getCurrentPosition(e => {
+        console.log('componentDidMount: ', e.coords)
+
                 this.setState({
-                    position: {
-                        lat: e.data.location.lat,
-                        lng: e.data.location.lng
-                    }
+                    // position: {
+                        lat: e.coords.latitude,
+                        lng: e.coords.longitude
+                    // }
+            }, this.newView)
             })
-            }).catch((err) => {
-                console.log(err)
-            })
-        // })
-    }
+        }
     
     getLocation = () => {
         let min = 4167147;
@@ -44,22 +45,15 @@ class Map extends Component {
         axios.get(`https://${process.env.REACT_APP_X_API_KEY}@www.budgetyourtrip.com/api/v3/locations/${geonameid}`)
         .then(location => {
           this.setState({
-              position: {
+            //   position: {
                   lat: Number(location.data.data.latitude),
                   lng: Number(location.data.data.longitude)
-              }
-          })
-        //   this.refreshMap()
-        // MapBox.forceUpdate()
+            //   }
+          }, this.newView)
         }).catch((err) => {
             console.log(err)
         })
       }
-
-      refreshMap = () => 
-        this.setState({
-            refreshMap: true
-        })
 
     //   componentDidUpdate(...args){
         //   console.log('streetview ref: ', this.refs.streetview)
@@ -75,26 +69,54 @@ class Map extends Component {
         this.props.history.push('/landing')
     }
 
+    newView = () => {
+        console.log('newView firing')
+        const googleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+        
+        const { lat, lng } = this.state
+        const streetViewPanoramaOptions = {
+            position: {lat, lng},
+            pov: {heading: -80, pitch: 0},
+            zoom: 0,
+        };
+        let view = <ReactStreetview
+                apiKey={googleMapsApiKey}
+                streetViewPanoramaOptions={streetViewPanoramaOptions}
+                />
+        return view
+    }
+
     render() {
+
+        console.log('this.state.lat: ', this.state.lat)
+        console.log('this.state.lng: ', this.state.lng)
+       
        
         return(
 
-            <div className="map-bg">
-                <div style={{
+    <div className="map-bg">
+        <div style={{
                     height: '70%',
                     width: '95%',
                     margin: 'auto'
                 }}>
-                <MapBox position={this.state.position} locationF={this.getLocation} refresh={this.refreshMap}/>
-            {/* <RenderReactStreetView apiKey={googleMapsApiKey} options={streetViewPanoramaOptions}/> */}
-                
+            <div className="map-tardis-box">
                 <div className="menu-enter map">
                     <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter menu"/>
                 </div>
-            </div>
-            </div>
+            <div className="sv-map">
+                
+                {this.newView()}
+                
+            
+                {/* <RenderReactStreetView apiKey={googleMapsApiKey} options={streetViewPanoramaOptions}/> */}
+                <MapBtn getLocation={this.getLocation}/>
 
+            </div>
+            </div>
+        </div>
+    </div>
 
         )
     }

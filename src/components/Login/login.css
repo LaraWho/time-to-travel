@@ -1,11 +1,11 @@
 .login-box {
     margin: auto;
-    margin-top: 70px;
+    margin-top: 90px;
     position: relative;
     text-align: center;
     padding: 20px;
-    height: 320px;
-    width: 200px;
+    height: 350px;
+    width: 250px;
     background: #003B6F;
     border-radius: 20px;
 }
@@ -21,7 +21,7 @@
     margin-top: 0px;
     color: #000814;
     height: 20px;
-    width: 180px;
+    width: 230px;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 20px;
@@ -32,7 +32,7 @@
     margin: 10px 0px;
     color: #000814;
     height: 20px;
-    width: 180px;
+    width: 230px;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 20px;
@@ -43,7 +43,7 @@
 .login-btn {
     margin-top: 25px;
     height: 20px;
-    width: 180px;
+    /* width: 210px; */
     background-color: #0563B6;
     padding: 10px;
     padding-bottom: 14px;
@@ -56,13 +56,13 @@
     margin: 20px 0px;
     padding: 10px;
     height: 20px;
-    width: 180px;
+    /* width: 180px; */
 }
 
 .register-btn {
     margin-top: 10px;
     height: 20px;
-    width: 180px;
+    /* width: 180px; */
     background-color: #012646;
     padding: 10px;
     padding-bottom: 14px;

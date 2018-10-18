@@ -15,7 +15,8 @@
     "react-particles-js": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
-    "react-streetview": "^1.1.1"
+    "react-streetview": "^1.1.1",
+    "sweetalert2": "^7.28.5"
   },
   "scripts": {
     "start": "react-scripts start",

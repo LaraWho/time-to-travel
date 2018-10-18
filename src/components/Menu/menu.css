@@ -2,6 +2,7 @@
     background-color: #6F8EA9;
     height: 100vh;
     width: 100vw;
+    overflow-y: hidden;
 }
 
 .menu-exit {
@@ -32,7 +33,6 @@
     line-height: 20px;
     color: #ffffff;
     text-align: center;
-    margin-top: 10px;
 }
 
 .menu-h3 {
@@ -55,7 +55,7 @@
 .menu-note {
     width: 100%;
     background-color: #8BA3B8;
-    margin-top: 15px;
+    margin-top: 10px;
     height: 350px;
 }
 
@@ -108,7 +108,28 @@
 }
 
 .menu-h3.logout {
-    bottom: 10px;
+    bottom: 30px;
     position: absolute;
     color: #2B455C;
+}
+
+.money-box {
+    position: absolute;
+    width: 100%;
+    height: 170px;
+    left: 0px;
+    top: 527px;
+    background: #8BA3B8;
+}
+
+.line3 {
+    position: absolute;
+    width: 5px;
+    height: 170px;
+    left: 0px;
+    background: #2B455C;
+}
+
+.money-box>h3 {
+    margin-top: 20px;
 }
