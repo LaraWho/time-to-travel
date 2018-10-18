@@ -21,7 +21,6 @@ textarea {
     font-size: 18px;
     color: #021D34;
     font-family: 'Futura';
-    text-align: center;
 }
 textarea:focus {
     background-color: rgb(220, 221, 224);
@@ -33,9 +32,9 @@ button {
     font-family: 'Futura';
 }
 
-button:hover {
+/* button:hover {
     animation: floating 6s infinite alternate ease-in-out; 
-}
+} */
 
 /* button:active {
 } */

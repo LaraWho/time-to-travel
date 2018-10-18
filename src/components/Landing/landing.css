@@ -11,6 +11,8 @@
 .menu-enter>p {
     text-align: right;
     padding-right: 10px; 
+    color: #021D34;
+    font-weight: bold;
 }
 
 .menu-enter>img {

@@ -10,7 +10,7 @@ import five from './bg-images/5.jpeg';
 import six from './bg-images/6.jpeg';
 import seven from './bg-images/7.jpeg';
 import eight from './bg-images/8.jpeg';
-import nine from './bg-images/9.jpeg';
+// import nine from './bg-images/9.jpeg';
 import ten from './bg-images/10.jpeg';
 import eleven from './bg-images/11.jpeg';
 import twelve from './bg-images/12.jpeg';
@@ -29,10 +29,10 @@ class NotebookBackground extends Component {
 
    
     bgChanger = () => {
-        let imgArray = [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve]
-        let num = Math.ceil(Math.random() * imgArray.length)
+        let imgArray = [one, two, three, four, five, six, seven, eight, ten, eleven, twelve]
+        let num = Math.floor(Math.random() * 11)
         this.setState({
-            bgImage: './bg-images/' + num + '.jpeg'
+            bgImage: imgArray[num]
         })
     }
     
@@ -55,10 +55,6 @@ class NotebookBackground extends Component {
                     
                 <div className="note-bg" style={{
                     backgroundImage: `url(${this.state.bgImage})`,
-                    // width: '100%',
-                    // minHeight: '100vh',
-                    // height: "100%",
-                    // position: "absolute"
                 }}>
                
             </div>

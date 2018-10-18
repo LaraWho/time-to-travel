@@ -56,13 +56,24 @@ border-radius: 20px;
     border-radius: 20px;
 }
 
-.note-save {
+.note-edit {
     position: absolute;
     width: 266px;
     height: 42px;
     left: 5px;
     top: 470px;
     background: rgba(2, 29, 52, 0.98);
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+.note-save {
+    position: absolute;
+    width: 266px;
+    height: 42px;
+    left: 5px;
+    top: 470px;
+    background: #0563B5;
     border-radius: 20px;
     color: #FFFFFF;
     font-size: 24px;

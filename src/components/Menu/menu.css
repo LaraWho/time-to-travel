@@ -12,7 +12,6 @@
     display: flex;
     justify-content: flex-end;
     padding: 30px;
-    color: #ffffff;
 }
 
 .menu-exit>p {
@@ -85,7 +84,6 @@
 
 .menu-note>textarea {
     border-radius: 20px;
-    text-align: center;
     padding: 5px 5px;    
     margin-top: 10px;
     width: 75%;
