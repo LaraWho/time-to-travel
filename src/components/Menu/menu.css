@@ -5,6 +5,29 @@
     overflow-y: hidden;
 }
 
+.menu-items {
+    font-family: 'Futura';
+    font-size: 24px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.menu-note {
+    width: 100%;
+    background-color: #8BA3B8;
+    margin-top: 6px;
+    height: 270px;
+}
+
+.line2 {
+    position: absolute;
+    background-color: #2B455C;
+    width: 5px;
+    height: 270px;
+    left: 0;
+}
+
 .menu-exit {
     font-family: 'Futura';
     font-size: 18px;
@@ -28,14 +51,6 @@
     
 }
 
-.menu-items {
-    font-family: 'Futura';
-    font-size: 24px;
-    line-height: 20px;
-    color: #ffffff;
-    text-align: center;
-}
-
 .menu-h3 {
     background-color: #8BA3B8;
     width: 100%;
@@ -53,20 +68,6 @@
     left: 0;
 }
 
-.menu-note {
-    width: 100%;
-    background-color: #8BA3B8;
-    margin-top: 6px;
-    height: 270px;
-}
-
-.line2 {
-    position: absolute;
-    background-color: #2B455C;
-    width: 5px;
-    height: 270px;
-    left: 0;
-}
 
 .menu-note>h3 {
     padding-top: 15px;

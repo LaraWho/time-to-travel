@@ -33,7 +33,10 @@ update: (req, res) => {
     const { title, location, content } = req.body;
 
     dbInstance.edit_note([ title, location, content, note_id ])
-    .then( (note) => res.status(200).send(note) ) 
+    .then( (note) => {
+        console.log('update:', note)
+        res.status(200).send(note) 
+        })
     .catch( err => {
         res.status(400).send({errorMessage: "Oops, you can't edit this!"})
         console.log(err)

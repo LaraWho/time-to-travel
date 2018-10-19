@@ -41,6 +41,30 @@ z-index: 5;
 top: -480px;
 }
 
+.intro-box {
+    position: relative;
+    bottom: 0;
+}
+/* .intro-inner {
+    margin: auto;   
+}  */
+.intro-text {
+    color: #FFFFFF;
+    font-family: 'Futura';
+    font-size: 22px;
+    position: absolute;
+    z-index: 2;
+    height: 380px;
+    width: 265px;
+    border-radius: 20px;
+    padding: 8px;
+    background-color: rgba(187, 93, 74, 0.774);
+    text-align: center;
+    top: 120px;
+    left: 22px;
+    line-height: 1.4;
+}
+
 .first{
     position: relative;
     height: 100vh;

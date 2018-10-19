@@ -3,6 +3,7 @@ import open from '../../assets/menu-open.svg';
 import './notebook.css';
 import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
+import AddNew from '../Notebook/addNew';
 import axios from 'axios';
 import sweetie from 'sweetalert2';
 
@@ -14,28 +15,52 @@ class Notebook extends Component {
             title: '',
             location: '',
             content: '',
+            noteId: 0,
             allNotes: [],
             mappedNotes: [],
             showSave: false,
             canEdit: false,
             disabled: true,
+            DWquote: '',
+            sourceQ: ''
         }
     }
 
     componentDidMount() {
         this.getNotes()
+        this.getQuote()
     }
 
     getNotes = () => {
         axios.get('/allnotes')
         .then(res => {
+            // if(!res.data.title) {
+            //     this.setState({
+            //         noNotes: true
+            //     })
+            // } else {
+                console.log(res.data)
+                    this.setState({
+                        allNotes: res.data,
+                        title: res.data.title,
+                        location: res.data.location,
+                        content: res.data.content,
+                        noteId: res.data.note_id
+                    })
+                    
+            // }
+        })
+    }
+
+    getQuote = () => {
+        axios.get('http://api.chrisvalleskey.com/fillerama/get.php?count=1&format=json&show=doctorwho')
+        .then(res => {
             this.setState({
-                allNotes: res.data,
-                title: res.data.title,
-                location: res.data.location,
-                content: res.data.content
+                DWquote: res.data.db[0].quote,
+                sourceQ: res.data.db[0].source
             })
         })
+            
     }
 
     updateTitle = (e) => {
@@ -69,18 +94,24 @@ class Notebook extends Component {
         })
       }
 
-      saveEdit = (id) => {
+      saveNote = (note) => {
         let { title, location, content } = this.state
-        axios.patch(`/allnotes/${id}`, { title, location, content })
-        console.log(this.props.match.params.id)
+        note.title = title ? title : note.title
+        note.location = location ? location : note.location
+        note.content = content ? content : note.content
+
+        axios.patch(`/allnotes/${note.note_id}`,  note )
         .then( res => {
           this.setState({
-            disabled: !this.state.disabled,
-            showSave: !this.state.showSave,
-            canEdit: !this.state.canEdit,
-          })
-          console.log('edit')
-        })
+              title: this.state.title,
+              location: this.state.location,
+              content: this.state.content,
+              disabled: !this.state.disabled,
+              showSave: !this.state.showSave,
+              canEdit: !this.state.canEdit
+            })
+          console.log('save method')
+        }).catch(err => console.log(err))
       }
 
       deleteNote(note_id) {
@@ -112,8 +143,14 @@ class Notebook extends Component {
     }
 
     render() {
+        console.log(this.state.DWquote)
+        console.log(this.state.sourceQ)
+
+        // let mappedNotes = []
+        // if(!this.state.noNotes) {
         let mappedNotes = this.state.allNotes.map((note, i) => {
             return(
+
                 <div key={i} className="first">
                     <NotebookBackground />
 
@@ -135,7 +172,7 @@ class Notebook extends Component {
 
                     {this.state.showSave ?
                     <div className="save-button"
-                    onClick={() => this.saveEdit()}>
+                    onClick={() => this.saveNote(note)}>
                     <button className="note-save">SAVE</button>
                     </div>
                     :
@@ -153,12 +190,28 @@ class Notebook extends Component {
                     </div>
 
             )})
+                // } else {
+                //     return(
+                //         <div>
+                //             <AddNew />
+                //         </div>
+                //     )
+                // }
 
         return(
             <div >
                 <div className="menu-enter nb">
                     <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
+                </div>
+
+                <div className="intro-box">
+                    <div className="intro-inner">
+                        <p className="intro-text"><strong>Hello</strong><br /><br />
+                        {/* Please add a new note in the menu above, or enjoy this quote! */}
+                        {this.state.DWquote}<br /> - {this.state.sourceQ}</p>
+                        <NotebookBackground />
+                    </div>
                 </div>
 
                 <div>
