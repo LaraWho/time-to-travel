@@ -3,7 +3,7 @@ import open from '../../assets/menu-open.svg';
 import './notebook.css';
 import NotebookBackground from './Notebookbackground';
 import axios from 'axios';
-// import sweetie from 'sweetalert2';
+import sweetie from 'sweetalert2';
 
 class Notebook extends Component {
     constructor(props) {
@@ -14,6 +14,7 @@ class Notebook extends Component {
             location: '',
             content: '',
             allNotes: [],
+            mappedNotes: [],
             showSave: false,
             canEdit: false,
             disabled: true,
@@ -28,7 +29,10 @@ class Notebook extends Component {
         axios.get('/allnotes')
         .then(res => {
             this.setState({
-                allNotes: res.data
+                allNotes: res.data,
+                title: res.data.title,
+                location: res.data.location,
+                content: res.data.content
             })
         })
     }
@@ -64,65 +68,66 @@ class Notebook extends Component {
         })
       }
 
-      saveEdit = () => {
-        // let { title, location, content } = this.state
-        // axios.patch(`/note/${this.props.match.params.id}`, 
-        // { title, location, content })
-        // .then( res => {
-        //   this.setState({
-        //     disabled: !this.state.disabled,
-        //     showSave: !this.state.showSave,
-        //     canEdit: !this.state.canEdit,
-        //   })
+      saveEdit = (id) => {
+        let { title, location, content } = this.state
+        axios.patch(`/allnotes/${id}`, { title, location, content })
+        console.log(this.props.match.params.id)
+        .then( res => {
+          this.setState({
+            disabled: !this.state.disabled,
+            showSave: !this.state.showSave,
+            canEdit: !this.state.canEdit,
+          })
           console.log('edit')
-        // })
+        })
       }
 
-    //   deleteNote(note_id) {
-    //       sweetie({
-    //         title: 'Are you sure you want to delete this?',
-    //         text: 'Also, would you like a jellybaby?',
-    //         showCancelButton: true,
-    //           confirmButtonColor: '#FF9770',
-    //         cancelButtonColor: '#ccc3c3',
-    //         cancelButtonText: 'No!',
-    //         confirmButtonText: 'Exterminate!',
-    //         padding: '2.5rem',
+      deleteNote(note_id) {
+          sweetie({
+            title: 'Are you sure you want to delete this?',
+            text: 'Also, would you like a jellybaby?',
+            showCancelButton: true,
+              confirmButtonColor: '#FF9770',
+            cancelButtonColor: '#ccc3c3',
+            cancelButtonText: 'No!',
+            confirmButtonText: 'Exterminate!',
+            padding: '2.5rem',
 
-    //     }).then((result) => {
-    //         if(result.value) {
-    //     axios.delete(`/note/${note_id}`)
-    //                   .then(res => {
-    //                       this.getNotes()
-    //                   })
-    //               sweetie({
-    //                   title: 'Exterminated!',
-    //                   text: 'No second chances',
-    //                   showConfirmButton: false,
-    //                   timer: 500,
-    //                   padding: '2.5rem'
-    //               })
-    //         }
-    //     })
-    // }
+        }).then((result) => {
+            if(result.value) {
+        axios.delete(`/allnotes/${note_id}`)
+                      .then(res => {
+                          this.getNotes()
+                      })
+                  sweetie({
+                      title: 'Exterminated!',
+                      text: 'No second chances',
+                      showConfirmButton: false,
+                      timer: 500,
+                      padding: '2.5rem'
+                  })
+            }
+        }).catch(err => console.log(err))
+    }
 
     render() {
-        let mappedInfo = this.state.allNotes.map((note, i) => {
+        let mappedNotes = this.state.allNotes.map((note, i) => {
+            console.log(note, i)
             return(
                 <div key={i} className="onenote-bg">
                     <div className="note">
 
                         <input className={this.state.canEdit ? "note-inputs" : "note-inputs cannot-edit"} 
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        value={note.title}/>
+                        value={note.title} onChange={this.updateTitle}/>
 
                         <input className={this.state.canEdit ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        value={note.location}/>
+                        value={note.location} onChange={this.updateLoc}/>
 
                         <input className={this.state.canEdit ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        value={note.content}/>
+                        value={note.content} onChange={this.updateContent}/>
 
 
                     {this.state.showSave ?
@@ -134,15 +139,15 @@ class Notebook extends Component {
                     <div className="edit-button"
                     onClick={() => this.toggleSave()}>
                     <button className="note-edit">EDIT</button>
-                </div>
-                }
+                    </div>
+                    }
                     </div>
                         <h3 className="delete-note"
-                        onClick={() => this.deleteNote()}>DELETE NOTE</h3>
-                </div>
+                        onClick={() => this.deleteNote(note.note_id)}>DELETE NOTE</h3>
+                    </div>
 
             )})
-        console.log(mappedInfo)
+
         return(
             <div >
                 <div className="menu-enter nb">
@@ -150,10 +155,10 @@ class Notebook extends Component {
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
                 <NotebookBackground />
-            <div>
 
-                    {mappedInfo}
-            </div>
+                <div>
+                    {mappedNotes}
+                </div>
                 
             </div>
         )

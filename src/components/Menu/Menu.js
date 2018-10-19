@@ -5,6 +5,15 @@ import axios from 'axios';
 import sweetie from 'sweetalert2';
 
 class Menu extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            title: '',
+            location: '',
+            content: ''
+        }
+    }
 
     logout = () => {
         axios.delete('/auth/logout')
@@ -23,6 +32,30 @@ class Menu extends Component {
         this.props.history.push('/notebook');
     }
 
+    handleAddTitle = (e) => {
+        this.setState({
+            title: e.target.value
+        })
+    }
+    handleAddLoc = (e) => {
+        this.setState({
+            location: e.target.value
+        })
+    }
+
+    handleAddContent = (e) => {
+        this.setState({
+            content: e.target.value
+        })
+    }
+
+    addNote = (note_id) => {
+        let { title, location, content } = this.state
+        axios.post(`allnotes/${note_id}`, { title, location, content })
+        .then(res => {
+            this.props.history.push('/notebook')
+        })
+    }
 
     render() {
         return(
@@ -40,10 +73,13 @@ class Menu extends Component {
                     <div className="menu-note">
                         <div className="line2"></div>
                         <h3>QUICK NOTE</h3>
-                        <input type="text" placeholder="TITLE"/>
-                        <input type="text" placeholder="LOCATION"/>
-                        <textarea cols="20" rows="10" placeholder="THOUGHTS..."></textarea>
-                        <button className="menu-save">SAVE</button>
+                        <input type="text" placeholder="TITLE"
+                        onChange={this.handleAddTitle}/>
+                        <input type="text" placeholder="LOCATION"
+                        onChange={this.handleAddLoc}/>
+                        <textarea cols="20" rows="10" placeholder="THOUGHTS..."
+                        onChange={this.handleAddTitle}></textarea>
+                        <button className="menu-save" onClick={this.addNote}>SAVE</button>
                     </div>
                     <div className="money-box">
                         <div className="line3"></div>

@@ -53,10 +53,10 @@ app.post('/auth/register', login_cntrl.register);
 app.delete('/auth/logout', login_cntrl.logout);
 
 // note endpoints
-// app.post('/allnotes/:id', note_cntrl.create);
+app.post('/allnotes/:note_id', note_cntrl.create);
 app.get('/allnotes', note_cntrl.read);
-// app.patch('/allnotes/:id', note_cntrl.update);
-// app.delete('/allnotes/:id', note_cntrl.delete);
+app.patch('/allnotes/:id', note_cntrl.update);
+app.delete('/allnotes/:note_id', note_cntrl.delete);
 
 
 app.listen(SERVER_PORT, ( ) => {
