@@ -121,15 +121,16 @@ class Notebook extends Component {
                     <div className="note">
                         <input className={this.state.canEdit ? "note-inputs" : "note-inputs cannot-edit"} 
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        value={note.title} onChange={this.updateTitle}/>
+                        placeholder={note.title} value={this.state.title} onChange={this.updateTitle}/>
 
                         <input className={this.state.canEdit ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        value={note.location} onChange={this.updateLoc}/>
+                        placeholder={note.location} value={this.state.location} onChange={this.updateLoc}/>
 
-                        <input className={this.state.canEdit ? "note-text" : "note-text cannot-edit"}
+                        <textarea cols="20" rows="10" 
+                        className={this.state.canEdit ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        value={note.content} onChange={this.updateContent}/>
+                        placeholder={note.content} value={this.state.content} onChange={this.updateContent}/>
 
 
                     {this.state.showSave ?

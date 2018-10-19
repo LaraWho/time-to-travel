@@ -8,6 +8,7 @@
     width: 250px;
     background: #003B6F;
     border-radius: 20px;
+    animation: floating 6s infinite alternate ease-in-out;
 }
 .login-text {
     color: #ffffff;

@@ -21,6 +21,7 @@ textarea {
     font-size: 18px;
     color: #021D34;
     font-family: 'Futura';
+    text-align: center;
 }
 textarea:focus {
     background-color: rgb(220, 221, 224);
@@ -33,7 +34,6 @@ button {
 }
 
 /* button:hover {
-    animation: floating 6s infinite alternate ease-in-out; 
 } */
 
 /* button:active {
@@ -41,5 +41,4 @@ button {
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
-    transform: scale(2)
 }

@@ -18,11 +18,11 @@ class App extends Component {
         <HashRouter>
             <Switch>
               <Route component={Home} path='/' exact />
-              <Route component={Login} path='/login' />
-              <Route component={Landing} path='/landing' />
-              <Route component={GMap} path='/map' />
-              <Route component={Menu} path='/menu' />
-              <Route component={Notebook} path='/notebook' />
+              <Route component={Login} exact path='/login' />
+              <Route component={Landing} exact path='/landing' />
+              <Route component={GMap} exact path='/map' />
+              <Route component={Menu} exact path='/menu' />
+              <Route component={Notebook} exact path='/notebook' />
             </Switch>
         </HashRouter>
         

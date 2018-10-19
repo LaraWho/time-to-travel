@@ -11,8 +11,10 @@ class Landing extends Component {
     toMap = () => {
         this.props.history.push('/map');
     }
+
     enterMenu = () => {
         this.props.history.push('/menu');
+        
     }
 
     render() {
