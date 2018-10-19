@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
 import './notebook.css';
+import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
 import axios from 'axios';
 import sweetie from 'sweetalert2';
@@ -112,11 +113,12 @@ class Notebook extends Component {
 
     render() {
         let mappedNotes = this.state.allNotes.map((note, i) => {
-            console.log(note, i)
             return(
-                <div key={i} className="onenote-bg">
-                    <div className="note">
+                <div key={i} className="first">
+                    <NotebookBackground />
 
+                <div className="onenote-bg">
+                    <div className="note">
                         <input className={this.state.canEdit ? "note-inputs" : "note-inputs cannot-edit"} 
                         type="text" disabled={(this.state.disabled) ? "disabled" : ""}
                         value={note.title} onChange={this.updateTitle}/>
@@ -145,6 +147,9 @@ class Notebook extends Component {
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote(note.note_id)}>DELETE NOTE</h3>
                     </div>
+                
+
+                    </div>
 
             )})
 
@@ -154,7 +159,6 @@ class Notebook extends Component {
                     <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
-                <NotebookBackground />
 
                 <div>
                     {mappedNotes}

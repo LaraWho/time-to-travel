@@ -55,7 +55,7 @@
 .button {
     cursor: pointer;
     position: absolute;
-    top: 450px;
+    top: 370px;
     transform: rotate(15deg);
 }
 

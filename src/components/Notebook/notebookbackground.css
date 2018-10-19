@@ -1,11 +1,18 @@
+.book-body {
+    /* position: absolute; */
+    /* top: -20px; */
+}
+
 .note-bg {
-    /* background-image: url('./bg-images/11.jpeg'); */
+    /* display: flex; */
     height: 100vh;
     width: auto;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-size: cover;
     position: relative;
+    z-index: 1;
+    margin: auto;
 }
 
 @media all and (min-width: 500px) {
