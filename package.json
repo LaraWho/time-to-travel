@@ -14,12 +14,10 @@
     "massive": "^5.5.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-google-map-street-view": "^1.1.0",
     "react-media": "^1.8.0",
     "react-particles-js": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
-    "react-streetview": "^1.1.1",
     "sweetalert2": "^7.28.5"
   },
   "scripts": {

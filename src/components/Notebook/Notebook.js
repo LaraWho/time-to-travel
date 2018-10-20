@@ -3,7 +3,6 @@ import open from '../../assets/menu-open.svg';
 import './notebook.css';
 import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
-import AddNew from '../Notebook/addNew';
 import axios from 'axios';
 import sweetie from 'sweetalert2';
 
@@ -34,11 +33,6 @@ class Notebook extends Component {
     getNotes = () => {
         axios.get('/allnotes')
         .then(res => {
-            // if(!res.data.title) {
-            //     this.setState({
-            //         noNotes: true
-            //     })
-            // } else {
                 console.log(res.data)
                     this.setState({
                         allNotes: res.data,
@@ -47,8 +41,6 @@ class Notebook extends Component {
                         content: res.data.content,
                         noteId: res.data.note_id
                     })
-                    
-            // }
         })
     }
 
@@ -146,8 +138,6 @@ class Notebook extends Component {
         console.log(this.state.DWquote)
         console.log(this.state.sourceQ)
 
-        // let mappedNotes = []
-        // if(!this.state.noNotes) {
         let mappedNotes = this.state.allNotes.map((note, i) => {
             return(
 
@@ -190,13 +180,6 @@ class Notebook extends Component {
                     </div>
 
             )})
-                // } else {
-                //     return(
-                //         <div>
-                //             <AddNew />
-                //         </div>
-                //     )
-                // }
 
         return(
             <div >

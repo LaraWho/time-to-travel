@@ -3,6 +3,7 @@
     /* background: radial-gradient(#4378a7 ,#0e487a, #003B6F); */
     height: 100vh;
     width: 100vw;
+    overflow-y: hidden;
 }
 .menu-enter.map {
     padding: 15px;
@@ -29,22 +30,30 @@
     cursor: pointer;
 }
 
-.sv-map {
-    height: 70%;
-    width: 95%;
+.photo {
+    height: 100vh;
+    width: auto;
     margin: auto;
     position: absolute;
-    top: 80px;
-    right: 2.5%;
-    z-index: 1;
-    box-shadow: 1px 1px 1px #000814;
-
 }
+
+.photo-info>p {
+    font-family: 'Futura';
+    position: relative;
+    color: #ffffff;
+    margin: auto;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
 .map-question-btn-box {
+    position: relative;
     padding: 15px;
     z-index: 2;
     cursor: pointer;
-    padding-left: 50px;
+    /* padding-left: 50px; */
+    top: 350px;
+    left: 112px;
 }
 
 .map-random-btn-text {
@@ -67,7 +76,7 @@
 
 
 @media all and (min-width: 920px) {
-    .sv-map {
+    .photo-info {
         margin: auto;
         height: 70%;
         width: 80%;

@@ -49,10 +49,11 @@ top: -480px;
     margin: auto;   
 }  */
 .intro-text {
+    margin-bottom: -396px;
     color: #FFFFFF;
     font-family: 'Futura';
     font-size: 22px;
-    position: absolute;
+    position: relative;
     z-index: 2;
     height: 380px;
     width: 265px;
@@ -135,4 +136,14 @@ border-radius: 20px;
     border-radius: 20px;
     color: #FFFFFF;
     font-size: 24px;
+}
+
+@media all and (min-width: 920px) {
+
+
+.intro-text {
+    margin: auto;
+    margin-bottom: -396px;
+
+}
 }

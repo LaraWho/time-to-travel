@@ -47,7 +47,6 @@ app.use((req, res, next) => {
         })
 
 // authorisation endpoints
-// app.get('/api/user', login_cntrl.getUser);
 app.post('/auth/login', login_cntrl.login);
 app.post('/auth/register', login_cntrl.register);
 app.delete('/auth/logout', login_cntrl.logout);
