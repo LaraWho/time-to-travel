@@ -34,25 +34,35 @@
     height: 100vh;
     width: auto;
     margin: auto;
-    position: absolute;
+    position: relative;
 }
 
 .photo-info>p {
     font-family: 'Futura';
-    position: relative;
+    position: absolute;
+    z-index: 5;
     color: #ffffff;
     margin: auto;
+    margin-bottom: 15px;
     padding-top: 15px;
     padding-left: 15px;
 }
 
-.map-question-btn-box {
+.city {
     position: relative;
+    margin-top: 10px;
+}
+.country {
+    top: 25px;
+
+}
+
+.map-question-btn-box {
+    position: absolute;
     padding: 15px;
     z-index: 2;
     cursor: pointer;
-    /* padding-left: 50px; */
-    top: 350px;
+    top: 400px;
     left: 112px;
 }
 

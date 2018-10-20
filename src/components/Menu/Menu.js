@@ -35,12 +35,16 @@ class Menu extends Component {
         this.props.history.push('/notebook');
     }
 
+    toLanding = () => {
+        this.props.history.push('/landing');
+    }
+
 
     render() {
         return(
             <div className="menu-bg">
                 <div className="menu-exit">
-                    <p>TIME TO<br />TRAVEL</p>
+                    <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={close} onClick={this.props.history.goBack} alt="close menu"/>
                 </div>
 

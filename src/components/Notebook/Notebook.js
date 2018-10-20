@@ -134,6 +134,10 @@ class Notebook extends Component {
         }).catch(err => console.log(err))
     }
 
+    toLanding = () => {
+        this.props.history.push('/landing');
+    }
+
     render() {
         console.log(this.state.DWquote)
         console.log(this.state.sourceQ)
@@ -184,7 +188,7 @@ class Notebook extends Component {
         return(
             <div >
                 <div className="menu-enter nb">
-                    <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
+                    <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
 

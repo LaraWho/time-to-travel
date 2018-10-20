@@ -12,9 +12,8 @@ class Landing extends Component {
         this.props.history.push('/map');
     }
 
-    enterMenu = () => {
+    toMenu = () => {
         this.props.history.push('/menu');
-        
     }
 
     render() {
@@ -33,7 +32,7 @@ class Landing extends Component {
                     
                     <div className="landing-enter">
                         <p>TIME TO<br />TRAVEL</p>
-                        <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
+                        <img src={open} onClick={this.toMenu} alt="enter-menu"/>
                     </div>
 
                     <div className="landing-tardis-box">
