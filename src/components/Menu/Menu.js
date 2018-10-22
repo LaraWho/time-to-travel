@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './menu.css';
 import '../Notebook/addnew.css';
-
 import close from '../../assets/menu-close.svg';
 import axios from 'axios';
 import sweetie from 'sweetalert2';
@@ -54,8 +53,7 @@ class Menu extends Component {
                         <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
                     </div>
                     
-                    <AddNew />
-
+                    <AddNew history={this.props.history}/>
 
                     <div className="money-box">
                         <div className="line3"></div>

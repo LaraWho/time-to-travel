@@ -2,13 +2,13 @@ module.exports = {
     
 create: (req, res) => {
     const dbInstance = req.app.get('db')
-    const { note_id } = req.params; 
+    const { user_id } = req.session.user
     const { title, location, content } = req.body;
 
-    dbInstance.add_note([ note_id, title, location, content ])
+    dbInstance.add_note([ title, location, content, user_id ])
     .then((note) => res.status(200).send(note) )
     .catch( err => {
-        res.status(401).send({errorMessage: "Oops, couldn't add a product!"})
+        res.sendStatus(401)
         console.log(err)
     })
 },
@@ -20,7 +20,6 @@ read: (req, res) => {
         dbInstance.view_all([user_id])
         .then(notes => {
             res.status(200).send(notes)
-            
         }).catch( err => {
             res.sendStatus(500)
             console.log(err)
@@ -34,11 +33,10 @@ update: (req, res) => {
 
     dbInstance.edit_note([ title, location, content, note_id ])
     .then( (note) => {
-        console.log('update:', note)
         res.status(200).send(note) 
         })
     .catch( err => {
-        res.status(400).send({errorMessage: "Oops, you can't edit this!"})
+        res.sendStatus(400)
         console.log(err)
     }) 
 },
@@ -53,7 +51,7 @@ delete: (req, res) => {
         res.status(200).send(notes) 
     })
     .catch( err => {
-        res.status(500).send({errorMessage: "Oops, you can't delete this!"})
+        res.sendStatus(500)
         console.log(err)
     } )
 }

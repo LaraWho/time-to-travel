@@ -1,9 +1,9 @@
 .menu-enter.nb {
-position: absolute;
-z-index: 2;
-right: 0;
-cursor: pointer;
-font-family: 'Futura';
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    cursor: pointer;
+    font-family: 'Futura';
     font-size: 18px;
     line-height: 20px;
     display: flex;
@@ -12,7 +12,7 @@ font-family: 'Futura';
     color: #021D34;
     text-align: right;
     font-weight: bold;
-
+    cursor: url('../../assets/key.png') 5 5 auto;
 }
 .menu-enter.nb>p {
     padding-right: 10px;
@@ -23,6 +23,19 @@ font-family: 'Futura';
     cursor: pointer;
 }
 
+.link-to-top {
+    position: absolute;
+    bottom: 1px;
+    right: 25px;
+    z-index: 10;
+    cursor: url('../../assets/key.png') 5 5 auto;	
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    /* white-space: nowrap; */
+}
 .allnotes-bg {
     position: relative;
     
@@ -83,6 +96,7 @@ top: -480px;
     color: #7F1816;
     margin-left: auto;
     margin-right: 18px;
+    cursor: pointer;    
     }
 
 .note {

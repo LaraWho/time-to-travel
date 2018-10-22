@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../Menu/menu.css';
 // import './addnew.css';
 import axios from 'axios';
-import sweetie from 'sweetalert2';
+// import sweetie from 'sweetalert2';
 
 class Menu extends Component {
     constructor(props) {
@@ -13,9 +13,7 @@ class Menu extends Component {
             location: '',
             content: ''
         }
-        
     }
-
 
     toNotes = () => {
         this.props.history.push('/notebook');
@@ -38,12 +36,14 @@ class Menu extends Component {
         })
     }
 
-    addNote = (note_id) => {
+    addNote = () => {
         let { title, location, content } = this.state
-        axios.post(`allnotes/${note_id}`, { title, location, content })
+        axios.post('/allnotes/new', { title, location, content })
         .then(res => {
-            this.props.history.push('/notebook')
-        })
+            setTimeout(() => {
+                this.props.history.push('/notebook');
+                }, 200)
+        }).catch((err) => console.log(err))
     }
 
     render() {
@@ -60,7 +60,7 @@ class Menu extends Component {
                         <input type="text" placeholder="LOCATION"
                         onChange={this.handleAddLoc}/>
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."
-                        onChange={this.handleAddTitle}></textarea>
+                        onChange={this.handleAddContent}></textarea>
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>
                     </div>
                 </div>

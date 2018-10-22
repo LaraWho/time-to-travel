@@ -1,6 +1,5 @@
 .map-bg {
-    background-color: #003B6F;
-    /* background: radial-gradient(#4378a7 ,#0e487a, #003B6F); */
+    background-color: #021D34;    
     height: 100vh;
     width: 100vw;
     overflow-y: hidden;
@@ -30,6 +29,22 @@
     cursor: pointer;
 }
 
+.arrow {
+    position: absolute;
+    z-index: 6;
+    right: 15px;
+    top: 45%;
+    background-color: #021D34;
+    border-radius: 20px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+/* .photo-btn {
+    position: relative;
+    bottom: 10px;
+} */
+
 .photo {
     height: 100vh;
     width: auto;
@@ -54,16 +69,32 @@
 }
 .country {
     top: 25px;
+}
 
+.name {
+    top: 50px;
+}
+
+.link {
+    bottom: 10px;
+    left: 10px;
+    font-family: 'Futura';
+    color: #ffffff;
+}
+.photographer {
+    left: 10px;
+    bottom: 40px;
+    width: 140px;
+    height: 55px;
 }
 
 .map-question-btn-box {
     position: absolute;
-    padding: 15px;
+    /* padding: 15px; */
     z-index: 2;
     cursor: pointer;
-    top: 400px;
-    left: 112px;
+    right: 10px;
+    bottom: 10px;
 }
 
 .map-random-btn-text {
@@ -83,15 +114,61 @@
         z-index: 2;
         height: 120px;
     }
+    @media all and (min-width: 500px) and (max-width: 920px) {
+
+    .photo {
+       display: flex;
+    }
+    .menu-enter.map{
+        padding: 40px;
+    }
+    .photo-info>p {
+        padding: 40px;
+    }
+
+    .link {
+        bottom: 40px;
+        left: 40px;
+    }
+    
+    .map-question-btn-box {
+        top: 580px;
+        position: absolute;
+        right: 20px;
+    }
+
+
+    .arrow {
+        right: 40px;
+    }
+}
 
 
 @media all and (min-width: 920px) {
-    .photo-info {
-        margin: auto;
-        height: 70%;
-        width: 80%;
-        top: 60px;
-        right: 10%;
+    .photo {
+       display: flex;
     }
 
+    .menu-enter.map{
+        padding: 50px;
+    }
+
+    .photo-info>p {
+        padding: 50px;
+    }
+
+    .link {
+        bottom: 50px;
+        left: 50px;
+    }
+
+    .map-question-btn-box {
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+    }
+
+    .arrow {
+        right: 50px;
+    }
 }

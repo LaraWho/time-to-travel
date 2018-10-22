@@ -11,15 +11,10 @@ class Notebook extends Component {
         super(props)
 
         this.state = {
-            title: '',
-            location: '',
-            content: '',
-            noteId: 0,
             allNotes: [],
-            mappedNotes: [],
-            showSave: false,
-            canEdit: false,
-            disabled: true,
+            showSave: [],
+            canEdit: [],
+            disabled: [],
             DWquote: '',
             sourceQ: ''
         }
@@ -33,13 +28,9 @@ class Notebook extends Component {
     getNotes = () => {
         axios.get('/allnotes')
         .then(res => {
-                console.log(res.data)
+                this.setAvailability(res.data.length)
                     this.setState({
-                        allNotes: res.data,
-                        title: res.data.title,
-                        location: res.data.location,
-                        content: res.data.content,
-                        noteId: res.data.note_id
+                        allNotes: res.data
                     })
         })
     }
@@ -55,22 +46,6 @@ class Notebook extends Component {
             
     }
 
-    updateTitle = (e) => {
-        this.setState({
-            title: e.target.value
-        })
-    }
-    updateLoc = (e) => {
-        this.setState({
-            location: e.target.value
-        })
-    }
-    updateContent = (e) => {
-        this.setState({
-            content: e.target.value
-        })
-    }
-
     enterMenu = () => {
         this.props.history.push('/menu')
     }
@@ -78,32 +53,22 @@ class Notebook extends Component {
         this.props.history.goBack()
     }
 
-    toggleSave() {
-        this.setState({
-          showSave: !this.state.showSave,
-          canEdit: !this.state.canEdit,
-          disabled: !this.state.disabled
-        })
-      }
-
-      saveNote = (note) => {
+      saveNote = (note, i) => {
         let { title, location, content } = this.state
         note.title = title ? title : note.title
         note.location = location ? location : note.location
         note.content = content ? content : note.content
-
-        axios.patch(`/allnotes/${note.note_id}`,  note )
-        .then( res => {
-          this.setState({
-              title: this.state.title,
-              location: this.state.location,
-              content: this.state.content,
-              disabled: !this.state.disabled,
-              showSave: !this.state.showSave,
-              canEdit: !this.state.canEdit
-            })
-          console.log('save method')
+        // if(note.note_id) {
+            axios.patch(`/allnotes/${note.note_id}`,  note )
+            .then( res => {
+                this.updateAvailability(i)
+              this.setState({
+                  allnotes: res.data
+                })
         }).catch(err => console.log(err))
+    // } else {
+    //     console.log('savenote!')
+    // }
       }
 
       deleteNote(note_id) {
@@ -127,7 +92,7 @@ class Notebook extends Component {
                       title: 'Exterminated!',
                       text: 'No second chances',
                       showConfirmButton: false,
-                      timer: 500,
+                      timer: 400,
                       padding: '2.5rem'
                   })
             }
@@ -138,11 +103,48 @@ class Notebook extends Component {
         this.props.history.push('/landing');
     }
 
-    render() {
-        console.log(this.state.DWquote)
-        console.log(this.state.sourceQ)
+    updateAvailability = (i) => {
+            let canEdit = [...this.state.canEdit]
+            canEdit[i] = !this.state.canEdit[i]
+            let showSave = [...this.state.showSave]
+            showSave[i] = !this.state.showSave[i]
+            let disabled = [...this.state.disabled]
+            disabled[i] = !this.state.disabled[i]
+            
+            this.setState({
+                canEdit: canEdit,
+                showSave: showSave,
+                disabled: disabled
+            })
+    }
 
+    updateField = (value, i, type) => {
+        let newNotes = [...this.state.allNotes]
+        newNotes[i][type] = value
+        this.setState({
+            allnotes: newNotes
+        })
+    }
+    setAvailability = (length) => {
+        for(let i = 0; i < length; i++){
+            let canEdit = [...this.state.canEdit]
+            canEdit[i] = false
+            let showSave = [...this.state.showSave]
+            showSave[i] = false
+            let disabled = [...this.state.disabled]
+            disabled[i] = true
+            this.setState({
+                canEdit: canEdit,
+                showSave: showSave,
+                disabled: disabled
+            })
+        }
+    }
+
+    render() {
+        
         let mappedNotes = this.state.allNotes.map((note, i) => {
+           
             return(
 
                 <div key={i} className="first">
@@ -150,28 +152,34 @@ class Notebook extends Component {
 
                 <div className="onenote-bg">
                     <div className="note">
-                        <input className={this.state.canEdit ? "note-inputs" : "note-inputs cannot-edit"} 
-                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        placeholder={note.title} value={this.state.title} onChange={this.updateTitle}/>
+                        <input className={this.state.canEdit[i] ? "note-inputs" : "note-inputs cannot-edit"} 
+                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
+                        value={this.state.allNotes[i].title} onChange={e => {
+                            this.updateField(e.target.value, i, 'title')
+                        }}/>
 
-                        <input className={this.state.canEdit ? "note-inputs2" : "note-inputs2 cannot-edit"} 
-                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        placeholder={note.location} value={this.state.location} onChange={this.updateLoc}/>
+                        <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
+                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
+                        value={this.state.allNotes[i].location} onChange={e => {
+                            this.updateField(e.target.value, i, 'location')
+                        }}/>
 
                         <textarea cols="20" rows="10" 
-                        className={this.state.canEdit ? "note-text" : "note-text cannot-edit"}
-                        type="text" disabled={(this.state.disabled) ? "disabled" : ""}
-                        placeholder={note.content} value={this.state.content} onChange={this.updateContent}/>
+                        className={this.state.canEdit[i] ? "note-text" : "note-text cannot-edit"}
+                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
+                        value={this.state.allNotes[i].content} onChange={e => {
+                            this.updateField(e.target.value, i, 'content')
+                        }}/>
 
 
-                    {this.state.showSave ?
+                    {this.state.showSave[i] ?
                     <div className="save-button"
-                    onClick={() => this.saveNote(note)}>
+                    onClick={() => this.saveNote(note, i)}>
                     <button className="note-save">SAVE</button>
                     </div>
                     :
                     <div className="edit-button"
-                    onClick={() => this.toggleSave()}>
+                    onClick={() => this.updateAvailability(i)}>
                     <button className="note-edit">EDIT</button>
                     </div>
                     }
@@ -179,6 +187,7 @@ class Notebook extends Component {
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote(note.note_id)}>DELETE NOTE</h3>
                     </div>
+                    <a className="link-to-top" href="#/notebook">Back to top</a>
                 
 
                     </div>
@@ -187,6 +196,7 @@ class Notebook extends Component {
 
         return(
             <div >
+                <a name="/notebook"></a>
                 <div className="menu-enter nb">
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
@@ -204,7 +214,6 @@ class Notebook extends Component {
                 <div>
                     {mappedNotes}
                 </div>
-                
             </div>
         )
     }

@@ -9,7 +9,6 @@ import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
 
-
 class App extends Component {
   render() {
     return (
