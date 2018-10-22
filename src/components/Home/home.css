@@ -40,7 +40,7 @@
     font-family: 'Futura';
     /* font-weight: bold; */
     font-size: 48px;
-    padding-top: 8%;
+    padding-top: 5%;
     line-height: 60px;
     display: flex;
     justify-content: center;
@@ -48,7 +48,7 @@
 
 .button>img {
     position: absolute;
-    width: 110px;
+    width: 130px;
     left: 20px;
 }
 
@@ -59,3 +59,22 @@
     transform: rotate(15deg);
 }
 
+@media all and (min-width: 320px) and (max-width: 920px) and (min-height: 794px) {
+
+    .button>img {
+        top: 190px;
+        left: 80px;
+        width: 160px;
+    
+    }
+}
+
+@media all and (min-width: 920px) {
+
+.button>img {
+    top: 60px;
+    left: 40px;
+    width: 180px;
+
+}
+}

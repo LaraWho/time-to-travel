@@ -76,10 +76,10 @@ class Notebook extends Component {
             title: 'Are you sure you want to delete this?',
             text: 'Also, would you like a jellybaby?',
             showCancelButton: true,
-              confirmButtonColor: '#FF9770',
-            cancelButtonColor: '#ccc3c3',
-            cancelButtonText: 'No!',
-            confirmButtonText: 'Exterminate!',
+            confirmButtonColor: '#7F1816',
+            cancelButtonColor: '#0563B5',
+            cancelButtonText: 'NO!',
+            confirmButtonText: 'EXTERMINATE!',
             padding: '2.5rem',
 
         }).then((result) => {
@@ -88,13 +88,13 @@ class Notebook extends Component {
                       .then(res => {
                           this.getNotes()
                       })
-                  sweetie({
-                      title: 'Exterminated!',
-                      text: 'No second chances',
-                      showConfirmButton: false,
-                      timer: 400,
-                      padding: '2.5rem'
-                  })
+                //   sweetie({
+                //       title: 'EXTERMINATED!',
+                //       text: 'No second chances',
+                //       showConfirmButton: false,
+                //       timer: 400,
+                //       padding: '2.5rem'
+                //   })
             }
         }).catch(err => console.log(err))
     }

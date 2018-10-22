@@ -17,10 +17,6 @@ class Login extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     this.getUser()
-    // }
-
     handleUsername = (e) => {
         this.setState({
             username: e.target.value
@@ -35,17 +31,6 @@ class Login extends Component {
     toLanding = () => {
         this.props.history.push('/landing');
     }
-
-    // getUser = () => {
-    //     console.log('getuser in login.js')
-    //     axios.get('/api/user')
-    //     .then(res => {
-    //         this.setState({
-    //             username: res.data.username,
-    //             password: res.data.password
-    //         })
-    //     }).catch(err => console.log(err))
-    // }
 
     handleLoginRequest = (e) => {
         axios.post('/auth/login', {
@@ -65,10 +50,9 @@ class Login extends Component {
             username: this.state.username,
             password: this.state.password
         }).then(res => {
-            console.log(res.data[0])
             setTimeout(() => {
             this.props.history.push('/landing');
-            }, 500)
+            }, 100)
         }).catch(err => console.log(err))
     }
 

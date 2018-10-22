@@ -1,4 +1,6 @@
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+
 
 module.exports = {
 
@@ -41,12 +43,41 @@ module.exports = {
         const dbInstance = req.app.get('db')
         let {username, password} = req.body;
 
-        bcrypt.hash(password, 8, function(err, hash) {
-            dbInstance.register_user( [username, hash] )
-            .then( user => {
-                    req.session.username = username
-                    req.session.password = password
-                    req.session.user = user[0]
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            // secure: false,
+            // port: 25,
+            auth: {
+              user: 'lara.who88@gmail.com',
+              pass: process.env.REACT_APP_PASSWORD
+            },
+            // tls: {
+            //   rejectUnauthorized: false
+            // }
+          });
+          
+          let HelperOptions = {
+            from: '"Lara" <lara.who88@gmail.com',
+            to: `username`,
+            subject: 'Registered with Time to Travel',
+            text: `Thank you for registering with Time to Travel! Your login information is ${username} and ${password}.`
+          };
+
+        //   console.log(auth.pass)
+                    
+          bcrypt.hash(password, 8, function(err, hash) {
+              dbInstance.register_user( [username, hash] )
+              .then( user => {
+                  req.session.username = username
+                  req.session.password = password
+                  req.session.user = user[0]
+                  transporter.sendMail(HelperOptions, (error, info) => {
+                      if (error) {
+                          return console.log(error);
+                        }
+                        console.log("The message was sent!");
+                        console.log(info);
+                    });
                     res.status(200).send(user)
                 }).catch( err => res.sendStatus(500))
             })

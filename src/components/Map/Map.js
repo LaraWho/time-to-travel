@@ -17,7 +17,6 @@ class Map extends Component {
            city: '',
            name: '',
            width: 0,
-           unsplashLink: '',
            photographer: '',
            photographerLink: ''
         }
@@ -38,8 +37,7 @@ class Map extends Component {
                     country: 'Who knows!',
                     photo: res.data.urls.regular,
                     city: 'Who knows!',
-                    name: res.data.location.name,
-                    unsplashLink: res.data.links.html,
+                    name: 'Who knows!',
                     width: res.data.width,
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html
@@ -50,7 +48,6 @@ class Map extends Component {
                     country: res.data.location.country,
                     city: res.data.location.city,
                     name: res.data.location.name,
-                    unsplashLink: res.data.links.html,
                     width: res.data.width,
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html
@@ -60,25 +57,29 @@ class Map extends Component {
         })
     }
 
-    goToLink = () => {
-
-    }
-
     enterMenu = () => {
         this.props.history.push('/menu')
     }
     goBack = () => {
         this.props.history.push('/landing')
     }
+
+    scroll = () => {
+        window.scrollTo({
+            'behavior': 'smooth',
+            'right': 0,
+        })
+    }
             
         render() {
-
+            console.log(this.props)
                 console.log(this.state.city)
                 console.log(this.state.country)
+                const elm = document.querySelector('.js-section');
 
                     let arrow = []
                     if(this.state.width >= 320) {
-                        arrow.push(<img className="arrow" src={scroll} alt="scroll right"/>)
+                        arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll()}/>)
                     }
                   
 
@@ -116,7 +117,6 @@ class Map extends Component {
                     <img src={open} onClick={this.enterMenu} alt="enter menu"/>
                 </div>
                 <img className="photo" src={this.state.photo} alt=""/>
-
             <div>
 
                 <MapBtn className="photo-btn" getPhoto={this.getPhoto}/>

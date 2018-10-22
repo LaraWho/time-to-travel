@@ -8,8 +8,10 @@ import GMap from './components/Map/Map';
 import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
+// import axios from 'axios';
 
 class App extends Component {
+
   render() {
     return (
       <div>

@@ -16,15 +16,15 @@
 .menu-note {
     width: 100%;
     background-color: #8BA3B8;
-    margin-top: 6px;
-    height: 270px;
+    margin-top: 10px;
+    height: 350px;
 }
 
 .line2 {
     position: absolute;
     background-color: #2B455C;
     width: 5px;
-    height: 270px;
+    height: 350px;
     left: 0;
 }
 
@@ -70,8 +70,8 @@
 
 
 .menu-note>h3 {
-    padding-top: 15px;
-    /* padding-bottom: 10px; */
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .menu-note>input {
@@ -90,15 +90,15 @@
     padding: 5px 5px;    
     margin-top: 6px;
     width: 75%;
-    height: 70px;
-    margin-bottom: 6px;
+    height: 120px;
+    margin-bottom: 15px;
 }
 
 .menu-save {
     background-color: #2B455C;
     height: 32px;
     border-radius: 20px;
-    width: 76%;
+    width: 78%;
     padding: 1px 5px;    
     text-align: center;
     margin: auto;
@@ -108,7 +108,7 @@
 }
 
 .menu-h3.logout {
-    bottom: 10px;
+    bottom: 18px;
     position: absolute;
     color: #2B455C;
 }

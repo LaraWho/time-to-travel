@@ -27,7 +27,11 @@
 }
 .menu-enter.map>img {
     height: 36px;
-    padding-top: 2px;
+    margin-top: 2px;
+    background: rgba(0, 59, 111, 0.1);
+    /* background: rgba(2, 29, 52, 0.205); */
+    opacity: 0.5;
+    border-radius: 10px;
     cursor: pointer;
 
 }
@@ -71,35 +75,32 @@
     position: relative;
     margin-top: 10px;
     text-shadow: 1px 1px 5px #021D34;
-
 }
+
 .country {
     top: 25px;
     text-shadow: 1px 1px 5px #021D34;
-
 }
 
 .name {
     top: 50px;
     text-shadow: 1px 1px 5px #021D34;
-
 }
 
 .link {
-    bottom: 10px;
+    bottom: 20px;
     left: 10px;
     font-family: 'Futura';
     color: #ffffff;
     text-shadow: 1px 1px 5px #021D34;
-
 }
+
 .photographer {
     left: 10px;
     bottom: 40px;
     width: 140px;
     height: 55px;
     text-shadow: 1px 1px 5px #021D34;
-
 }
 
 .map-question-btn-box {
@@ -107,8 +108,10 @@
     /* padding: 15px; */
     z-index: 2;
     cursor: pointer;
-    right: 10px;
-    bottom: 10px;
+    right: 15px;
+    bottom: 15px;
+    /* background: rgba(0, 59, 111, 0.15);
+    border-radius: 40px; */
 }
 
 .map-random-btn-text {
@@ -119,12 +122,13 @@
     font-size: 18px;
     text-align: right;
     line-height: 26px;
-    padding-left: 20px;
+    text-shadow: 5px 5px 15px #003B6F;
+
     }
     
     .map-question-mark {
         position: relative;
-        padding-left: 115px;
+        padding-left: 100px;
         z-index: 2;
         height: 120px;
     }
@@ -143,6 +147,10 @@
     .link {
         bottom: 40px;
         left: 40px;
+    }
+    .photographer {
+        left: 40px;
+        bottom: 40px;
     }
     
     .map-question-btn-box {
@@ -175,11 +183,16 @@
         bottom: 50px;
         left: 50px;
     }
+    .photographer {
+        left: 50px;
+        bottom: 80px;
+    }
 
     .map-question-btn-box {
         position: absolute;
         right: 50px;
         bottom: 50px;
+        padding: 0px;
     }
 
     .arrow {

@@ -13,7 +13,8 @@ class Menu extends Component {
         this.state = {
             title: '',
             location: '',
-            content: ''
+            content: '',
+            name: 'hi from the menu state'
         }
     }
 
@@ -21,9 +22,11 @@ class Menu extends Component {
         axios.delete('/auth/logout')
           .then(res => {
             sweetie({
-                text: "Re-locating!",
+                text: "Regenerating!",
                 timer: 500,
-                buttons: false})
+                showConfirmButton: false,
+                padding: '2.5rem'
+            })
             setTimeout(() => {
             this.props.history.push('/');
             }, 500)
@@ -38,24 +41,11 @@ class Menu extends Component {
         this.props.history.push('/landing');
     }
 
-    // getCurrency = () => {
-    //     let geonameid = Math.floor(Math.random()*9000000) + 10000;
-    //     axios.get(`https://${process.env.REACT_APP_X_API_KEY}@www.budgetyourtrip.com/api/v3/costs/highlights/${geonameid}`)
-    //     .then(res => {
-    //         console.log(res.data)
-    //         console.log(geonameid)
-
-    //     //   this.setState({
-             
-    //     //   })
-    //     }).catch((err) => {
-    //         console.log(err)
-    //     })
-    //   }
-    
-
 
     render() {
+
+        console.log(this.props.propsName)
+        
         return(
             <div className="menu-bg">
                 <div className="menu-exit">
@@ -69,12 +59,13 @@ class Menu extends Component {
                         <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
                     </div>
                     
-                    <AddNew history={this.props.history}/>
+                    <AddNew />
 
-                    <div className="money-box">
+                    {/* <div className="money-box">
                         <div className="line3"></div>
                         <h3>CURRENCY INFO</h3>
-                    </div>
+                    </div> */}
+                    
                     <div className="menu-h3 logout">
                         <div className="line logout"></div>
                         <h3 onClick={this.logout}>LOGOUT</h3>

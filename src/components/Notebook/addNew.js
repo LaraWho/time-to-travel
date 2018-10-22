@@ -47,6 +47,7 @@ class Menu extends Component {
     }
 
     render() {
+        console.log(this.props.name)
         return(
             <div className="menu-bg menu">
 

@@ -12,7 +12,7 @@
     color: #021D34;
     text-align: right;
     font-weight: bold;
-    cursor: url('../../assets/key.png') 5 5 auto;
+    cursor: pointer;
 }
 .menu-enter.nb>p {
     padding-right: 10px;
@@ -28,7 +28,7 @@
     bottom: 1px;
     right: 25px;
     z-index: 10;
-    cursor: url('../../assets/key.png') 5 5 auto;	
+    cursor: pointer;	
     
 }
 
@@ -158,6 +158,9 @@ border-radius: 20px;
 .intro-text {
     margin: auto;
     margin-bottom: -396px;
-
+}
+.onenote-bg {
+    top: -550px;
+    
 }
 }
