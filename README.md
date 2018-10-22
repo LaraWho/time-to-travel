@@ -7,4 +7,4 @@ travel journal...with a fun Doctor Who theme!
 
 Here's the prototype I created on Figma:
 
-<img width="672" alt="screen shot 2018-10-17 at 22 18 22" src="https://user-images.githubusercontent.com/29001520/47131255-f25ef880-d25a-11e8-802f-6d8641c1725c.png">
+![prototypes](https://user-images.githubusercontent.com/29001520/47278100-6b27c280-d583-11e8-8511-e75aa4bb2140.jpeg)
