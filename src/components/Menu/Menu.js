@@ -38,6 +38,22 @@ class Menu extends Component {
         this.props.history.push('/landing');
     }
 
+    // getCurrency = () => {
+    //     let geonameid = Math.floor(Math.random()*9000000) + 10000;
+    //     axios.get(`https://${process.env.REACT_APP_X_API_KEY}@www.budgetyourtrip.com/api/v3/costs/highlights/${geonameid}`)
+    //     .then(res => {
+    //         console.log(res.data)
+    //         console.log(geonameid)
+
+    //     //   this.setState({
+             
+    //     //   })
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     })
+    //   }
+    
+
 
     render() {
         return(

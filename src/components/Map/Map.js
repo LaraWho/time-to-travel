@@ -31,7 +31,6 @@ class Map extends Component {
     getPhoto = () => {
         axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel`)
         .then(res => {
-            console.log(res.data.width)
             console.log(res.data)
 
             if(!res.data.location) {

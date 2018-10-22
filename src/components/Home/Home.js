@@ -7,7 +7,6 @@ import key from '../../assets/tardis-key.svg';
 import tardisSound from '../../assets/tardis-landing.mp3';
 import Media from "react-media";
 
-
 class Home extends Component {
 
 

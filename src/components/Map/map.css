@@ -22,11 +22,14 @@
 
 .menu-enter.map>p {
     padding-right: 10px;
+    text-shadow: 1px 1px 5px #021D34;
+
 }
 .menu-enter.map>img {
     height: 36px;
     padding-top: 2px;
     cursor: pointer;
+
 }
 
 .arrow {
@@ -61,18 +64,25 @@
     margin-bottom: 15px;
     padding-top: 15px;
     padding-left: 15px;
+    text-shadow: 1px 1px 5px #021D34;
 }
 
 .city {
     position: relative;
     margin-top: 10px;
+    text-shadow: 1px 1px 5px #021D34;
+
 }
 .country {
     top: 25px;
+    text-shadow: 1px 1px 5px #021D34;
+
 }
 
 .name {
     top: 50px;
+    text-shadow: 1px 1px 5px #021D34;
+
 }
 
 .link {
@@ -80,12 +90,16 @@
     left: 10px;
     font-family: 'Futura';
     color: #ffffff;
+    text-shadow: 1px 1px 5px #021D34;
+
 }
 .photographer {
     left: 10px;
     bottom: 40px;
     width: 140px;
     height: 55px;
+    text-shadow: 1px 1px 5px #021D34;
+
 }
 
 .map-question-btn-box {

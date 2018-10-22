@@ -154,20 +154,23 @@ class Notebook extends Component {
                     <div className="note">
                         <input className={this.state.canEdit[i] ? "note-inputs" : "note-inputs cannot-edit"} 
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].title} onChange={e => {
+                        value={this.state.allNotes[i].title} placeholder="TITLE"
+                        onChange={e => {
                             this.updateField(e.target.value, i, 'title')
                         }}/>
 
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].location} onChange={e => {
+                        value={this.state.allNotes[i].location} placeholder="LOCATION"
+                        onChange={e => {
                             this.updateField(e.target.value, i, 'location')
                         }}/>
 
                         <textarea cols="20" rows="10" 
                         className={this.state.canEdit[i] ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].content} onChange={e => {
+                        value={this.state.allNotes[i].content} placeholder="THOUGHTS..."
+                        onChange={e => {
                             this.updateField(e.target.value, i, 'content')
                         }}/>
 
