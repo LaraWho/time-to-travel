@@ -19,7 +19,7 @@ class Notebook extends Component {
             sourceQ: '',
             input: '',
             // showFilter: false,
-            filteredNotes: []
+            unchangedNotes: []
         }
     }
 
@@ -33,8 +33,8 @@ class Notebook extends Component {
         .then(res => {
                 this.setAvailability(res.data.length)
                     this.setState({
-                        allNotes: res.data
-                        // filteredNotes: res.data
+                        allNotes: res.data,
+                        unchangedNotes: res.data
                     })
         })
     }
@@ -151,6 +151,7 @@ class Notebook extends Component {
     }
 
     searchNotes = (query) => {
+        if(query) {
         this.setState({
             // showFilter: true,
             allNotes: this.state.allNotes.filter(response => {
@@ -160,9 +161,15 @@ class Notebook extends Component {
             return response.location.toLowerCase().includes(query.toLowerCase())
         })
     })
-    console.log('this.state.allNotes in search: ', this.state.allNotes)
+} else {
+    this.setState({
+        allNotes: this.state.unchangedNotes
+    })
+}
+console.log('this.state.allNotes in search: ', this.state.allNotes)
+}
         
-    }
+    
 
     // response.title.includes(query) || 
     //         response.country.includes(query) || 
