@@ -1,14 +1,7 @@
-.menu-bg {
-   
-}
-
-.menu-items {
-    /* margin-top: 50%; */
-}
-
-.menu-note {
-}
-
-.line2 {
-    /* visibility: hidden; */
+.addnew-photo {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 160px;
+    width: auto;
+    border-radius: 20px;
 }

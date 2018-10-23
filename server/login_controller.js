@@ -53,10 +53,15 @@ module.exports = {
             subject: 'Registered with Time to Travel',
             text: `You\'ve registered with Time to Travel! Your login information is: EMAIL - ${username} and PASSWORD - ${password}`,
             html:
-            `<h1 style={{fontFamily='Futura', color: '#003B6F', fontWeight: 'bold'}}> Thank you for registering with Time to Travel! </h1>
-            <p style="font-family=FFutura; color: #003B6F"> Your login information is: <br />EMAIL - ${username} <br /> PASSWORD - ${password} </p>
-            <img style="height: 100px; width: auto; text-align: center" src="../src/components/best-tardis-full.svg" alt="TARDIS" />`
-        };
+            `<h1 style="font-family: Futura; background-color: #003B6F; text-align: center; color: #FFF; font-weight: bold; font-size: 36px"> Thank you for registering with Time to Travel! </h1>
+            <h2 style="font-family: Futura; color: #333; text-align: center; font-size: 18px; font-weight: bold; text-decoration: none"> Your login information is: <br />EMAIL - ${username} <br /> PASSWORD - ${password} </h2>
+            <img style="height: 200px; width: auto; margin-left: 45%" src="cid:tardis" alt="TARDIS" />
+            <p style="font-family: Futura; text-align: center; color: #003B6F; font-weight: bold; font-size: 24px" >Have fun!</p>`,
+            attachments: [{
+            filename: 'best-tardis-full.png',
+            path: __dirname + '/best-tardis-full.png',
+            cid: 'tardis'
+        }]};
                     
           bcrypt.hash(password, 8, function(err, hash) {
               dbInstance.register_user( [username, hash] )

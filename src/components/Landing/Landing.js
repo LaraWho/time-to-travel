@@ -13,7 +13,7 @@ class Landing extends Component {
     }
 
     toMenu = () => {
-        this.props.history.push('/menu');
+        this.props.history.push('/notebookmenu');
     }
 
     render() {

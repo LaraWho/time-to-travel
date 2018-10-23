@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../Menu/menu.css';
-// import './addnew.css';
+import './addnew.css';
 import axios from 'axios';
 // import sweetie from 'sweetalert2';
 
@@ -13,12 +13,14 @@ class Menu extends Component {
             location: '',
             content: '',
             country: ''
+            // photo: ''
         }
     }
     componentDidMount() {
         this.setState({
             location: this.props.name,
-            country: this.props.country
+            country: this.props.country,
+            content: this.props.photo
         })
     }
 
@@ -33,8 +35,7 @@ class Menu extends Component {
     }
     handleAddLoc = (e) => {
         this.setState({
-            location: e.target.value,
-            country: e.target.value
+            location: e.target.value
         })
     }
 
@@ -63,12 +64,13 @@ class Menu extends Component {
                     <div className="menu-note menu">
                         <div className="line2 menu"></div>
                         <h3>QUICK NOTE</h3>
-                        <input type="text" placeholder="TITLE"
-                        onChange={this.handleAddTitle}/>
                         <input type="text" placeholder="LOCATION" value={`${this.state.country}, ${this.state.location}`}
-                        onChange={this.handleAddLoc}/>
-                        <textarea cols="20" rows="10" placeholder="THOUGHTS..."
-                        onChange={this.handleAddContent}></textarea>
+                        onChange={this.handleAddLoc} disabled={true}/>
+                        <input type="text" placeholder="THOUGHTS..."
+                        onChange={this.handleAddTitle}/>
+                        {/* <textarea cols="20" rows="10" placeholder="THOUGHTS..."
+                        onChange={this.handleAddContent}></textarea> */}
+                        <img className="addnew-photo" src={this.state.content} alt=""/>
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>
                     </div>
                 </div>

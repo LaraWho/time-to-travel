@@ -28,10 +28,10 @@ class Map extends Component {
     }
 
     getPhoto = () => {
-        axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel`)
+        axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel&w=1080&h=720`)
         .then(res => {
             console.log(res.data)
-            this.props.updateLocation(res.data.location.name, res.data.location.country)
+            this.props.updateLocation(res.data.location.name, res.data.location.country, res.data.urls.regular)
             if(!res.data.location) {
                 this.setState({
                     country: 'Who knows!',
@@ -64,9 +64,10 @@ class Map extends Component {
     }
 
     scroll = () => {
+        console.log(document.querySelector('.photo').offsetWidth - document.body.offsetWidth)
         window.scrollTo({
             'behavior': 'smooth',
-            'right': 0,
+            'left': document.querySelector('.photo').offsetWidth - document.body.offsetWidth,
         })
     }
             
@@ -77,7 +78,7 @@ class Map extends Component {
                 
                     let arrow = []
                     if(this.state.width >= 320) {
-                        arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll()}/>)
+                        arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll}/>)
                     }
                   
 
@@ -101,6 +102,7 @@ class Map extends Component {
                 <p className="name">{this.state.name}</p>
 
                      {arrow}
+
                 <a className="photographer" style={{position: 'absolute', zIndex: 3}} target="_blank" href={this.state.photographerLink}>
                     <p>Photo by<br />{this.state.photographer}</p>
                 </a>

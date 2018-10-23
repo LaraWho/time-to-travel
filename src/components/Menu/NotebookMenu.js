@@ -4,7 +4,6 @@ import '../Notebook/addnew.css';
 import close from '../../assets/menu-close.svg';
 import axios from 'axios';
 import sweetie from 'sweetalert2';
-import AddNew from '../Notebook/addNew';
 
 class Menu extends Component {
     constructor(props) {
@@ -32,12 +31,39 @@ class Menu extends Component {
           }).catch((err) => console.log(err))
       }
 
+    toLanding = () => {
+        this.props.history.push('/landing');
+    }
+
     toNotes = () => {
         this.props.history.push('/notebook');
     }
 
-    toLanding = () => {
-        this.props.history.push('/landing');
+    handleAddTitle = (e) => {
+        this.setState({
+            title: e.target.value
+        })
+    }
+    handleAddLoc = (e) => {
+        this.setState({
+            location: e.target.value
+        })
+    }
+
+    handleAddContent = (e) => {
+        this.setState({
+            content: e.target.value
+        })
+    }
+
+    addNote = () => {
+        let { title, country, location, content } = this.state
+        axios.post('/allnotes/new', { country, title, location, content })
+        .then(res => {
+            setTimeout(() => {
+                this.props.history.push('/landing');
+                }, 200)
+        }).catch((err) => console.log(err))
     }
 
 
@@ -57,9 +83,22 @@ class Menu extends Component {
                         <div className="line"></div>
                         <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
                     </div>
-                    
-                    <AddNew history={this.props.history} name={this.props.name} country={this.props.country} photo={this.props.photo}/>
 
+                <div className="menu-items menu">
+                    
+                    <div className="menu-note menu">
+                        <div className="line2 menu"></div>
+                        <h3>QUICK NOTE</h3>
+                        <input type="text" placeholder="TITLE"
+                        onChange={this.handleAddTitle}/>
+                        <input type="text" placeholder="LOCATION"
+                        onChange={this.handleAddLoc}/>
+                        <textarea cols="20" rows="10" placeholder="THOUGHTS..."
+                        onChange={this.handleAddContent}></textarea>
+                        <button className="menu-save" onClick={this.addNote}>SAVE</button>
+                    </div>
+                </div>
+                    
                     {/* <div className="money-box">
                         <div className="line3"></div>
                         <h3>CURRENCY INFO</h3>

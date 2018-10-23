@@ -8,6 +8,7 @@ import GMap from './components/Map/Map';
 import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
+import NotebookMenu from './components/Menu/NotebookMenu';
 // import axios from 'axios';
 
 class App extends Component {
@@ -15,14 +16,16 @@ class App extends Component {
     super(props)
     this.state = {
       name: '',
-      country: ''
+      country: '',
+      photo: ''
     }
   }
 
-  updateLocation = (value1, value2) => {
+  updateLocation = (value1, value2, value3) => {
     this.setState({
       name: value1,
-      country: value2
+      country: value2,
+      photo: value3
     })
   }
 
@@ -42,10 +45,12 @@ class App extends Component {
 
               <Route exact path='/menu' render={(props) => {
                 return (
-                  <Menu {...props} name={this.state.name} country={this.state.country}/>
+                  <Menu {...props} name={this.state.name} country={this.state.country} photo={this.state.photo}/>
                 )
               }} />
               <Route component={Notebook} exact path='/notebook' />
+              <Route component={NotebookMenu} exact path='/notebookmenu' />
+
             </Switch>
         </HashRouter>
         

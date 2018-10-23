@@ -41,6 +41,16 @@ html {
     
 }
 
+#filter {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 9%;
+    border-radius: 20px;
+    width: 265px;
+    /* background-color: rgba(187, 93, 74, 0.774); */
+}
+
 .onenote-bg {
 width: 275px;
 height: 445px;
@@ -74,7 +84,7 @@ top: -480px;
     padding: 8px;
     background-color: rgba(187, 93, 74, 0.774);
     text-align: center;
-    top: 120px;
+    top: 100px;
     left: 22px;
     line-height: 1.4;
 }
@@ -117,6 +127,7 @@ border-radius: 20px;
 height: 32px;
 background: #FFFFFF;
 border-radius: 20px;
+/* margin-bottom: 5px; */
 }
 
 .note-inputs2 {
@@ -130,7 +141,7 @@ border-radius: 20px;
 .note-text {
     /* width: 225px; */
     height: 195px;
-    padding-top: 8px;
+    padding-top: 6px;
     background: #FFFFFF;
     border-radius: 20px;
 }
@@ -150,6 +161,10 @@ border-radius: 20px;
     border-radius: 20px;
     color: #FFFFFF;
     font-size: 24px;
+}
+.note-photo {
+    height: 150px;
+    border-radius: 20px;
 }
 
 @media all and (min-width: 920px) {

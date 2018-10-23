@@ -16,7 +16,10 @@ class Notebook extends Component {
             canEdit: [],
             disabled: [],
             DWquote: '',
-            sourceQ: ''
+            sourceQ: '',
+            input: '',
+            showFilter: false,
+            filteredNotes: []
         }
     }
 
@@ -31,6 +34,7 @@ class Notebook extends Component {
                 this.setAvailability(res.data.length)
                     this.setState({
                         allNotes: res.data
+                        // filteredNotes: res.data
                     })
         })
     }
@@ -47,7 +51,7 @@ class Notebook extends Component {
     }
 
     enterMenu = () => {
-        this.props.history.push('/menu')
+        this.props.history.push('/notebookmenu')
     }
     goBack = () => {
         this.props.history.goBack()
@@ -142,9 +146,34 @@ class Notebook extends Component {
         }
     }
 
+    updateFilter = (e) => {
+        this.setState({
+            input: e.target.value
+        }, this.filterNotes)
+    }
+
+    filterNotes = () => {
+        this.setState({
+            // input: e.target.value,
+            showFilter: true,
+            filteredNotes: this.state.allNotes.filter(response => {
+                console.log(this.state.input)
+            return response.country === this.state.input
+        })
+    }) 
+    }
+
     render() {
+        let newNoteArray = [];
+
+        if(!this.state.showFilter) {
+                newNoteArray = this.state.allNotes
         
-        let mappedNotes = this.state.allNotes.map((note, i) => {
+        } else {
+                newNoteArray = this.state.filteredNotes
+        }
+        
+        let mappedNotes = newNoteArray.map((note, i) => {
            
             return(
 
@@ -153,19 +182,17 @@ class Notebook extends Component {
 
                 <div className="onenote-bg">
                     <div className="note">
-                        <input className={this.state.canEdit[i] ? "note-inputs" : "note-inputs cannot-edit"} 
-                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].title} placeholder="TITLE"
-                        onChange={e => {
-                            this.updateField(e.target.value, i, 'title')
-                        }}/>
 
-                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
-                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].country} placeholder="COUNTRY"
-                        onChange={e => {
-                            this.updateField(e.target.value, i, 'country')
-                        }}/>
+                        {this.state.allNotes[i].country === null ?
+                        null
+                        :
+                        <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
+                       type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
+                       value={this.state.allNotes[i].country} placeholder="COUNTRY"
+                       onChange={e => {
+                           this.updateField(e.target.value, i, 'country')
+                       }}/>
+                        }
 
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
@@ -174,13 +201,24 @@ class Notebook extends Component {
                             this.updateField(e.target.value, i, 'location')
                         }}/>
 
+                         <input className={this.state.canEdit[i] ? "note-inputs" : "note-inputs cannot-edit"} 
+                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
+                        value={this.state.allNotes[i].title} placeholder="THOUGHTS..."
+                        onChange={e => {
+                            this.updateField(e.target.value, i, 'title')
+                        }}/>
+
+                        {this.state.allNotes[i].country === null ?
                         <textarea cols="20" rows="10" 
                         className={this.state.canEdit[i] ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
                         value={this.state.allNotes[i].content} placeholder="THOUGHTS..."
                         onChange={e => {
                             this.updateField(e.target.value, i, 'content')
-                        }}/>
+                        }}/> 
+                        :
+                        <img className="note-photo" src={this.state.allNotes[i].content} alt={this.state.allNotes[i].location}/>
+                        }
 
 
                     {this.state.showSave[i] ?
@@ -201,7 +239,7 @@ class Notebook extends Component {
                     <a className="link-to-top" href="#/notebook">Back to top</a>
                 
 
-                    </div>
+                </div>
 
             )})
 
@@ -214,9 +252,10 @@ class Notebook extends Component {
                 </div>
 
                 <div className="intro-box">
+                    <input type="text" id="filter" placeholder="SEARCH NOTES"
+                    onChange={this.updateFilter}/>
                     <div className="intro-inner">
                         <p className="intro-text"><strong>Hello</strong><br /><br />
-                        {/* Please add a new note in the menu above, or enjoy this quote! */}
                         {this.state.DWquote}<br /> - {this.state.sourceQ}</p>
                         <NotebookBackground />
                     </div>
