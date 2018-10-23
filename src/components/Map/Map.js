@@ -31,7 +31,7 @@ class Map extends Component {
         axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel`)
         .then(res => {
             console.log(res.data)
-
+            this.props.updateLocation(res.data.location.name)
             if(!res.data.location) {
                 this.setState({
                     country: 'Who knows!',
@@ -51,7 +51,6 @@ class Map extends Component {
                     width: res.data.width,
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html
-
                 })
             }
         })
@@ -72,11 +71,11 @@ class Map extends Component {
     }
             
         render() {
-            console.log(this.props)
+
+                console.log(this.props.updateLocation)
                 console.log(this.state.city)
                 console.log(this.state.country)
-                const elm = document.querySelector('.js-section');
-
+                
                     let arrow = []
                     if(this.state.width >= 320) {
                         arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll()}/>)

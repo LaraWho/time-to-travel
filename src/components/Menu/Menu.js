@@ -14,7 +14,6 @@ class Menu extends Component {
             title: '',
             location: '',
             content: '',
-            name: 'hi from the menu state'
         }
     }
 
@@ -44,7 +43,7 @@ class Menu extends Component {
 
     render() {
 
-        console.log(this.props.propsName)
+        // console.log(this.props.propsName)
         
         return(
             <div className="menu-bg">
@@ -59,13 +58,13 @@ class Menu extends Component {
                         <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
                     </div>
                     
-                    <AddNew />
+                    <AddNew history={this.props.history} name={this.props.name}/>
 
                     {/* <div className="money-box">
                         <div className="line3"></div>
                         <h3>CURRENCY INFO</h3>
                     </div> */}
-                    
+
                     <div className="menu-h3 logout">
                         <div className="line logout"></div>
                         <h3 onClick={this.logout}>LOGOUT</h3>

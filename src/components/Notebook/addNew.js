@@ -47,7 +47,6 @@ class Menu extends Component {
     }
 
     render() {
-        console.log(this.props.name)
         return(
             <div className="menu-bg menu">
 
@@ -59,6 +58,7 @@ class Menu extends Component {
                         <input type="text" placeholder="TITLE"
                         onChange={this.handleAddTitle}/>
                         <input type="text" placeholder="LOCATION"
+                        value={this.props.name}
                         onChange={this.handleAddLoc}/>
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."
                         onChange={this.handleAddContent}></textarea>
