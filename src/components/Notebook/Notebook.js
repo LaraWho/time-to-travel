@@ -18,7 +18,7 @@ class Notebook extends Component {
             DWquote: '',
             sourceQ: '',
             input: '',
-            showFilter: false,
+            // showFilter: false,
             filteredNotes: []
         }
     }
@@ -146,34 +146,34 @@ class Notebook extends Component {
         }
     }
 
-    updateFilter = (e) => {
-        this.setState({
-            input: e.target.value
-        }, this.filterNotes)
+    handleFilter = (e) => {
+        this.searchNotes(e.target.value)
     }
 
-    filterNotes = () => {
+    searchNotes = (query) => {
         this.setState({
-            // input: e.target.value,
-            showFilter: true,
-            filteredNotes: this.state.allNotes.filter(response => {
-                console.log(this.state.input)
-            return response.country === this.state.input
+            // showFilter: true,
+            allNotes: this.state.allNotes.filter(response => {
+
+                // console.log('response in filter: ',response)
+                // if(!response.title || response.country || response.contents)
+            return response.location.toLowerCase().includes(query.toLowerCase())
         })
-    }) 
+    })
+    console.log('this.state.allNotes in search: ', this.state.allNotes)
+        
     }
+
+    // response.title.includes(query) || 
+    //         response.country.includes(query) || 
+    // response.contents.includes(query)
+
 
     render() {
-        let newNoteArray = [];
+    console.log('this.state.allNotes in render: ', this.state.allNotes)
 
-        if(!this.state.showFilter) {
-                newNoteArray = this.state.allNotes
-        
-        } else {
-                newNoteArray = this.state.filteredNotes
-        }
-        
-        let mappedNotes = newNoteArray.map((note, i) => {
+               
+        let mappedNotes = this.state.allNotes.map((note, i) => {
            
             return(
 
@@ -252,8 +252,7 @@ class Notebook extends Component {
                 </div>
 
                 <div className="intro-box">
-                    <input type="text" id="filter" placeholder="SEARCH NOTES"
-                    onChange={this.updateFilter}/>
+                    
                     <div className="intro-inner">
                         <p className="intro-text"><strong>Hello</strong><br /><br />
                         {this.state.DWquote}<br /> - {this.state.sourceQ}</p>
@@ -262,6 +261,9 @@ class Notebook extends Component {
                 </div>
 
                 <div>
+                <input type="text" id="filter" placeholder="SEARCH NOTES"
+                    onKeyUp={this.handleFilter}/>
+                    
                     {mappedNotes}
                 </div>
             </div>

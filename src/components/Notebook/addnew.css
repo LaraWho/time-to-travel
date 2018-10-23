@@ -5,3 +5,18 @@
     width: auto;
     border-radius: 20px;
 }
+
+@media all and (min-width: 768px) {
+    .addnew-photo {
+        height: 320px;
+    }
+    }
+
+
+@media all and (min-width: 920px) {
+.addnew-photo {
+    height: 320px;
+}
+}
+
+

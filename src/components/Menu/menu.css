@@ -134,3 +134,37 @@
 .money-box>h3 {
     margin-top: 6px;
 }
+
+
+@media all and (min-width: 768px) {
+
+    .menu-note>textarea {
+        width: 55%;
+
+    }
+    .menu-note {
+        height: 515px;
+
+    }
+
+    .line2 {
+        height: 515px;
+    }
+
+    .menu-note>input {
+        width: 55%;
+    }
+    .menu-save {
+        width: 56%;
+    }
+}
+
+@media all and (min-width: 920px) {
+    .menu-note {
+        height: 515px;
+
+    }
+    .line2 {
+        height: 515px;
+    }
+}

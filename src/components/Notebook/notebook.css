@@ -44,7 +44,9 @@ html {
 #filter {
     position: absolute;
     z-index: 10;
+    /* bottom: -15px; */
     bottom: 20px;
+
     left: 9%;
     border-radius: 20px;
     width: 265px;
@@ -55,13 +57,13 @@ html {
 width: 275px;
 height: 445px;
 margin: 0 auto;
-margin-bottom: 20px;
+/* margin-bottom: 20px; */
 background: #C46352;
 border-radius: 20px;
 padding-top: 15px;
 position: relative;
 z-index: 5;
-top: -480px;
+top: -490px;
 }
 
 .intro-box {

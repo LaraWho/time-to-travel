@@ -25,6 +25,17 @@ class Map extends Component {
 
     componentDidMount() {
         this.getPhoto()
+        this.fancyLoad()
+    }
+
+    fancyLoad = () => {
+        console.time('image-load')
+        const img1 = document.querySelector('.photo')
+        img1.addEventListener('load', onLoad)
+        function onLoad(){
+            console.timeEnd('image-load')
+            img1.classList.add('appear')
+        }
     }
 
     getPhoto = () => {
@@ -54,6 +65,7 @@ class Map extends Component {
                 })
             }
         })
+        this.fancyLoad()
     }
 
     enterMenu = () => {
