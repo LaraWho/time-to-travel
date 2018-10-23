@@ -31,7 +31,7 @@ class Map extends Component {
         axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel`)
         .then(res => {
             console.log(res.data)
-            this.props.updateLocation(res.data.location.name)
+            this.props.updateLocation(res.data.location.name, res.data.location.country)
             if(!res.data.location) {
                 this.setState({
                     country: 'Who knows!',
@@ -72,7 +72,6 @@ class Map extends Component {
             
         render() {
 
-                console.log(this.props.updateLocation)
                 console.log(this.state.city)
                 console.log(this.state.country)
                 

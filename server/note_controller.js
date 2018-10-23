@@ -3,9 +3,9 @@ module.exports = {
 create: (req, res) => {
     const dbInstance = req.app.get('db')
     const { user_id } = req.session.user
-    const { title, location, content } = req.body;
+    const { title, country, location, content } = req.body;
 
-    dbInstance.add_note([ title, location, content, user_id ])
+    dbInstance.add_note([ title, country, location, content, user_id ])
     .then((note) => res.status(200).send(note) )
     .catch( err => {
         res.sendStatus(401)
@@ -29,9 +29,9 @@ read: (req, res) => {
 update: (req, res) => {
     const dbInstance = req.app.get('db');
     const { note_id } = req.params;
-    const { title, location, content } = req.body;
+    const { title, country, location, content } = req.body;
 
-    dbInstance.edit_note([ title, location, content, note_id ])
+    dbInstance.edit_note([ title, country, location, content, note_id ])
     .then( (note) => {
         res.status(200).send(note) 
         })

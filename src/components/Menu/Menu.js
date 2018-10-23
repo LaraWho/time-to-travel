@@ -58,7 +58,7 @@ class Menu extends Component {
                         <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
                     </div>
                     
-                    <AddNew history={this.props.history} name={this.props.name}/>
+                    <AddNew history={this.props.history} name={this.props.name} country={this.props.country}/>
 
                     {/* <div className="money-box">
                         <div className="line3"></div>

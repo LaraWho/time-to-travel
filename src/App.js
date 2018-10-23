@@ -14,13 +14,15 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: ''
+      name: '',
+      country: ''
     }
   }
 
-  updateLocation = (value) => {
+  updateLocation = (value1, value2) => {
     this.setState({
-      name: value
+      name: value1,
+      country: value2
     })
   }
 
@@ -39,9 +41,8 @@ class App extends Component {
                 )}} />
 
               <Route exact path='/menu' render={(props) => {
-                console.log(props)
                 return (
-                  <Menu {...props} name={this.state.name} />
+                  <Menu {...props} name={this.state.name} country={this.state.country}/>
                 )
               }} />
               <Route component={Notebook} exact path='/notebook' />

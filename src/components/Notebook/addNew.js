@@ -11,8 +11,15 @@ class Menu extends Component {
         this.state = {
             title: '',
             location: '',
-            content: ''
+            content: '',
+            country: ''
         }
+    }
+    componentDidMount() {
+        this.setState({
+            location: this.props.name,
+            country: this.props.country
+        })
     }
 
     toNotes = () => {
@@ -26,7 +33,8 @@ class Menu extends Component {
     }
     handleAddLoc = (e) => {
         this.setState({
-            location: e.target.value
+            location: e.target.value,
+            country: e.target.value
         })
     }
 
@@ -37,11 +45,11 @@ class Menu extends Component {
     }
 
     addNote = () => {
-        let { title, location, content } = this.state
-        axios.post('/allnotes/new', { title, location, content })
+        let { title, country, location, content } = this.state
+        axios.post('/allnotes/new', { country, title, location, content })
         .then(res => {
             setTimeout(() => {
-                this.props.history.push('/notebook');
+                this.props.history.push('/landing');
                 }, 200)
         }).catch((err) => console.log(err))
     }
@@ -57,8 +65,7 @@ class Menu extends Component {
                         <h3>QUICK NOTE</h3>
                         <input type="text" placeholder="TITLE"
                         onChange={this.handleAddTitle}/>
-                        <input type="text" placeholder="LOCATION"
-                        value={this.props.name}
+                        <input type="text" placeholder="LOCATION" value={`${this.state.country}, ${this.state.location}`}
                         onChange={this.handleAddLoc}/>
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."
                         onChange={this.handleAddContent}></textarea>

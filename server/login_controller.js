@@ -51,8 +51,9 @@ module.exports = {
             from: '"Lara" <larapotjewyd@gmx.com',
             to: `${username}`,
             subject: 'Registered with Time to Travel',
-            text: `You\'ve registered with Time to Travel! Your login information is: EMAIL - ${username} and PASSWORD - ${password}`
-            `<h1 style={{fontFamily='Futura'; color: '#003B6F'; fontWeight: 'bold'}}> Thank you for registering with Time to Travel! </h1>
+            text: `You\'ve registered with Time to Travel! Your login information is: EMAIL - ${username} and PASSWORD - ${password}`,
+            html:
+            `<h1 style={{fontFamily='Futura', color: '#003B6F', fontWeight: 'bold'}}> Thank you for registering with Time to Travel! </h1>
             <p style="font-family=FFutura; color: #003B6F"> Your login information is: <br />EMAIL - ${username} <br /> PASSWORD - ${password} </p>
             <img style="height: 100px; width: auto; text-align: center" src="../src/components/best-tardis-full.svg" alt="TARDIS" />`
         };

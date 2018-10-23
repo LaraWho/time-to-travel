@@ -54,8 +54,9 @@ class Notebook extends Component {
     }
 
       saveNote = (note, i) => {
-        let { title, location, content } = this.state
+        let { title, country, location, content } = this.state
         note.title = title ? title : note.title
+        note.country = country ? country : note.country
         note.location = location ? location : note.location
         note.content = content ? content : note.content
         // if(note.note_id) {
@@ -157,6 +158,13 @@ class Notebook extends Component {
                         value={this.state.allNotes[i].title} placeholder="TITLE"
                         onChange={e => {
                             this.updateField(e.target.value, i, 'title')
+                        }}/>
+
+                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
+                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
+                        value={this.state.allNotes[i].country} placeholder="COUNTRY"
+                        onChange={e => {
+                            this.updateField(e.target.value, i, 'country')
                         }}/>
 
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
