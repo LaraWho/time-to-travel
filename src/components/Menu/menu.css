@@ -42,6 +42,7 @@
     padding-right: 10px; 
     font-family: 'Futura';
     color: #021D34;
+    cursor: pointer;
 }
 
 .menu-exit>img {

@@ -49,6 +49,7 @@ class Login extends Component {
             axios.post('/auth/register', {
             username: this.state.username,
             password: this.state.password
+            
         }).then(res => {
             setTimeout(() => {
             this.props.history.push('/landing');
@@ -89,7 +90,7 @@ class Login extends Component {
                 <div className="login-box">
                     <div className="login-text">
                         <div >
-                            <input className="username" type="text" placeholder="USERNAME"
+                            <input className="username" type="text" placeholder="EMAIL"
                             onChange={this.handleUsername} />
                         </div>
                         <div >

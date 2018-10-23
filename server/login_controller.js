@@ -4,15 +4,6 @@ const nodemailer = require('nodemailer');
 
 module.exports = {
 
-    // getUser: (req, res) => {
-    //     console.log('getuser in controller')
-    //     if(req.session.user) {
-    //         res.status(200).send(req.session.user);
-    //     } else {
-    //         res.status(401).send('Go log in!')
-    //     }
-    // },
-
     login: (req, res) => {
         const dbInstance = req.app.get('db')
         let { username, password } = req.body
@@ -44,11 +35,11 @@ module.exports = {
         let {username, password} = req.body;
 
         let transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'mail.gmx.com',
+            port: 587,
             // secure: false,
-            // port: 25,
             auth: {
-              user: 'lara.who88@gmail.com',
+              user: 'larapotjewyd@gmx.com',
               pass: process.env.REACT_APP_PASSWORD
             },
             // tls: {
@@ -57,13 +48,14 @@ module.exports = {
           });
           
           let HelperOptions = {
-            from: '"Lara" <lara.who88@gmail.com',
-            to: `username`,
+            from: '"Lara" <larapotjewyd@gmx.com',
+            to: `${username}`,
             subject: 'Registered with Time to Travel',
-            text: `Thank you for registering with Time to Travel! Your login information is ${username} and ${password}.`
-          };
-
-        //   console.log(auth.pass)
+            text: `You\'ve registered with Time to Travel! Your login information is: EMAIL - ${username} and PASSWORD - ${password}`
+            `<h1 style={{fontFamily='Futura'; color: '#003B6F'; fontWeight: 'bold'}}> Thank you for registering with Time to Travel! </h1>
+            <p style="font-family=FFutura; color: #003B6F"> Your login information is: <br />EMAIL - ${username} <br /> PASSWORD - ${password} </p>
+            <img style="height: 100px; width: auto; text-align: center" src="../src/components/best-tardis-full.svg" alt="TARDIS" />`
+        };
                     
           bcrypt.hash(password, 8, function(err, hash) {
               dbInstance.register_user( [username, hash] )
