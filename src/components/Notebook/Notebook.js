@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
+import down from './down.svg';
 import './notebook.css';
 import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
@@ -32,11 +33,15 @@ class Notebook extends Component {
         axios.get('/allnotes')
         .then(res => {
                 this.setAvailability(res.data.length)
+                    res.data.country = res.data.map(note => {
+                        return note.country === null ? note.country = '' : note.country
+                    })
                     this.setState({
                         allNotes: res.data,
                         unchangedNotes: res.data
                     })
         })
+        // console.log('this.state.allNotes in componentDidMount: ', this.state.allNotes)
     }
 
     getQuote = () => {
@@ -153,12 +158,10 @@ class Notebook extends Component {
     searchNotes = (query) => {
         if(query) {
         this.setState({
-            // showFilter: true,
             allNotes: this.state.allNotes.filter(response => {
-
-                // console.log('response in filter: ',response)
-                // if(!response.title || response.country || response.contents)
-            return response.location.toLowerCase().includes(query.toLowerCase())
+            return response.location.toLowerCase().includes(query.toLowerCase()) ||
+                    response.title.toLowerCase().includes(query.toLowerCase()) || 
+            response.country.toLowerCase().includes(query.toLowerCase()) 
         })
     })
 } else {
@@ -168,16 +171,10 @@ class Notebook extends Component {
 }
 console.log('this.state.allNotes in search: ', this.state.allNotes)
 }
-        
-    
-
-    // response.title.includes(query) || 
-    //         response.country.includes(query) || 
-    // response.contents.includes(query)
-
+     
 
     render() {
-    console.log('this.state.allNotes in render: ', this.state.allNotes)
+    // console.log('this.state.allNotes in render: ', this.state.allNotes)
 
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
@@ -190,8 +187,8 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                 <div className="onenote-bg">
                     <div className="note">
 
-                        {this.state.allNotes[i].country === null ?
-                        null
+                        {this.state.allNotes[i].country === '' ?
+                        ''
                         :
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
@@ -215,7 +212,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                             this.updateField(e.target.value, i, 'title')
                         }}/>
 
-                        {this.state.allNotes[i].country === null ?
+                        {this.state.allNotes[i].country === '' ?
                         <textarea cols="20" rows="10" 
                         className={this.state.canEdit[i] ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
@@ -268,9 +265,9 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                 </div>
 
                 <div>
-                <input type="text" id="filter" placeholder="SEARCH NOTES"
+                    <input type="text" id="filter" placeholder="SEARCH NOTES"
                     onKeyUp={this.handleFilter}/>
-                    
+                    <img style={{position: "absolute", zIndex: '10', right: '45%', bottom: '0px'}} src={down} alt=""/>
                     {mappedNotes}
                 </div>
             </div>

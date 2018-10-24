@@ -14,6 +14,10 @@ class Home extends Component {
         this.props.history.push('/login')
     }
 
+    toInfo = () => {
+        this.props.history.push('/info')
+    }
+
     render() {
         return(
 
@@ -35,7 +39,6 @@ class Home extends Component {
                             <div className="home-heading">
                                 <h1>TIME TO TRAVEL</h1>
                             </div>
-
                             ) : (
                             <div className="home-heading">
                                 <h1>TIME TO<br />TRAVEL</h1>
@@ -49,6 +52,7 @@ class Home extends Component {
                         <div className="button">
                             <img onClick={this.enter} src={key} alt="enter button"/>
                         </div>
+                        <p style={{cursor: 'pointer', position: 'absolute', bottom: '20px', margin: 'auto', fontFamily: 'Futura', color: '#FFF'}} onClick={this.toInfo}>What am I doing here?</p>
                     </div>
 
                     <div className="audio-player">

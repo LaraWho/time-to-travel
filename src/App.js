@@ -9,6 +9,7 @@ import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
 import NotebookMenu from './components/Menu/NotebookMenu';
+import Infographic from './components/Infographic/Infographic';
 // import axios from 'axios';
 
 class App extends Component {
@@ -50,7 +51,7 @@ class App extends Component {
               }} />
               <Route component={Notebook} exact path='/notebook' />
               <Route component={NotebookMenu} exact path='/notebookmenu' />
-
+              <Route component={Infographic} exact path='/info' />
             </Switch>
         </HashRouter>
         

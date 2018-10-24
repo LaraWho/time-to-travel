@@ -44,13 +44,18 @@ html {
 #filter {
     position: absolute;
     z-index: 10;
-    /* bottom: -15px; */
     bottom: 20px;
-
-    left: 9%;
+    height: 32px;
+    left: 7%;
     border-radius: 20px;
-    width: 265px;
-    /* background-color: rgba(187, 93, 74, 0.774); */
+    width: 280px;
+    /* background-color: rgba(187, 93, 74, 0.8); */
+    /* color: #FFFFFF; */
+    color: #021D34;
+}
+#filter:focus {
+    /* color: #FFFFFF; */
+    background-color: #C46352;
 }
 
 .onenote-bg {

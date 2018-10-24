@@ -12,7 +12,14 @@
     position: relative;
     z-index: 1;
     margin: auto;
+    /* opacity: 0; */
+    /* transition: all .6s ease;  */
 }
+
+/* .appear {
+    opacity: 1;
+
+} */
 
 @media all and (min-width: 500px) {
 

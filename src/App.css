@@ -12,7 +12,7 @@ input {
 }
 
 input:focus {
-    background-color: rgb(220, 221, 224);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 textarea {
@@ -24,7 +24,15 @@ textarea {
     text-align: center;
 }
 textarea:focus {
-    background-color: rgb(220, 221, 224);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input::placeholder {
+    color: #333333;
+}
+
+textarea::placeholder {
+    color: #333333;
 }
 
 button {
