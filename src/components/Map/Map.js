@@ -43,15 +43,16 @@ class Map extends Component {
         .then(res => {
             console.log(res.data)
             this.props.updateLocation(res.data.location.name, res.data.location.country, res.data.urls.regular)
+            const width = document.querySelector('.photo').offsetWidth
             if(!res.data.location) {
                 this.setState({
                     country: 'Who knows!',
                     photo: res.data.urls.regular,
                     city: 'Who knows!',
                     name: 'Who knows!',
-                    width: res.data.width,
                     photographer: res.data.user.name,
-                    photographerLink: res.data.links.html
+                    photographerLink: res.data.links.html,
+                    width: width
                 })
             } else {
                 this.setState({
@@ -59,9 +60,10 @@ class Map extends Component {
                     country: res.data.location.country,
                     city: res.data.location.city,
                     name: res.data.location.name,
-                    width: res.data.width,
                     photographer: res.data.user.name,
-                    photographerLink: res.data.links.html
+                    photographerLink: res.data.links.html,
+                    width: width
+
                 })
             }
         })
@@ -84,10 +86,10 @@ class Map extends Component {
     }
             
         render() {
+            console.log(this.state.width)
 
                 console.log(this.state.city)
                 console.log(this.state.country)
-                
                     let arrow = []
                     if(this.state.width >= 320) {
                         arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll}/>)

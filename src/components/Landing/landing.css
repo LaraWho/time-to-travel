@@ -4,8 +4,8 @@
     line-height: 20px;
     display: flex;
     justify-content: flex-end;
-    padding: 30px;
-    padding-bottom: 20px;
+    padding: 20px;
+    padding-bottom: 10px;
     color: #ffffff;
     position: relative;
     z-index: 2;
@@ -32,8 +32,8 @@
 .landing-tardis {
     height: 90%;
     width: auto;
-    margin: auto;
-    margin-top: 0;
+    margin: 0 auto;
+    /* margin-top: 0; */
     /* padding-top: 8%; */
     position: relative;
     animation: floating 6s infinite alternate ease-in-out;
@@ -43,7 +43,7 @@
     position: absolute;
     padding: 20px;
     z-index: 2;
-    margin-top: 105%;
+    margin-top: 100%;
     background-color: #0563B6;
     height: 155px;
     /* width: 55%; */

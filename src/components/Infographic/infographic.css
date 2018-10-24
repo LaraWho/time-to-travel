@@ -1,0 +1,120 @@
+.info-g-bg {
+    background-color: #6F8EA9; 
+    height: 100vh; 
+}
+.title {
+    position: relative; 
+    top: 10px; 
+    left: 6%;
+}
+.one {
+    position: absolute; 
+    right: 8px; 
+    top: 100px;
+}
+
+.two {
+    position: relative; 
+    left: 12px; 
+    top: 24px;
+}
+.three {
+    position: absolute; 
+    right: 18px; 
+    top: 210px;
+}
+.tardis {
+    position: relative; 
+    top: 95px; 
+    left: 18px;
+}
+
+@media all and (min-width: 420px) and (max-width: 920px) {
+
+.back-btn {
+    bottom: 58px !important;
+    left: 124px !important;
+}
+
+.title {
+    position: absolute;
+    height: 20%;
+    left: 20%;
+}
+.one {
+    position: absolute;
+    /* right: 160px; */
+    left: 50px;
+    top: 290px;
+    /* width: 25%; */
+    height: 22%;
+}
+
+.two {
+    position: relative;
+    left: 36%;
+    top: 200px;
+    height: 66%;
+
+}
+.three {
+    position: absolute;
+    right: 80px;
+    top: 200px;
+    /* width: 20%; */
+    height: 22%;
+
+}
+.tardis {
+    position: relative; 
+    /* width: 22%; */
+    top: 275px;
+    left: 355px;
+    height: 50%;
+
+} 
+
+}
+
+
+
+@media all and (min-width: 920px) {
+    .back-btn {
+        bottom: 50px !important;
+        left: 20% !important;
+    }
+    
+    .title {
+        position: absolute;
+        left: 26%;
+        height: 18%;
+    }
+    .one {
+        position: absolute;
+        /* right: 160px; */
+        left: 10%;
+        top: 260px;
+        height: 23%;    
+}
+    
+    .two {
+        position: relative;
+        left: 36%;
+        top: 180px;
+        height: 70%;
+    }
+    .three {
+        position: absolute;
+        right: 20%;
+        top: 180px;
+        height: 22%
+    }
+    .tardis {
+        position: relative; 
+        top: 30%;
+        left: 40%;
+        height: 55%;
+    } 
+
+
+}

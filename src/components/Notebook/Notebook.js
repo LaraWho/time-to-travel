@@ -98,13 +98,12 @@ class Notebook extends Component {
                       .then(res => {
                           this.getNotes()
                       })
-                //   sweetie({
-                //       title: 'EXTERMINATED!',
-                //       text: 'No second chances',
-                //       showConfirmButton: false,
-                //       timer: 400,
-                //       padding: '2.5rem'
-                //   })
+                  sweetie({
+                      title: 'EXTERMINATED!',
+                      showConfirmButton: false,
+                      timer: 400,
+                      padding: '2.5rem'
+                  })
             }
         }).catch(err => console.log(err))
     }

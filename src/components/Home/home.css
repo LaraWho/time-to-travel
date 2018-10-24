@@ -6,9 +6,9 @@
     to   { transform: translate(0px, -0px); } 
 }
 
-    @keyframes materialize {
+    @keyframes materialise {
     0% { opacity: 100%; }
-    50% { opacity: 0; }
+    50% { opacity: 0.1; }
     100% { opacity: 100%; }
     }
 
@@ -31,7 +31,7 @@
     margin: auto;
     margin-top: 20px;
     position: relative;
-    animation: materialize 2s 5 alternate ease-in-out, floating 6s 10s infinite alternate ease-in-out;
+    animation: materialise 2s 5 alternate ease-in-out, floating 6s 10s infinite alternate ease-in-out;
 }
 
 .home-heading h1 {

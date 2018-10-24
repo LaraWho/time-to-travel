@@ -53,9 +53,10 @@ module.exports = {
             subject: 'Registered with Time to Travel',
             text: `You\'ve registered with Time to Travel! Your login information is: EMAIL - ${username} and PASSWORD - ${password}`,
             html:
-            `<h1 style="font-family: Futura; background-color: #003B6F; text-align: center; color: #FFF; font-weight: bold; font-size: 36px"> Thank you for registering with Time to Travel! </h1>
-            <h2 style="font-family: Futura; color: #333; text-align: center; font-size: 18px; font-weight: bold; text-decoration: none"> Your login information is: <br />EMAIL - ${username} <br /> PASSWORD - ${password} </h2>
+            `<h1 style="font-family: Futura; background-color: #003B6F; border-radius: 20px; padding: 10px 0; text-align: center; color: #FFF; font-weight: bold; font-size: 36px"> Thank you for registering with Time to Travel! </h1>
+            <h2 style="font-family: Futura; color: #003B6F; text-align: center; font-size: 18px; font-weight: bold; text-decoration: none"> Your login information is: <br />EMAIL - ${username} <br /> PASSWORD - ${password} </h2>
             <img style="height: 200px; width: auto; margin-left: 45%" src="cid:tardis" alt="TARDIS" />
+            <p style="font-family: Futura; text-align: center; color: #003B6F; font-size: 24px" >https://www.time-to-travel.fun</p>            
             <p style="font-family: Futura; text-align: center; color: #003B6F; font-weight: bold; font-size: 24px" >Have fun!</p>`,
             attachments: [{
             filename: 'best-tardis-full.png',

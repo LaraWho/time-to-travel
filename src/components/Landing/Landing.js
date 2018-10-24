@@ -16,6 +16,10 @@ class Landing extends Component {
         this.props.history.push('/notebookmenu');
     }
 
+    toInfo = () => {
+        this.props.history.push('/info')
+    }
+
     render() {
         return(
                  <div className="space-bg">
@@ -41,6 +45,8 @@ class Landing extends Component {
                         <img className="question-mark" src={question} alt=""/>
                     </div>
                         <img className="landing-tardis" src={tardis} alt="TARDIS"/>
+                        <p style={{cursor: 'pointer', position: 'absolute', bottom: '15px', margin: 'auto', fontFamily: 'Futura', color: '#FFF'}} onClick={this.toInfo}>What am I doing here?</p>
+
                     </div>
 
 
