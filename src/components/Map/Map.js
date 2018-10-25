@@ -7,6 +7,7 @@ import particleConfig from '../../particlesjs-config.json';
 import Particles from 'react-particles-js';
 import scroll from './next-icon.svg';
 
+
 class Map extends Component {
     constructor(props) {
         super(props) 
@@ -52,7 +53,7 @@ class Map extends Component {
                     name: 'Who knows!',
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html,
-                    width: width
+                    width: 500
                 })
             } else {
                 this.setState({
@@ -62,7 +63,7 @@ class Map extends Component {
                     name: res.data.location.name,
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html,
-                    width: width
+                    width: 500
 
                 })
             }
@@ -79,9 +80,11 @@ class Map extends Component {
 
     scroll = () => {
         console.log(document.querySelector('.photo').offsetWidth - document.body.offsetWidth)
-        window.scrollTo({
+        console.log(`window ...`,window.scrollTo)
+
+        this.pictureContainer.scrollTo({
             'behavior': 'smooth',
-            'left': document.querySelector('.photo').offsetWidth - document.body.offsetWidth,
+            'left': document.querySelector('.photo').offsetWidth,
         })
     }
             
@@ -98,7 +101,7 @@ class Map extends Component {
 
         return(
 
-        <div className="map-bg">
+        <div className="map-bg" style={{overflow: 'auto', width: '100vw'}} ref={(el) => (this.pictureContainer = el)}>
 
         <Particles style={{
                      width: '100%',
@@ -126,11 +129,11 @@ class Map extends Component {
 
 
             </div>
-                <div className="menu-enter map">
+                <div className="menu-enter map" >
                     <p onClick={this.goBack}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter menu"/>
                 </div>
-                <img className="photo" src={this.state.photo} alt=""/>
+                <img className="photo" src={this.state.photo}   alt=""/>
             <div>
 
                 <MapBtn className="photo-btn" getPhoto={this.getPhoto}/>

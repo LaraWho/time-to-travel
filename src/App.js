@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './reset.css';
 import './App.css';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Notebook from './components/Notebook/Notebook';
 import GMap from './components/Map/Map';
@@ -10,7 +10,7 @@ import Login from './components/Login/Login';
 import Menu from './components/Menu/Menu';
 import NotebookMenu from './components/Menu/NotebookMenu';
 import Infographic from './components/Infographic/Infographic';
-// import axios from 'axios';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class App extends Component {
   constructor(props) {
@@ -33,10 +33,17 @@ class App extends Component {
   render() {
     return (
       <div>
+      <BrowserRouter>
+        <Route render={({ location }) => (
 
-        <HashRouter>
-            <Switch>
-              <Route component={Home} path='/' exact />
+      <TransitionGroup>
+        <CSSTransition key={location.key} 
+        
+        classNames="fade" timeout={{enter: 500, exit: 300}}
+        
+        >
+            <Switch location={location}>
+              <Route component={Home} exact path='/' />
               <Route component={Login} exact path='/login' />
               <Route component={Landing} exact path='/landing' />
               <Route exact path='/map' render={(props) => {
@@ -52,8 +59,14 @@ class App extends Component {
               <Route component={Notebook} exact path='/notebook' />
               <Route component={NotebookMenu} exact path='/notebookmenu' />
               <Route component={Infographic} exact path='/info' />
+              <Route render={() => <div>Not Found</div>} />
             </Switch>
-        </HashRouter>
+
+          </CSSTransition>
+      </TransitionGroup>
+       
+          )}/>
+        </BrowserRouter>
         
       </div>
     );

@@ -170,6 +170,12 @@ class Notebook extends Component {
 }
 console.log('this.state.allNotes in search: ', this.state.allNotes)
 }
+    scrollTop = () => {
+        this.top.scrollTo({
+            'behavior': 'smooth',
+            'top': 0,
+        })
+    }
      
 
     render() {
@@ -239,7 +245,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote(note.note_id)}>DELETE NOTE</h3>
                     </div>
-                    <a className="link-to-top" href="#/notebook">Back to top</a>
+                    <h5 className="link-to-top" onClick={this.scrollTop}>Back to top</h5>
                 
 
                 </div>
@@ -247,8 +253,11 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
             )})
 
         return(
-            <div >
-                <a name="/notebook"></a>
+            <div ref={(el) => (this.top = el)} style={{
+                overflow: 'auto',
+                height: '100vh'
+            }}>
+                {/* <a name="/notebook"></a> */}
                 <div className="menu-enter nb">
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
@@ -266,7 +275,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                 <div>
                     <input type="text" id="filter" placeholder="SEARCH NOTES"
                     onKeyUp={this.handleFilter}/>
-                    <img style={{position: "absolute", zIndex: '10', right: '45%', bottom: '0px'}} src={down} alt=""/>
+                    {/* <img style={{position: "absolute", zIndex: '10', right: '45%', bottom: '0px'}} src={down} alt=""/> */}
                     {mappedNotes}
                 </div>
             </div>

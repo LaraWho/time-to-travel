@@ -1,6 +1,6 @@
 .menu-enter.nb {
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     right: 0;
     cursor: pointer;
     font-family: 'Futura';
@@ -8,11 +8,13 @@
     line-height: 20px;
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 10px 20px;
     color: #021D34;
     text-align: right;
     font-weight: bold;
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
 }
 .menu-enter.nb>p {
     padding-right: 10px;
@@ -29,7 +31,8 @@
     right: 25px;
     z-index: 10;
     cursor: pointer;	
-    
+    font-family: 'Futura';
+color: #FFFFFF;    
 }
 
 html {
@@ -44,7 +47,7 @@ html {
 #filter {
     position: absolute;
     z-index: 10;
-    bottom: 20px;
+    bottom: 10px;
     height: 32px;
     left: 7%;
     border-radius: 20px;
@@ -55,7 +58,9 @@ html {
 }
 #filter:focus {
     /* color: #FFFFFF; */
-    background-color: #C46352;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    /* background-color: #C46352; */
 }
 
 .onenote-bg {

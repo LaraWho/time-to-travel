@@ -13,9 +13,9 @@ class Infographic extends Component {
     //         size: 0
     //     }
     // }
-    //         componentDidMount() {
-    //             this.getSize()
-    //         }
+            componentDidMount() {
+                this.fancyLoad()
+            }
 
     //         getSize = () => {
                 
@@ -23,6 +23,31 @@ class Infographic extends Component {
     //                 size: window.innerWidth
     //             })
     //         }
+
+    fancyLoad = () => {
+        console.time('image-load')
+        const title = document.querySelector('.title')
+        const one = document.querySelector('.one')
+        const two = document.querySelector('.two')
+        const three = document.querySelector('.three')
+        const tardis = document.querySelector('.tardis')
+        
+        title.addEventListener('load', onLoad)
+        one.addEventListener('load', onLoad)
+        two.addEventListener('load', onLoad)
+        three.addEventListener('load', onLoad)
+        tardis.addEventListener('load', onLoad)
+
+        function onLoad(){
+            console.timeEnd('image-load')
+            title.classList.add('appear')
+            one.classList.add('appear')
+            two.classList.add('appear')
+            three.classList.add('appear')
+            tardis.classList.add('appear')
+
+        }
+    }
     
     render() {
             return (
