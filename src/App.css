@@ -16,6 +16,9 @@ body {
 .fade-enter {
   opacity: 0;
 }
+/* .fade-enter-done {
+    opacity: 1;
+} */
 
 .fade-appear-active,
 .fade-enter-active {
@@ -23,10 +26,10 @@ body {
   opacity: 1;
 }
 
-.fade-exit {
+/* .fade-exit {
   transition: opacity .2s ease-out;
   opacity: 1;
-}
+} */
 
 .fade-exit-active {
   opacity: 0;

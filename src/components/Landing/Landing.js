@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import particleConfig from '../../particlesjs-config.json';
 import './landing.css';
-import tardis from '../best-tardis-full.svg';
+// import tardis from '../best-tardis-full.svg';
 import question from '../who.svg';
 import open from '../../assets/menu-open.svg';
+import tardisCutout from './cutout-tardis.svg';
+import door1 from './door1.svg';
+import door2 from './door2.svg';
 
 class Landing extends Component {
 
@@ -15,20 +18,34 @@ class Landing extends Component {
     fancyLoad = () => {
         console.time('image-load')
         const tardis = document.querySelector('.landing-tardis')
+        const door1 = document.querySelector('.door1')
+        const door2 = document.querySelector('.door2')
         const box = document.querySelector('.question-btn-box')
 
         tardis.addEventListener('load', onLoad)
         box.addEventListener('load', onLoad)
+        door1.addEventListener('load', onLoad)
+        door2.addEventListener('load', onLoad)
 
         function onLoad(){
             console.timeEnd('image-load')
-            tardis.classList.add('appear')
             box.classList.add('appear')
+            door1.classList.add('appear')
+            door2.classList.add('appear')
+            tardis.classList.add('appear')
         }
     }
 
     toMap = () => {
-        this.props.history.push('/map');
+        document.querySelector('.question-btn-box').classList.remove('appear');
+        document.querySelector('.door1').classList.add('door1Open');
+        document.querySelector('.door2').classList.add('door2Open');
+
+            console.log('heeeelp')
+
+        setTimeout(() => {
+            this.props.history.push('/map');
+        }, 6000)
     }
 
     toMenu = () => {
@@ -63,8 +80,17 @@ class Landing extends Component {
                         <h2 className="random-btn-text">WHERE WILL<br /> THE TARDIS<br /> TAKE YOU</h2>
                         <img className="question-mark" src={question} alt=""/>
                     </div>
-                        <img className="landing-tardis" src={tardis} alt="TARDIS"/>
-                        <p style={{cursor: 'pointer', position: 'absolute', bottom: '15px', margin: 'auto', fontFamily: 'Futura', color: '#FFF'}} onClick={this.toInfo}>What am I doing here?</p>
+
+                        <div>
+                            <img className="landing-tardis" src={tardisCutout} alt="TARDIS"/>
+                            <img className="door1" src={door1} alt="TARDIS"/>
+                            <img className="door2" src={door2} alt="TARDIS"/>
+                        </div>
+
+                        <p 
+                            style={{cursor: 'pointer', position: 'absolute', bottom: '15px', margin: 'auto', fontFamily: 'Futura', color: '#FFF'}} 
+                            onClick={this.toInfo}>What am I doing here?
+                        </p>
 
                     </div>
 

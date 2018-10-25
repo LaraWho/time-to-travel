@@ -48,10 +48,10 @@ class Map extends Component {
             const width = this.pictureContainer.offsetWidth
             if(!res.data.location) {
                 this.setState({
-                    country: 'Who knows!',
+                    country: 'In some country',
                     photo: res.data.urls.regular,
-                    city: 'Who knows!',
-                    name: 'Who knows!',
+                    city: 'Some city',
+                    name: 'I am out of specifics!',
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html,
                     width: width
@@ -106,7 +106,6 @@ class Map extends Component {
     }
             
         render() {
-                console.log(this.state.width)
                 console.log(this.state.city)
                 console.log(this.state.country)
 

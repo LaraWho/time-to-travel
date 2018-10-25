@@ -33,12 +33,32 @@
     height: 90%;
     width: auto;
     margin: 0 auto;
-    /* margin-top: 0; */
-    /* padding-top: 8%; */
     position: relative;
     animation: floating 6s infinite alternate ease-in-out;
     opacity: 0;
     transition: all .6s ease;
+}
+
+.door1 {
+    position: absolute;
+    height: 317px;
+    left: 62px;
+    top: 196px;
+    opacity: 0;
+    transition: all .6s ease;
+    animation: floating 6s infinite alternate ease-in-out;
+    transform-origin: left;
+}
+
+.door2 {
+    position: absolute;
+    height: 317px;
+    right: 62px;
+    top: 196px;
+    opacity: 0;
+    transition: all .6s ease;
+    animation: floating 6s infinite alternate ease-in-out;
+    transform-origin: right;
 }
 
 .question-btn-box {
@@ -46,25 +66,55 @@
     padding: 20px;
     z-index: 2;
     margin-top: 100%;
-    background-color: #0563B6;
+    background-color: rgba(5, 99, 182, 0.795);
     height: 155px;
-    /* width: 55%; */
     border-radius: 20px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #021D34;
-    opacity: 0.96;
     opacity: 0;
     transition: all .6s ease;
 }
-.appear {
+
+@keyframes open2 {
+    from {
+    } 70% {
+    transform: perspective(1200px) 
+    translateZ(0px) translateX(0px) 
+    translateY(0px) rotateY(-75deg);
+    } to {  
+    }
+}
+
+@keyframes open1 {
+    from {
+    } 70% {
+    transform: perspective(1200px) 
+    translateZ(0px) translateX(0px) 
+    translateY(0px) rotateY(75deg);
+    } to {  
+    }
+}
+
+.door1Open {
+    animation: open1 6s ease-in-out;
+}
+
+.door2Open {
+    animation: open2 6s ease-in-out;
+}
+
+.btn-leave {
     opacity: 1;
 }
 
+.appear {
+    opacity: 1;
+}
 .random-btn-text {
-position: absolute;
-color: #ffffff;
-font-family: 'Futura';
-padding-top: 55px;
+    position: absolute;
+    color: #ffffff;
+    font-family: 'Futura';
+    padding-top: 55px;
     font-size: 24px;
     text-align: right;
     line-height: 33px;
