@@ -11,7 +11,6 @@ class Menu extends Component {
         this.state = {
             title: '',
             location: '',
-            content: '',
             country: '',
             photo: ''
         }
@@ -46,8 +45,8 @@ class Menu extends Component {
     }
 
     addNote = () => {
-        let { title, country, location, content, photo } = this.state
-        axios.post('/allnotes/new', { country, title, location, content, photo })
+        let { title, country, location, photo } = this.state
+        axios.post('/allnotes/addphoto', { title, country, location, photo })
         .then(res => {
             setTimeout(() => {
                 this.props.history.push('/landing');

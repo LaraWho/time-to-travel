@@ -45,7 +45,6 @@ class Map extends Component {
         axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel&w=1080&h=720`)
         .then(res => {
             console.log(res.data)
-            this.props.updateLocation(res.data.location.name, res.data.location.country, res.data.urls.regular)
             const width = this.pictureContainer.offsetWidth
             if(!res.data.location) {
                 this.setState({
@@ -66,9 +65,11 @@ class Map extends Component {
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html,
                     width: width
-
+                    
                 })
             }
+            this.props.updateLocation(this.state.name, this.state.country, this.state.photo)
+            console.log('this.state.name, this.state.country, this.state.photo', this.state.name, this.state.country, this.state.photo)
         })
         this.fancyLoad()
     }

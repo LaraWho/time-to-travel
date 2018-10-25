@@ -26,6 +26,20 @@ read: (req, res) => {
         })
     
 },
+
+addphoto: (req, res) => {
+    const dbInstance = req.app.get('db')
+    const { user_id } = req.session.user
+    const { title, country, location, photo } = req.body;
+
+    dbInstance.add_photo([ title, country, location, photo, user_id ])
+    .then((note) => res.status(200).send(note) )
+    .catch( err => {
+        res.sendStatus(401)
+        console.log(err)
+    })
+},
+
 update: (req, res) => {
     const dbInstance = req.app.get('db');
     const { note_id } = req.params;

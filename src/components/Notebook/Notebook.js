@@ -37,6 +37,9 @@ class Notebook extends Component {
                     res.data.country = res.data.map(note => {
                         return note.country === null ? note.country = '' : note.country
                     })
+                    res.data.content = res.data.map(note => {
+                        return note.content === null ? note.content = '' : note.content
+                    })
                     this.setState({
                         allNotes: res.data,
                         unchangedNotes: res.data
@@ -99,12 +102,12 @@ class Notebook extends Component {
                       .then(res => {
                           this.getNotes()
                       })
-                  sweetie({
-                      title: 'EXTERMINATED!',
-                      showConfirmButton: false,
-                      timer: 400,
-                      padding: '2.5rem'
-                  })
+            //       sweetie({
+            //           title: 'EXTERMINATED!',
+            //           showConfirmButton: false,
+            //           timer: 400,
+            //           padding: '2.5rem'
+            //       })
             }
         }).catch(err => console.log(err))
     }
@@ -161,7 +164,7 @@ class Notebook extends Component {
             allNotes: this.state.allNotes.filter(response => {
             return response.location.toLowerCase().includes(query.toLowerCase()) ||
                     response.title.toLowerCase().includes(query.toLowerCase()) || 
-            response.country.toLowerCase().includes(query.toLowerCase()) 
+                    response.country.toLowerCase().includes(query.toLowerCase()) 
         })
     })
 } else {
@@ -189,7 +192,9 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
     render() {
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
-           
+        //    console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
+        //    console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
+        //    console.log('this.state.allNotes[i].content', this.state.allNotes[i].content)
             return(
 
                 <div key={i} className="first">
@@ -199,7 +204,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                     <div className="note">
 
                         {this.state.allNotes[i].country === '' ?
-                        ''
+                        console.log('whaaaat! True result of this.state.allNotes[i].country === empty string')
                         :
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
@@ -223,16 +228,16 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                             this.updateField(e.target.value, i, 'title')
                         }}/>
 
-                        {this.state.allNotes[i].country === '' ?
+                        {this.state.allNotes[i].photo === null ?
                         <textarea cols="20" rows="10" 
                         className={this.state.canEdit[i] ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].content} placeholder="THOUGHTS..."
+                        value={this.state.allNotes[i].content} placeholder="EXTENSIVE THOUGHTS..."
                         onChange={e => {
                             this.updateField(e.target.value, i, 'content')
                         }}/> 
                         :
-                        <img className="note-photo" src={this.state.allNotes[i].content} alt={this.state.allNotes[i].location}/>
+                        <img className="note-photo" src={this.state.allNotes[i].photo} alt={this.state.allNotes[i].location}/>
                         }
 
 
@@ -265,11 +270,11 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
             }}>
                 <div className="menu-enter nb">
                     <img onClick={this.scrollTop} src={up} alt="scroll up"
-                    style={{position: "absolute", zIndex: '10', left: '18%', top: '5px', height: '18px'}}/>
+                    style={{position: "absolute", zIndex: '10', left: '18%', top: '2px', height: '18px', cursor: 'pointer'}}/>
                     <img onClick={this.scrollDown} src={down} alt="scroll down"
-                    style={{position: "absolute", zIndex: '10', left: '23%', top: '32px', height: '18px'}} />
+                    style={{position: "absolute", zIndex: '10', left: '23%', top: '26px', height: '18px', cursor: 'pointer'}} />
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
-                    <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
+                    <img className="open-menu" src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
 
                 <div className="intro-box">

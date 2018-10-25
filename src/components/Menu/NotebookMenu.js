@@ -98,11 +98,6 @@ class Menu extends Component {
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>
                     </div>
                 </div>
-                    
-                    {/* <div className="money-box">
-                        <div className="line3"></div>
-                        <h3>CURRENCY INFO</h3>
-                    </div> */}
 
                     <div className="menu-h3 logout">
                         <div className="line logout"></div>
