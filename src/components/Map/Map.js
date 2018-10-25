@@ -140,10 +140,10 @@ class Map extends Component {
 
                      {arrow}
 
-                <a className="photographer" style={{position: 'absolute', zIndex: 3}} target="_blank" href={this.state.photographerLink}>
+                <a className="photographer" style={{position: 'absolute', zIndex: 3}} target="_blank" rel="noopener noreferrer" href={this.state.photographerLink}>
                     <p>Photo by<br />{this.state.photographer}</p>
                 </a>
-                <a className="link" style={{position: 'absolute', zIndex: 3}} target="_blank" href="https://unsplash.com/?utm_source=time_to_travel&utm_medium=referral">
+                <a className="link" style={{position: 'absolute', zIndex: 3}} target="_blank" rel="noopener noreferrer" href="https://unsplash.com/?utm_source=time_to_travel&utm_medium=referral">
                     <p>Unsplash</p>
                 </a>
 

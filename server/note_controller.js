@@ -29,9 +29,9 @@ read: (req, res) => {
 update: (req, res) => {
     const dbInstance = req.app.get('db');
     const { note_id } = req.params;
-    const { title, country, location, content } = req.body;
+    const { title, country, location, content, photo } = req.body;
 
-    dbInstance.edit_note([ title, country, location, content, note_id ])
+    dbInstance.edit_note([ title, country, location, content, photo, note_id ])
     .then( (note) => {
         res.status(200).send(note) 
         })

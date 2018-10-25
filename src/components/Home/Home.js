@@ -6,7 +6,6 @@ import tardis from '../best-tardis-full.svg';
 import key from '../../assets/tardis-key.svg';
 import tardisSound from '../../assets/tardis-landing.mp3';
 import Media from "react-media";
-import { Link } from 'react-router-dom'
 
 class Home extends Component {
 

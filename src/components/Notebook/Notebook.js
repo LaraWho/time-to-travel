@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
 import down from './down.svg';
 import up from './up.svg';
-import ReactDOM from 'react-dom';
 import './notebook.css';
 import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
@@ -181,9 +180,8 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
     }
 
     scrollDown = () => {
-        this.bottom.scrollTo({
+        this.bottom.scrollIntoView({
             'behavior': 'smooth',
-            'top': -5000,
         })
     }
      
@@ -253,7 +251,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote(note.note_id)}>DELETE NOTE</h3>
                     </div>
-                    <h5 className="link-to-top" onClick={this.scrollTop}>Back to top</h5>
+                    {/* <h5 className="link-to-top" onClick={this.scrollTop}>Back to top</h5> */}
                 
 
                 </div>
@@ -267,9 +265,9 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
             }}>
                 <div className="menu-enter nb">
                     <img onClick={this.scrollTop} src={up} alt="scroll up"
-                    style={{position: "absolute", zIndex: '10', left: '15%', top: '5px', height: '20px'}}/>
+                    style={{position: "absolute", zIndex: '10', left: '18%', top: '5px', height: '18px'}}/>
                     <img onClick={this.scrollDown} src={down} alt="scroll down"
-                    style={{position: "absolute", zIndex: '10', left: '15%', top: '32px', height: '20px'}} />
+                    style={{position: "absolute", zIndex: '10', left: '23%', top: '32px', height: '18px'}} />
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
@@ -288,8 +286,8 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                     onKeyUp={this.handleFilter}/>
                     {mappedNotes}
 
-                    <div ref={(el) => (this.bottom = el)}>></div>
                 </div>
+                    <div ref={(el) => (this.bottom = el)}></div>
             </div>
         )
     }

@@ -12,15 +12,15 @@ class Menu extends Component {
             title: '',
             location: '',
             content: '',
-            country: ''
-            // photo: ''
+            country: '',
+            photo: ''
         }
     }
     componentDidMount() {
         this.setState({
             location: this.props.name,
             country: this.props.country,
-            content: this.props.photo
+            photo: this.props.photo
         })
     }
 
@@ -46,8 +46,8 @@ class Menu extends Component {
     }
 
     addNote = () => {
-        let { title, country, location, content } = this.state
-        axios.post('/allnotes/new', { country, title, location, content })
+        let { title, country, location, content, photo } = this.state
+        axios.post('/allnotes/new', { country, title, location, content, photo })
         .then(res => {
             setTimeout(() => {
                 this.props.history.push('/landing');
@@ -70,7 +70,7 @@ class Menu extends Component {
                         onChange={this.handleAddTitle}/>
                         {/* <textarea cols="20" rows="10" placeholder="THOUGHTS..."
                         onChange={this.handleAddContent}></textarea> */}
-                        <img className="addnew-photo" src={this.state.content} alt=""/>
+                        <img className="addnew-photo" src={this.state.photo} alt=""/>
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>
                     </div>
                 </div>

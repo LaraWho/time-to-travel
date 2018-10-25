@@ -13,7 +13,7 @@ class Menu extends Component {
         this.state = {
             title: '',
             location: '',
-            content: '',
+            photo: '',
         }
     }
 
@@ -59,11 +59,6 @@ class Menu extends Component {
                     </div>
                     
                     <AddNew history={this.props.history} name={this.props.name} country={this.props.country} photo={this.props.photo}/>
-
-                    {/* <div className="money-box">
-                        <div className="line3"></div>
-                        <h3>CURRENCY INFO</h3>
-                    </div> */}
 
                     <div className="menu-h3 logout">
                         <div className="line logout"></div>
