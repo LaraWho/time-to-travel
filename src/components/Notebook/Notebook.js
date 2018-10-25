@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
 import down from './down.svg';
+import up from './up.svg';
+import ReactDOM from 'react-dom';
 import './notebook.css';
 import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
@@ -170,17 +172,23 @@ class Notebook extends Component {
 }
 console.log('this.state.allNotes in search: ', this.state.allNotes)
 }
+
     scrollTop = () => {
         this.top.scrollTo({
             'behavior': 'smooth',
             'top': 0,
         })
     }
+
+    scrollDown = () => {
+        this.bottom.scrollTo({
+            'behavior': 'smooth',
+            'top': -5000,
+        })
+    }
      
 
     render() {
-    // console.log('this.state.allNotes in render: ', this.state.allNotes)
-
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
            
@@ -257,8 +265,11 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                 overflow: 'auto',
                 height: '100vh'
             }}>
-                {/* <a name="/notebook"></a> */}
                 <div className="menu-enter nb">
+                    <img onClick={this.scrollTop} src={up} alt="scroll up"
+                    style={{position: "absolute", zIndex: '10', left: '15%', top: '5px', height: '20px'}}/>
+                    <img onClick={this.scrollDown} src={down} alt="scroll down"
+                    style={{position: "absolute", zIndex: '10', left: '15%', top: '32px', height: '20px'}} />
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={open} onClick={this.enterMenu} alt="enter-menu"/>
                 </div>
@@ -275,8 +286,9 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                 <div>
                     <input type="text" id="filter" placeholder="SEARCH NOTES"
                     onKeyUp={this.handleFilter}/>
-                    {/* <img style={{position: "absolute", zIndex: '10', right: '45%', bottom: '0px'}} src={down} alt=""/> */}
                     {mappedNotes}
+
+                    <div ref={(el) => (this.bottom = el)}>></div>
                 </div>
             </div>
         )

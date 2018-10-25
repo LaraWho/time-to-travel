@@ -6,6 +6,7 @@ import open from '../../assets/menu-open.svg';
 import particleConfig from '../../particlesjs-config.json';
 import Particles from 'react-particles-js';
 import scroll from './next-icon.svg';
+import scrollLeft from './left.svg';
 
 
 class Map extends Component {
@@ -19,7 +20,8 @@ class Map extends Component {
            name: '',
            width: 0,
            photographer: '',
-           photographerLink: ''
+           photographerLink: '',
+           showLeft: false
         }
         
     }
@@ -44,7 +46,7 @@ class Map extends Component {
         .then(res => {
             console.log(res.data)
             this.props.updateLocation(res.data.location.name, res.data.location.country, res.data.urls.regular)
-            const width = document.querySelector('.photo').offsetWidth
+            const width = this.pictureContainer.offsetWidth
             if(!res.data.location) {
                 this.setState({
                     country: 'Who knows!',
@@ -53,7 +55,7 @@ class Map extends Component {
                     name: 'Who knows!',
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html,
-                    width: 500
+                    width: width
                 })
             } else {
                 this.setState({
@@ -63,7 +65,7 @@ class Map extends Component {
                     name: res.data.location.name,
                     photographer: res.data.user.name,
                     photographerLink: res.data.links.html,
-                    width: 500
+                    width: width
 
                 })
             }
@@ -79,23 +81,41 @@ class Map extends Component {
     }
 
     scroll = () => {
-        console.log(document.querySelector('.photo').offsetWidth - document.body.offsetWidth)
         console.log(`window ...`,window.scrollTo)
 
         this.pictureContainer.scrollTo({
             'behavior': 'smooth',
             'left': document.querySelector('.photo').offsetWidth,
         })
+        this.setState({
+            showLeft: true
+        })
+    }
+
+    scrollLeft = () => {
+        console.log(`window ...`,window.scrollTo)
+
+        this.pictureContainer.scrollTo({
+            'behavior': 'smooth',
+            'left': -document.querySelector('.photo').offsetWidth,
+        })
+        this.setState({
+            showLeft: false
+        })
     }
             
         render() {
-            console.log(this.state.width)
-
+                console.log(this.state.width)
                 console.log(this.state.city)
                 console.log(this.state.country)
+
                     let arrow = []
                     if(this.state.width >= 320) {
-                        arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll}/>)
+                        {!this.state.showLeft ?
+                            arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll}/>)
+                        :
+                            arrow.push(<img className="left-arrow" src={scrollLeft} alt="scroll left" onClick={this.scrollLeft}/>)
+                        }
                     }
                   
 
