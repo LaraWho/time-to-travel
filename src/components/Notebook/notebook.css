@@ -71,7 +71,7 @@ border-radius: 20px;
 padding-top: 15px;
 position: relative;
 z-index: 5;
-top: -490px;
+top: -490px !important;
 }
 
 .intro-box {

@@ -20,7 +20,6 @@ class Notebook extends Component {
             DWquote: '',
             sourceQ: '',
             input: '',
-            // showFilter: false,
             unchangedNotes: []
         }
     }
@@ -45,7 +44,6 @@ class Notebook extends Component {
                         unchangedNotes: res.data
                     })
         })
-        // console.log('this.state.allNotes in componentDidMount: ', this.state.allNotes)
     }
 
     getQuote = () => {
@@ -72,7 +70,6 @@ class Notebook extends Component {
         note.country = country ? country : note.country
         note.location = location ? location : note.location
         note.content = content ? content : note.content
-        // if(note.note_id) {
             axios.patch(`/allnotes/${note.note_id}`,  note )
             .then( res => {
                 this.updateAvailability(i)
@@ -80,9 +77,6 @@ class Notebook extends Component {
                   allnotes: res.data
                 })
         }).catch(err => console.log(err))
-    // } else {
-    //     console.log('savenote!')
-    // }
       }
 
       deleteNote(note_id) {
@@ -192,6 +186,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
     render() {
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
+            console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
         //    console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
         //    console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
         //    console.log('this.state.allNotes[i].content', this.state.allNotes[i].content)
@@ -204,7 +199,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                     <div className="note">
 
                         {this.state.allNotes[i].country === '' ?
-                        console.log('whaaaat! True result of this.state.allNotes[i].country === empty string')
+                        console.log('Would you like a Jammie Dodger?')
                         :
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
                        type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
@@ -255,9 +250,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                     </div>
                         <h3 className="delete-note"
                         onClick={() => this.deleteNote(note.note_id)}>DELETE NOTE</h3>
-                    </div>
-                    {/* <h5 className="link-to-top" onClick={this.scrollTop}>Back to top</h5> */}
-                
+                    </div>                
 
                 </div>
 

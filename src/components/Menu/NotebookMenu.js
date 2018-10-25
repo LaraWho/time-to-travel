@@ -57,8 +57,8 @@ class Menu extends Component {
     }
 
     addNote = () => {
-        let { title, country, location, content } = this.state
-        axios.post('/allnotes/new', { country, title, location, content })
+        let { title, location, content } = this.state
+        axios.post('/allnotes/new', { title, location, content })
         .then(res => {
             setTimeout(() => {
                 this.props.history.push('/landing');
@@ -89,10 +89,10 @@ class Menu extends Component {
                     <div className="menu-note menu">
                         <div className="line2 menu"></div>
                         <h3>QUICK NOTE</h3>
-                        <input type="text" placeholder="TITLE"
-                        onChange={this.handleAddTitle}/>
                         <input type="text" placeholder="LOCATION"
                         onChange={this.handleAddLoc}/>
+                        <input type="text" placeholder="TITLE"
+                        onChange={this.handleAddTitle}/>
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."
                         onChange={this.handleAddContent}></textarea>
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>
