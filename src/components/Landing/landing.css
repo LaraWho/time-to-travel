@@ -37,6 +37,8 @@
     /* padding-top: 8%; */
     position: relative;
     animation: floating 6s infinite alternate ease-in-out;
+    opacity: 0;
+    transition: all .6s ease;
 }
 
 .question-btn-box {
@@ -51,7 +53,11 @@
     cursor: pointer;
     box-shadow: 1px 1px 1px #021D34;
     opacity: 0.96;
-
+    opacity: 0;
+    transition: all .6s ease;
+}
+.appear {
+    opacity: 1;
 }
 
 .random-btn-text {

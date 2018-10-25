@@ -1,5 +1,4 @@
 
-
 .info-g-bg {
     background-color: #6F8EA9; 
     height: 100vh; 
@@ -10,37 +9,36 @@
     top: 10px; 
     left: 6%;
     opacity: 0;
-    transition: all .6s ease;
+    transition: all .4s ease;
 }
 .one {
     position: absolute; 
     right: 8px; 
     top: 100px;
     opacity: 0;
-    transition: all .6s ease;
+    transition: all .4s ease;
 }
-
 
 .two {
     position: relative; 
     left: 12px; 
     top: 24px;
     opacity: 0;
-    transition: all .6s ease;
+    transition: all .4s ease;
 }
 .three {
     position: absolute; 
     right: 18px; 
     top: 210px;
     opacity: 0;
-    transition: all .6s ease;
+    transition: all .4s ease;
 }
 .tardis {
     position: relative; 
     top: 95px; 
     left: 18px;
     opacity: 0;
-    transition: all .6s ease;
+    transition: all .4s ease;
 }
 .appear {
     opacity: 1;

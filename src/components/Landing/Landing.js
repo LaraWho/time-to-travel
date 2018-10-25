@@ -8,6 +8,25 @@ import open from '../../assets/menu-open.svg';
 
 class Landing extends Component {
 
+    componentDidMount() {
+        this.fancyLoad()
+    }
+
+    fancyLoad = () => {
+        console.time('image-load')
+        const tardis = document.querySelector('.landing-tardis')
+        const box = document.querySelector('.question-btn-box')
+
+        tardis.addEventListener('load', onLoad)
+        box.addEventListener('load', onLoad)
+
+        function onLoad(){
+            console.timeEnd('image-load')
+            tardis.classList.add('appear')
+            box.classList.add('appear')
+        }
+    }
+
     toMap = () => {
         this.props.history.push('/map');
     }
