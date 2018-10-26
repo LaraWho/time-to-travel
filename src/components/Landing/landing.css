@@ -19,7 +19,6 @@
 
 .landing-enter>img {
     height: 36px;
-    /* padding-top: 2px; */
     cursor: pointer;
 }
 
@@ -27,15 +26,6 @@
     height: 90%;
     display: flex;
     justify-content: center;
-}
-
-.landing-tardis {
-    height: 90%;
-    width: auto;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    animation: floating 6s infinite alternate ease-in-out;
     opacity: 0;
     transition: all .6s ease;
 }
@@ -75,18 +65,21 @@
     opacity: 0;
     transition: all .6s ease;
 }
-
-@keyframes open2 {
-    from {
-    } 70% {
-    transform: perspective(1200px) 
-    translateZ(0px) translateX(0px) 
-    translateY(0px) rotateY(-75deg);
-    } to {  
-    }
+.landing-tardis {
+    height: 90%;
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    animation: floating 6s infinite alternate ease-in-out;
+    opacity: 1;
+    /* transition: all .6s ease; */
 }
 
-@keyframes open1 {
+.appear {
+    opacity: 1;
+}
+
+/* @keyframes open1 {
     from {
     } 70% {
     transform: perspective(1200px) 
@@ -94,14 +87,32 @@
     translateY(0px) rotateY(75deg);
     } to {  
     }
-}
-@keyframes materialise2 {
+} */
+/* @keyframes materialise2 {
     0% { opacity: 100%; }
     50% { opacity: 0.1; }
     100% { opacity: 100%; }
-    }
+    } */
 
-    @keyframes interior {
+        @keyframes open2 {
+            from { } 
+            to {
+            transform: perspective(1200px) 
+            translateZ(0px) translateX(0px) 
+            translateY(0px) rotateY(-95deg);
+            }
+        }
+        
+        @keyframes open1 {
+            from { } 
+            to {
+            transform: perspective(1200px) 
+            translateZ(0px) translateX(0px) 
+            translateY(0px) rotateY(95deg);
+            }
+        }
+
+          @keyframes leave {
         0% { opacity: 1; }
         100% { 
             opacity: 0; 
@@ -109,7 +120,23 @@
         }
         }
 
-    .interior {
+        @keyframes scale {
+            from { }
+            to {
+                transform: 
+                scale(40)
+                rotate(-10deg)
+                translateY(-10px)
+                translateX(10px);
+                opacity: 0;
+            }
+        }
+
+        .scale {
+            animation: scale 3s 2s 1 ease-in-out forwards;
+        }
+
+    /* .interior {
         position: absolute;
         left: 62px;
         top: 205px;
@@ -117,31 +144,30 @@
         z-index: 0;
         opacity: 0;
         transition: all .3s ease;
-    }
-.interior-leave {
+    } */
+/* .interior-leave {
     animation: interior 1s 4s 1 forwards;
 }
 
 .tardis-anim {
     animation: materialise2 2s 4s 3 alternate ease-in-out;
-}
+} */
 
 .door1Open {
-    animation: open1 5s ease-in-out, materialise2 2s 4s 3 alternate ease-in-out;
+    animation: open1 3s forwards, leave .1s 2s 1 forwards;
+    /* animation: open1 5s ease-in-out, materialise2 2s 4s 3 alternate ease-in-out; */
 }
 
 .door2Open {
-    animation: open2 5s ease-in-out, materialise2 2s 4s 3 alternate ease-in-out;
+    animation: open2 3s forwards, leave .1s 2s 1 forwards;
+
 }
 
-.btn-leave {
+/* .btn-leave {
     opacity: 1;
-}
+} */
 
-.appear {
-    opacity: 1 !important;
-    /* position: relative; */
-}
+
 .random-btn-text {
     position: absolute;
     color: #ffffff;
@@ -158,6 +184,7 @@
     z-index: 2;
     height: 150px;
 }
+
 @media all and (min-width: 320px) and (max-width: 490px) {
     .question-btn-box {
         margin-top: 75%;

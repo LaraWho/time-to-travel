@@ -31,6 +31,10 @@ body {
   opacity: 1;
 } */
 
+.fade-enter-done {
+    opacity: 1;
+}
+
 .fade-exit-active {
   opacity: 0;
 }
@@ -74,18 +78,12 @@ button {
     font-family: 'Futura';
 }
 
-/* button:hover {
-} */
-
-/* button:active {
-} */
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Futura';
     cursor: pointer;	
-
 }
 
 ::-webkit-scrollbar {
