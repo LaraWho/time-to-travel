@@ -6,6 +6,8 @@ import './landing.css';
 import question from '../who.svg';
 import open from '../../assets/menu-open.svg';
 import tardisCutout from './cutout-tardis.svg';
+import tardisCutout2 from './cutout-tardis2.svg';
+import interior from './interior.png';
 import door1 from './door1.svg';
 import door2 from './door2.svg';
 
@@ -21,8 +23,10 @@ class Landing extends Component {
         const door1 = document.querySelector('.door1')
         const door2 = document.querySelector('.door2')
         const box = document.querySelector('.question-btn-box')
+        const interior = document.querySelector('.interior')
 
         tardis.addEventListener('load', onLoad)
+        interior.addEventListener('load', onLoad)
         box.addEventListener('load', onLoad)
         door1.addEventListener('load', onLoad)
         door2.addEventListener('load', onLoad)
@@ -33,6 +37,8 @@ class Landing extends Component {
             door1.classList.add('appear')
             door2.classList.add('appear')
             tardis.classList.add('appear')
+            interior.classList.add('appear')
+
         }
     }
 
@@ -40,12 +46,15 @@ class Landing extends Component {
         document.querySelector('.question-btn-box').classList.remove('appear');
         document.querySelector('.door1').classList.add('door1Open');
         document.querySelector('.door2').classList.add('door2Open');
-
-            console.log('heeeelp')
+        document.querySelector('.landing-tardis').classList.add('tardis-anim');
+        document.querySelector('.interior').classList.add('interior-leave');
+        
+        console.log('heeeelp')
 
         setTimeout(() => {
             this.props.history.push('/map');
-        }, 6000)
+        }, 9000)
+
     }
 
     toMenu = () => {
@@ -82,7 +91,8 @@ class Landing extends Component {
                     </div>
 
                         <div>
-                            <img className="landing-tardis" src={tardisCutout} alt="TARDIS"/>
+                            <img className="landing-tardis" src={tardisCutout2} alt="TARDIS"/>
+                            <img className="interior" src={interior} alt=""/>
                             <img className="door1" src={door1} alt="TARDIS"/>
                             <img className="door2" src={door2} alt="TARDIS"/>
                         </div>

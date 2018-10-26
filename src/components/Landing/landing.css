@@ -34,6 +34,7 @@
     width: auto;
     margin: 0 auto;
     position: relative;
+    z-index: 2;
     animation: floating 6s infinite alternate ease-in-out;
     opacity: 0;
     transition: all .6s ease;
@@ -64,7 +65,7 @@
 .question-btn-box {
     position: absolute;
     padding: 20px;
-    z-index: 2;
+    z-index: 3;
     margin-top: 100%;
     background-color: rgba(5, 99, 182, 0.795);
     height: 155px;
@@ -94,13 +95,43 @@
     } to {  
     }
 }
+@keyframes materialise2 {
+    0% { opacity: 100%; }
+    50% { opacity: 0.1; }
+    100% { opacity: 100%; }
+    }
+
+    @keyframes interior {
+        0% { opacity: 1; }
+        100% { 
+            opacity: 0; 
+            display: none;
+        }
+        }
+
+    .interior {
+        position: absolute;
+        left: 62px;
+        top: 205px;
+        height: 296px;
+        z-index: 0;
+        opacity: 0;
+        transition: all .3s ease;
+    }
+.interior-leave {
+    animation: interior 1s 4s 1 forwards;
+}
+
+.tardis-anim {
+    animation: materialise2 2s 4s 3 alternate ease-in-out;
+}
 
 .door1Open {
-    animation: open1 6s ease-in-out;
+    animation: open1 5s ease-in-out, materialise2 2s 4s 3 alternate ease-in-out;
 }
 
 .door2Open {
-    animation: open2 6s ease-in-out;
+    animation: open2 5s ease-in-out, materialise2 2s 4s 3 alternate ease-in-out;
 }
 
 .btn-leave {
@@ -108,7 +139,8 @@
 }
 
 .appear {
-    opacity: 1;
+    opacity: 1 !important;
+    /* position: relative; */
 }
 .random-btn-text {
     position: absolute;
