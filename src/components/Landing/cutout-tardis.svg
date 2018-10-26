@@ -1,5 +1,5 @@
 <svg width="904" height="1791" viewBox="0 0 904 1791" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M47 1709H857V479H47V1709Z" fill="url(#pattern0)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M47 1720H857V490H47V1720Z" fill="url(#pattern0)"/>
 <rect x="407" y="139" width="85" height="20" fill="url(#paint0_linear)"/>
 <g filter="url(#filter0_d)">
 <rect x="6" y="1739" width="892" height="44" fill="#003B6F"/>
@@ -7,7 +7,7 @@
 <rect x="807" y="473" width="50" height="1236" fill="#003B6F"/>
 <rect x="47" y="479" width="50" height="1236" fill="#003B6F"/>
 <g filter="url(#filter1_d)">
-<rect x="47" y="339" width="810" height="154" fill="#003B6F"/>
+<rect x="47" y="339" width="810" height="151" fill="#003B6F"/>
 </g>
 <g filter="url(#filter2_d)">
 <path d="M58 372H846V442H58V372Z" fill="#333333"/>
@@ -58,7 +58,7 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
 </filter>
-<filter id="filter1_d" x="45" y="339" width="814" height="158" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_d" x="45" y="339" width="814" height="155" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="2"/>

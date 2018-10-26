@@ -32,24 +32,30 @@
 
 .door1 {
     position: absolute;
-    height: 317px;
-    left: 62px;
-    top: 196px;
+    /* height: 326px;
+    left: 59px;
+    top: 189px; */
     opacity: 0;
     transition: all .6s ease;
     animation: floating 6s infinite alternate ease-in-out;
     transform-origin: left;
+    height: 330px;
+    left: 57px;
+    top: 184px;
 }
 
 .door2 {
     position: absolute;
-    height: 317px;
-    right: 62px;
-    top: 196px;
+    /* height: 326px;
+    right: 59px;
+    top: 189px; */
     opacity: 0;
     transition: all .6s ease;
     animation: floating 6s infinite alternate ease-in-out;
     transform-origin: right;
+    height: 330px;
+    right: 59px;
+    top: 184px;
 }
 
 .question-btn-box {
@@ -66,13 +72,15 @@
     transition: all .6s ease;
 }
 .landing-tardis {
-    height: 90%;
-    width: auto;
+    height: 85%;
+    /* width: auto; */
     margin: 0 auto;
-    position: relative;
+    bottom: 33px;
+    right: 39px;
+    position: fixed;
     animation: floating 6s infinite alternate ease-in-out;
-    opacity: 1;
-    /* transition: all .6s ease; */
+    opacity: 0;
+    transition: all .6s ease;
 }
 
 .appear {
@@ -121,16 +129,18 @@
         }
 
         @keyframes scale {
-            from { }
+            from { 
+                transform: none;
+            }
             to {
                 transform: 
-                scale(40)
-                rotate(-10deg)
-                translateY(-10px)
-                translateX(10px);
+                scale(20)
+                translateX(10px)
+                rotate(-5deg)
+                translateY(-80px);
                 opacity: 0;
             }
-        }
+        } 
 
         .scale {
             animation: scale 3s 2s 1 ease-in-out forwards;
@@ -145,13 +155,13 @@
         opacity: 0;
         transition: all .3s ease;
     } */
-/* .interior-leave {
-    animation: interior 1s 4s 1 forwards;
-}
+    .leave {
+    animation: leave 1s 1 forwards;
+    } 
 
-.tardis-anim {
+/* .tardis-anim {
     animation: materialise2 2s 4s 3 alternate ease-in-out;
-} */
+}  */
 
 .door1Open {
     animation: open1 3s forwards, leave .1s 2s 1 forwards;

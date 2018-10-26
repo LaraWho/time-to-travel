@@ -10,8 +10,15 @@ import tardisCutout from './cutout-tardis.svg';
 // import interior from './interior.png';
 import door1 from './door1.svg';
 import door2 from './door2.svg';
+import geronimo from './geronimo.mp3';
 
 class Landing extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            audio: false
+        }
+    }
 
     componentDidMount() {
         this.fancyLoad()
@@ -19,13 +26,13 @@ class Landing extends Component {
 
     fancyLoad = () => {
         console.time('image-load')
-        // const tardis = document.querySelector('.landing-tardis')
+        const tardis = document.querySelector('.landing-tardis')
         const tardisBox = document.querySelector('.landing-tardis-box')
         const door1 = document.querySelector('.door1')
         const door2 = document.querySelector('.door2')
         const box = document.querySelector('.question-btn-box')
 
-        // tardis.addEventListener('load', onLoad)
+        tardis.addEventListener('load', onLoad)
         tardisBox.addEventListener('load', onLoad)
         box.addEventListener('load', onLoad)
         door1.addEventListener('load', onLoad)
@@ -36,17 +43,22 @@ class Landing extends Component {
             box.classList.add('appear')
             door1.classList.add('appear')
             door2.classList.add('appear')
-            // tardis.classList.add('appear')
+            tardis.classList.add('appear')
             tardisBox.classList.add('appear')
 
         }
     }
 
     toMap = () => {
+        document.querySelector('.info-btn').classList.add('leave');
+        document.querySelector('.landing-enter').classList.add('leave');
         document.querySelector('.question-btn-box').classList.remove('appear');
         document.querySelector('.door1').classList.add('door1Open');
         document.querySelector('.door2').classList.add('door2Open');
-        document.querySelector('.landing-tardis').classList.add('scale');
+        document.querySelector('.landing-tardis.appear').classList.add('scale');
+        this.setState({
+            audio: true
+        })
 
         setTimeout(() => {
             this.props.history.push('/map');
@@ -92,13 +104,19 @@ class Landing extends Component {
                             <img className="door2" src={door2} alt="TARDIS"/>
                         </div>
 
-                        <p 
+                        <p  className="info-btn"
                             style={{cursor: 'pointer', position: 'absolute', bottom: '15px', margin: 'auto', fontFamily: 'Futura', color: '#FFF'}} 
                             onClick={this.toInfo}>What am I doing here?
                         </p>
 
                     </div>
 
+    {this.state.audio ? 
+            <div className="audio-player">
+            <audio src={geronimo} type="audio/mp3" autoPlay></audio>
+            </div> :
+        null
+    }
 
                 </div>
         )

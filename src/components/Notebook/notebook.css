@@ -64,14 +64,16 @@ html {
 .onenote-bg {
 width: 275px;
 height: 445px;
-margin: 0 auto;
+/* margin: 0 auto; */
 /* margin-bottom: 20px; */
 background: #C46352;
 border-radius: 20px;
 padding-top: 15px;
-position: relative;
+position: absolute;
+    left: 7%;
 z-index: 5;
-top: -490px !important;
+/* top: -490px !important; */
+top: 82px;
 }
 
 .intro-box {

@@ -11,7 +11,7 @@
     background-size: cover;
     position: relative;
     z-index: 1;
-    margin: auto;
+    margin: 1px auto;
     /* opacity: 0; */
     /* transition: all .6s ease;  */
 }

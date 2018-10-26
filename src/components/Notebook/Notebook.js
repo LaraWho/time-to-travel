@@ -131,7 +131,9 @@ class Notebook extends Component {
         this.setState({
             allnotes: newNotes
         })
+        console.log('this.state.allNotes: ', this.state.allNotes)
     }
+    
     setAvailability = (length) => {
         for(let i = 0; i < length; i++){
             let canEdit = [...this.state.canEdit]
@@ -186,7 +188,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
     render() {
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
-            console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
+            // console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
         //    console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
         //    console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
         //    console.log('this.state.allNotes[i].content', this.state.allNotes[i].content)
