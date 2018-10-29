@@ -47,7 +47,7 @@ html {
     z-index: 10;
     bottom: 10px;
     height: 32px;
-    left: 7%;
+    left: 6%;
     border-radius: 20px;
     width: 280px;
     /* background-color: rgba(187, 93, 74, 0.8); */
@@ -64,16 +64,17 @@ html {
 .onenote-bg {
 width: 275px;
 height: 445px;
-/* margin: 0 auto; */
+margin: 0 auto;
+position: relative;
 /* margin-bottom: 20px; */
 background: #C46352;
 border-radius: 20px;
 padding-top: 15px;
-position: absolute;
-    left: 7%;
+/* position: absolute; */
+    /* left: 7%; */
 z-index: 5;
-/* top: -490px !important; */
-top: 82px;
+top: -490px !important;
+/* top: 82px; */
 }
 
 .intro-box {
@@ -124,42 +125,47 @@ top: 82px;
 .note {
 display: flex;
 justify-content: center;
-flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
 margin: 5px auto;
-padding-top: 18px;
+padding-top: 8px;
 width: 235px;
-height: 375px;
+height: 388px;
+
+/* height: 375px; */
 background: #BB5C4A;
 border-radius: 20px;
 }
 
 .note-inputs {
 /* position: absolute; */
-/* width: 225px; */
-height: 32px;
+width: 220px;
+height: 78px;
 background: #FFFFFF;
 border-radius: 20px;
-/* margin-bottom: 5px; */
+margin-bottom: 8px;
 }
 
 .note-inputs2 {
 /* position: absolute; */
-/* width: 225px; */
+width: 220px;
 height: 32px;
 background: #FFFFFF;
 border-radius: 20px;
+margin-bottom: 6px;
 }
 
 .note-text {
-    /* width: 225px; */
-    height: 195px;
+    width: 220px;
+    height: 228px;
     padding-top: 6px;
     background: #FFFFFF;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .note-edit {
-    width: 215px;    
+    width: 225px;    
     height: 36px;
     background: rgba(2, 29, 52, 0.98);
     border-radius: 20px;
@@ -177,6 +183,7 @@ border-radius: 20px;
 .note-photo {
     height: 150px;
     border-radius: 20px;
+    margin-bottom: 8px;
 }
 
 @media all and (min-width: 920px) {

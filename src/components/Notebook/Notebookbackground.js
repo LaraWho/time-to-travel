@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './notebookbackground.css';
 import './notebook.css'
-import Particles from 'react-particles-js';
-import particleConfig from '../../particlesjs-config.json';
+// import Particles from 'react-particles-js';
+// import particleConfig from '../../particlesjs-config.json';
 import one from './bg-images/1.jpeg';
 import two from './bg-images/2.jpeg';
 import three from './bg-images/3.jpeg';
@@ -43,7 +43,7 @@ class NotebookBackground extends Component {
         return(
             <div className="book-body">
             
-                    <Particles style={{
+                    {/* <Particles style={{
                         width: '100%',
                         minHeight: '100vh',
                         height: "100%",
@@ -51,7 +51,7 @@ class NotebookBackground extends Component {
                         
                     }}
                         params={particleConfig}                        
-                    />
+                    /> */}
                     
                 <div className="note-bg" style={{
                     backgroundImage: `url(${this.state.bgImage})`,

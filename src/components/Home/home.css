@@ -26,10 +26,10 @@
 }
 
 .home-tardis {
-    height: 80%;
+    height: 85%;
     width: auto;
-    margin: auto;
-    margin-top: 20px;
+    margin: 10px auto;
+    margin-top: 15px;
     position: relative;
     animation: materialise 2s 5 alternate ease-in-out, floating 6s 10s infinite alternate ease-in-out;
 }
@@ -38,10 +38,9 @@
     text-align: center;
     color: #ffffff;
     font-family: 'Futura';
-    /* font-weight: bold; */
-    font-size: 48px;
+    font-size: 38px;
     padding-top: 5%;
-    line-height: 60px;
+    line-height: 45px;
     display: flex;
     justify-content: center;
 }

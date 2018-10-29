@@ -89,9 +89,9 @@ class Menu extends Component {
                     <div className="menu-note menu">
                         <div className="line2 menu"></div>
                         <h3>QUICK NOTE</h3>
-                        <input type="text" placeholder="LOCATION"
+                        <input type="text" placeholder="COUNTRY"
                         onChange={this.handleAddLoc}/>
-                        <input type="text" placeholder="TITLE"
+                        <input type="text" placeholder="LOCATION"
                         onChange={this.handleAddTitle}/>
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."
                         onChange={this.handleAddContent}></textarea>

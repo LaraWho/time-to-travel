@@ -131,7 +131,6 @@ class Notebook extends Component {
         this.setState({
             allnotes: newNotes
         })
-        console.log('this.state.allNotes: ', this.state.allNotes)
     }
     
     setAvailability = (length) => {
@@ -153,7 +152,6 @@ class Notebook extends Component {
     handleFilter = (e) => {
         this.searchNotes(e.target.value)
     }
-
     searchNotes = (query) => {
         if(query) {
         this.setState({
@@ -168,7 +166,10 @@ class Notebook extends Component {
         allNotes: this.state.unchangedNotes
     })
 }
-console.log('this.state.allNotes in search: ', this.state.allNotes)
+this.top.scrollTo({
+    'behavior': 'smooth',
+    'top': window.innerHeight,
+})
 }
 
     scrollTop = () => {
@@ -189,9 +190,9 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
             // console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
-        //    console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
-        //    console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
-        //    console.log('this.state.allNotes[i].content', this.state.allNotes[i].content)
+            //  console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
+            //  console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
+            //  console.log('this.state.allNotes[i].content', this.state.allNotes[i].content)
             return(
 
                 <div key={i} className="first">
@@ -200,7 +201,7 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                 <div className="onenote-bg">
                     <div className="note">
 
-                        {this.state.allNotes[i].country === '' ?
+                        {this.state.allNotes[i].country === null ?
                         console.log('Would you like a Jammie Dodger?')
                         :
                         <input className={this.state.canEdit[i] ? "note-inputs2" : "note-inputs2 cannot-edit"} 
@@ -218,18 +219,23 @@ console.log('this.state.allNotes in search: ', this.state.allNotes)
                             this.updateField(e.target.value, i, 'location')
                         }}/>
 
-                         <input className={this.state.canEdit[i] ? "note-inputs" : "note-inputs cannot-edit"} 
+                        {this.state.allNotes[i].photo === null ?
+                         null 
+                         :
+                         <textarea className={this.state.canEdit[i] ? "note-inputs" : "note-inputs cannot-edit"} 
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
                         value={this.state.allNotes[i].title} placeholder="THOUGHTS..."
                         onChange={e => {
                             this.updateField(e.target.value, i, 'title')
                         }}/>
+                       
+                        }
 
                         {this.state.allNotes[i].photo === null ?
                         <textarea cols="20" rows="10" 
                         className={this.state.canEdit[i] ? "note-text" : "note-text cannot-edit"}
                         type="text" disabled={(this.state.disabled[i]) ? "disabled" : ""}
-                        value={this.state.allNotes[i].content} placeholder="EXTENSIVE THOUGHTS..."
+                        value={this.state.allNotes[i].content} placeholder="THOUGHTS..."
                         onChange={e => {
                             this.updateField(e.target.value, i, 'content')
                         }}/> 
