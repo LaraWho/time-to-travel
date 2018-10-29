@@ -41,7 +41,7 @@
     transform-origin: left;
     height: 330px;
     left: 57px;
-    top: 184px;
+    top: 183px;
 }
 
 .door2 {
@@ -55,7 +55,7 @@
     transform-origin: right;
     height: 330px;
     right: 59px;
-    top: 184px;
+    top: 183px;
 }
 
 .question-btn-box {
@@ -134,10 +134,10 @@
             }
             to {
                 transform: 
-                scale(20)
-                translateX(10px)
-                rotate(-5deg)
-                translateY(-30px);
+                scale(15)
+                translateY(-80px)
+                translateX(-50px)
+                rotate(-5deg);
                 opacity: 0;
             }
         } 

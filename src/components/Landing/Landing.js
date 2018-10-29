@@ -7,7 +7,6 @@ import question from '../who.svg';
 import open from '../../assets/menu-open.svg';
 import tardisCutout from './cutout-tardis.svg';
 // import tardisCutout2 from './cutout-tardis2.svg';
-// import interior from './interior.png';
 import door1 from './door1.svg';
 import door2 from './door2.svg';
 import geronimo from './geronimo.mp3';
