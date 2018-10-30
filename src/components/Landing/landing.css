@@ -21,6 +21,20 @@
     height: 36px;
     cursor: pointer;
 }
+.landing-enter>p:hover {
+    transform: scale(1.04);    
+    cursor: pointer;
+}
+.landing-enter>img:hover {
+    transform: scale(1.04);    
+}
+.question-btn-box:hover {
+    opacity: 0.8;
+}
+.info-btn:hover {
+    transform: scale(1.04);    
+}
+
 
 .landing-tardis-box {
     height: 90%;
@@ -136,8 +150,8 @@
                 transform: 
                 scale(15)
                 translateY(-80px)
-                translateX(-50px)
-                rotate(-5deg);
+                translateX(-30px)
+                rotate(5deg);
                 opacity: 0;
             }
         } 

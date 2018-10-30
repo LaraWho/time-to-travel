@@ -109,19 +109,6 @@ top: -490px !important;
     z-index: 0;
 }
 
-.delete-note {
-    width: 125px;
-    height: 24px;
-    font-family: Futura;
-    font-weight: bold;
-    line-height: 22px;
-    font-size: 18px;
-    color: #7F1816;
-    margin-left: auto;
-    margin-right: 18px;
-    cursor: pointer;    
-    }
-
 .note {
 display: flex;
 justify-content: center;
@@ -172,6 +159,13 @@ margin-bottom: 6px;
     color: #FFFFFF;
     font-size: 24px;
 }
+.note-edit:hover {
+    background: #032B4D;
+}
+.note-edit:active {
+    background: #021D34;
+}
+
 .note-save {
     width: 225px;
     height: 36px;
@@ -180,10 +174,45 @@ margin-bottom: 6px;
     color: #FFFFFF;
     font-size: 24px;
 }
+.note-save:hover {
+    background: #0671CE;
+}
+.note-save:active {
+    background: #04559C;
+}
+
+
+.delete-note {
+    width: 125px;
+    height: 24px;
+    font-family: Futura;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 18px;
+    color: #7F1816;
+    margin-left: auto;
+    margin-right: 18px;
+    cursor: pointer;    
+    }
+    .delete-note:hover {
+        color: #951C1A;
+    }
+    .delete-note:active{
+        transform: translateY(1px) translateX(1px);
+        color: #691412;
+    }
+
 .note-photo {
     height: 150px;
     border-radius: 20px;
     margin-bottom: 8px;
+}
+
+.menu-enter.nb>img:hover {
+    transform: scale(1.04);    
+}
+.menu-enter.nb>p:hover {
+    transform: scale(1.04);    
 }
 
 @media all and (min-width: 920px) {

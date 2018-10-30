@@ -33,7 +33,14 @@
     /* background: rgba(2, 29, 52, 0.205); */
     border-radius: 10px;
     cursor: pointer;
-
+}
+.menu-enter.map>p:hover {
+    transform: scale(1.04);    
+    cursor: pointer;
+}
+.menu-enter.map>img:hover {
+    transform: scale(1.04);    
+    cursor: pointer;
 }
 
 .arrow {
@@ -146,6 +153,10 @@
         z-index: 2;
         height: 120px;
     }
+    /* .map-question-mark:hover {
+    transform: scale(1.10);            
+    } */
+
     @media all and (min-width: 500px) and (max-width: 920px) {
 
     .photo {

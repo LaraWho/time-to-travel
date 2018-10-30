@@ -1,4 +1,6 @@
-
+.back-btn:hover {
+    transform: scale(1.04);
+}
 .info-g-bg {
     background-color: #6F8EA9; 
     height: 100vh; 

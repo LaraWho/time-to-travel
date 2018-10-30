@@ -44,7 +44,6 @@ class Map extends Component {
     getPhoto = () => {
         axios.get(`https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=travel&w=1080&h=720`)
         .then(res => {
-            console.log(res.data)
             const width = this.pictureContainer.offsetWidth
             if(!res.data.location) {
                 this.setState({
@@ -69,7 +68,7 @@ class Map extends Component {
                 })
             }
             this.props.updateLocation(this.state.name, this.state.country, this.state.photo)
-            console.log('this.state.name, this.state.country, this.state.photo', this.state.name, this.state.country, this.state.photo)
+            // console.log('this.state.name, this.state.country, this.state.photo', this.state.name, this.state.country, this.state.photo)
         })
         this.fancyLoad()
     }
@@ -82,8 +81,6 @@ class Map extends Component {
     }
 
     scroll = () => {
-        console.log(`window ...`,window.scrollTo)
-
         this.pictureContainer.scrollTo({
             'behavior': 'smooth',
             'left': document.querySelector('.photo').offsetWidth,
@@ -94,8 +91,6 @@ class Map extends Component {
     }
 
     scrollLeft = () => {
-        console.log(`window ...`,window.scrollTo)
-
         this.pictureContainer.scrollTo({
             'behavior': 'smooth',
             'left': -document.querySelector('.photo').offsetWidth,
@@ -106,20 +101,20 @@ class Map extends Component {
     }
             
         render() {
-                console.log(this.state.city)
-                console.log(this.state.country)
+                // console.log(this.state.city)
+                // console.log(this.state.country)
 
-                    let arrow = []
-                    if(this.state.width >= 320) {
-                        {!this.state.showLeft ?
-                            arrow.push(<img className="arrow" src={scroll} alt="scroll right" onClick={this.scroll}/>)
-                        :
-                            arrow.push(<img className="left-arrow" src={scrollLeft} alt="scroll left" onClick={this.scrollLeft}/>)
-                        }
+                
+                let arrow = []
+                if(this.state.width >= 320) {
+                    {!this.state.showLeft ?
+                        arrow.push(<img className="arrow" src={scroll} key={arrow} alt="scroll right" onClick={this.scroll}/>)
+                    :
+                        arrow.push(<img className="left-arrow" src={scrollLeft} key={arrow} alt="scroll left" onClick={this.scrollLeft}/>)
                     }
-                  
-
-        return(
+                }
+                
+                return(
 
         <div className="map-bg" style={{overflow: 'auto', width: '100vw'}} ref={(el) => (this.pictureContainer = el)}>
 

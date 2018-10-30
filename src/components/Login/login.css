@@ -52,6 +52,13 @@
     text-align: center;
     cursor: pointer;
 }
+.login-btn:hover {
+    background: #0671CE;
+}
+.login-btn:active {
+    background: #04559C;
+    transform: translateY(1px) translateX(1px);
+}
 
 .or-text {
     margin: 20px 0px;
@@ -69,6 +76,14 @@
     padding-bottom: 14px;
     border-radius: 20px;
     cursor: pointer;
+}
+
+.register-btn:hover {
+    background: #032B4D;
+}
+.register-btn:active {
+    background: #021D34;
+    transform: translateY(1px) translateX(1px);
 }
 
 .login-heading {

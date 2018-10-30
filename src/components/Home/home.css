@@ -24,6 +24,9 @@
     display: flex;
     justify-content: center;
 }
+.home-tardis-box>p:hover {
+    transform: scale(1.04);
+}
 
 .home-tardis {
     height: 85%;
@@ -49,6 +52,11 @@
     position: absolute;
     width: 130px;
     left: 20px;
+}
+
+.button>img:hover {
+    transform: rotate(-25deg); 
+    transition: 300ms linear all;
 }
 
 .button {

@@ -60,7 +60,7 @@ class Infographic extends Component {
                         <img src={tardis} className="tardis" alt=""/> 
                         
                     <p onClick={this.props.history.goBack} className="back-btn"
-                    style={{position: 'absolute', bottom: '16px', left: '24px', fontFamily: 'Futura', color: '#FFF', textAlign: 'center'}}
+                    style={{position: 'absolute', bottom: '16px', left: '24px', fontFamily: 'Futura', color: '#FFF', textAlign: 'center', cursor: 'pointer'}}
                     >GO BACK<br />TO THE FUN</p>
 
                 </div>

@@ -49,7 +49,12 @@
     height: 36px;
     padding-top: 2px;
     cursor: pointer;
-    
+}
+.menu-exit>p:hover {
+    transform: scale(1.04);    
+}
+.menu-exit>img:hover {
+    transform: scale(1.04);    
 }
 
 .menu-h3 {
@@ -60,6 +65,13 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.menu-h3>h3:hover {
+    color: #F2F2F2;
+}
+.menu-h3>h3:active {
+    color: #E5E5E5;
+    transform: translateY(1px) translateX(1px);
 }
 .line {
     position: absolute;
@@ -74,6 +86,7 @@
     padding-top: 15px;
     padding-bottom: 5px;
 }
+
 
 .menu-note>input {
     border-radius: 20px;
@@ -108,20 +121,28 @@
     cursor: pointer;
 }
 
+.menu-save:hover {
+    background: #33526D;
+}
+.menu-save:active {
+    background: #23384B;
+    transform: translateY(1px) translateX(1px);
+}
+
 .menu-h3.logout {
     bottom: 18px;
     position: absolute;
     color: #2B455C;
 }
 
-.money-box {
+/* .money-box {
     position: absolute;
     width: 100%;
     height: 83px;
     left: 0px;
     top: 414px;
     background: #8BA3B8;
-}
+} */
 
 .line3 {
     position: absolute;
@@ -131,9 +152,17 @@
     background: #2B455C;
 }
 
-.money-box>h3 {
-    margin-top: 6px;
+.menu-h3.logout>h3:hover {
+    color: #33526D;
 }
+.menu-h3.logout>h3:active {
+    color: #23384B;
+    transform: translateY(1px) translateX(1px);
+}
+
+/* .money-box>h3 {
+    margin-top: 6px;
+} */
 
 
 @media all and (min-width: 768px) {
