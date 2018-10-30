@@ -270,9 +270,9 @@ this.top.scrollTo({
                 height: '100vh'
             }}>
                 <div className="menu-enter nb">
-                    <img onClick={this.scrollTop} src={up} alt="scroll up"
+                    <img className="up" onClick={this.scrollTop} src={up} alt="scroll up"
                     style={{position: "absolute", zIndex: '10', left: '18%', top: '2px', height: '18px', cursor: 'pointer'}}/>
-                    <img onClick={this.scrollDown} src={down} alt="scroll down"
+                    <img className="down" onClick={this.scrollDown} src={down} alt="scroll down"
                     style={{position: "absolute", zIndex: '10', left: '23%', top: '26px', height: '18px', cursor: 'pointer'}} />
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img className="open-menu" src={open} onClick={this.enterMenu} alt="enter-menu"/>

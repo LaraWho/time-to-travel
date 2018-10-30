@@ -73,6 +73,9 @@ class Menu extends Component {
         
         return(
             <div className="menu-bg">
+                    <div className="logout">
+                        <h3 className="logout-btn" onClick={this.logout}>LOGOUT</h3>
+                    </div>
                 <div className="menu-exit">
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={close} onClick={this.props.history.goBack} alt="close menu"/>
@@ -88,7 +91,7 @@ class Menu extends Component {
                     
                     <div className="menu-note menu">
                         <div className="line2 menu"></div>
-                        <h3>QUICK NOTE</h3>
+                        <h3 style={{paddingTop: '15px'}}>QUICK NOTE</h3>
                         <input type="text" placeholder="COUNTRY"
                         onChange={this.handleAddLoc}/>
                         <input type="text" placeholder="LOCATION"
@@ -99,10 +102,7 @@ class Menu extends Component {
                     </div>
                 </div>
 
-                    <div className="menu-h3 logout">
-                        <div className="line logout"></div>
-                        <h3 onClick={this.logout}>LOGOUT</h3>
-                    </div>
+                    
 
                 </div>
                 

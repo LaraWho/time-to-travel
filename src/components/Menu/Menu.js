@@ -47,6 +47,9 @@ class Menu extends Component {
         
         return(
             <div className="menu-bg">
+                    <div className="logout">
+                        <h3 className="logout-btn" onClick={this.logout}>LOGOUT</h3>
+                    </div>
                 <div className="menu-exit">
                     <p onClick={this.toLanding}>TIME TO<br />TRAVEL</p>
                     <img src={close} onClick={this.props.history.goBack} alt="close menu"/>
@@ -60,10 +63,7 @@ class Menu extends Component {
                     
                     <AddNew history={this.props.history} name={this.props.name} country={this.props.country} photo={this.props.photo}/>
 
-                    <div className="menu-h3 logout">
-                        <div className="line logout"></div>
-                        <h3 onClick={this.logout}>LOGOUT</h3>
-                    </div>
+                   
 
                 </div>
                 

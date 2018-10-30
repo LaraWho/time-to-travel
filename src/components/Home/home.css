@@ -25,7 +25,8 @@
     justify-content: center;
 }
 .home-tardis-box>p:hover {
-    transform: scale(1.04);
+    transform: scale(1.1); 
+    transition: 300ms linear all;
 }
 
 .home-tardis {

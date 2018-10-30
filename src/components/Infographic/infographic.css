@@ -1,5 +1,6 @@
 .back-btn:hover {
-    transform: scale(1.04);
+    transform: scale(1.1);  
+    transition: 300ms linear all;
 }
 .info-g-bg {
     background-color: #6F8EA9; 
@@ -134,4 +135,17 @@
     } 
 
 
+}
+
+@media all and (min-width: 1300px) {
+.title {
+    left: 30%;
+}
+.tardis {
+    height: 65%;
+}
+.three {
+    right: 18%;
+    top: 160px;
+}
 }

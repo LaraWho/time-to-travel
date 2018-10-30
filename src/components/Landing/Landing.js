@@ -99,7 +99,7 @@ class Landing extends Component {
                         <img className="question-mark" src={question} alt=""/>
                     </div>
 
-                        <div>
+                        <div className="tardis-anim-box" style={{width: '400px'}}>
                             <img className="landing-tardis" src={tardisCutout} alt="TARDIS"/>
                             <img className="door1" src={door1} alt="TARDIS"/>
                             <img className="door2" src={door2} alt="TARDIS"/>

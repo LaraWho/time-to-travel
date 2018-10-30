@@ -17,14 +17,14 @@
     width: 100%;
     background-color: #8BA3B8;
     margin-top: 10px;
-    height: 358px;
+    height: 400px;
 }
 
 .line2 {
     position: absolute;
     background-color: #2B455C;
     width: 5px;
-    height: 358px;
+    height: 400px;
     left: 0;
 }
 
@@ -51,10 +51,13 @@
     cursor: pointer;
 }
 .menu-exit>p:hover {
-    transform: scale(1.04);    
+     transform: scale(1.1);  
+     transition: 300ms linear all;   
+
 }
 .menu-exit>img:hover {
-    transform: scale(1.04);    
+    transform: scale(1.1);  
+    transition: 300ms linear all;   
 }
 
 .menu-h3 {
@@ -104,8 +107,8 @@
     padding: 5px 5px;    
     margin-top: 6px;
     width: 75%;
-    height: 120px;
-    margin-bottom: 15px;
+    height: 180px;
+    margin-bottom: 10px;
 }
 
 .menu-save {
@@ -129,9 +132,16 @@
     transform: translateY(1px) translateX(1px);
 }
 
-.menu-h3.logout {
-    bottom: 10px;
+.logout {
+    top: 30px;
+    left: 25px;
     position: absolute;
+}
+
+.logout-btn {
+    font-family: 'Futura';
+    font-size: 14px;
+    line-height: 20px;
     color: #2B455C;
 }
 
@@ -144,13 +154,13 @@
     background: #8BA3B8;
 } */
 
-.line3 {
+/* .line3 {
     position: absolute;
     width: 5px;
     height: 83px;
     left: 0px;
     background: #2B455C;
-}
+} */
 
 .menu-h3.logout>h3:hover {
     color: #33526D;
@@ -195,14 +205,45 @@
     }
 
     .menu-note {
-        height: 585px;
+        height: 595px;
 
     }
     .line2 {
-        height: 585px;
+        height: 595px;
     }
 
     .menu-h3.logout {
         bottom: 8px;
     }
+
+.menu-note>textarea {
+    height: 350px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+.menu-note>input {
+    margin-top: 8px;
+}
+
+.menu-exit {
+    padding-right: 40px;
+}
+
+.menu-exit>p {
+    font-size: 24px;
+    line-height: 26px;
+}
+
+.menu-exit>img {
+    height: 50px;
+}
+
+.logout-btn {
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 24px;
+}
+
+
 }

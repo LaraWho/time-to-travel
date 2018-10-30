@@ -209,10 +209,21 @@ margin-bottom: 6px;
 }
 
 .menu-enter.nb>img:hover {
-    transform: scale(1.04);    
+    transform: scale(1.1);    
+    transition: 300ms linear all;
 }
 .menu-enter.nb>p:hover {
-    transform: scale(1.04);    
+    transform: scale(1.1);   
+    transition: 300ms linear all;
+}
+
+.menu-enter.nb>img.up:hover {
+    transform: scale(1.5);
+    transition: 300ms linear all;
+}
+.menu-enter.nb>img.down:hover {
+    transform: scale(1.5);
+    transition: 300ms linear all;
 }
 
 @media all and (min-width: 920px) {
@@ -220,10 +231,94 @@ margin-bottom: 6px;
 
 .intro-text {
     margin: auto;
-    margin-bottom: -396px;
+    margin-bottom: -397px;
 }
 .onenote-bg {
     top: -550px;
     
 }
+}
+
+@media all and (min-width: 920px){
+
+    .menu-enter.nb {
+        padding: 15px;
+    }
+
+    .menu-enter.nb>p {
+        font-size: 24px;
+        line-height: 26px;
+    }
+    .menu-enter.nb>img {
+        height: 50px;
+        padding-right: 40px;
+
+    }
+    .menu-enter.nb>img.up {
+        padding: 12px;
+        height: 30px !important;
+        left: 120px !important;
+    }
+
+    .menu-enter.nb>img.down {
+        padding: 18px;
+        height: 30px !important;
+        left: 180px !important;
+        top: 22px !important;
+    }
+    .intro-text {
+        margin: auto;
+        margin-bottom: -451px;
+        top: 158px;
+        padding: 50px;
+        height: 350px;
+        width: 365px;
+    }
+#filter {
+    left: 311px;
+    bottom: 20px;
+    width: 400px;
+}
+
+.onenote-bg {
+    top: -650px !important;
+    width: 580px;
+    height: 555px;
+}
+
+.note {
+    width: 510px;
+    height: 500px;
+}
+.delete-note {
+    margin-right: 34px;
+}
+.note-inputs2 {
+    width: 400px;
+}
+.note-inputs {
+    width: 400px;
+}
+.note-edit {
+    width: 400px;
+}
+.note-save {
+    width: 400px;
+}
+
+.note-photo {
+    height: 265px;
+}
+
+.note-text {
+    width: 400px;
+}
+
+}
+
+@media all and (min-width: 1300px) {
+    #filter {
+        left: 482px;
+    }
+        
 }
