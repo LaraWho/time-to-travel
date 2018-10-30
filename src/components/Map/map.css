@@ -52,6 +52,15 @@
     border-radius: 20px;
     height: 40px;
 }
+/* 
+.arrow:hover {
+    transform: scale(1.04);    
+    cursor: pointer;
+}
+.left-arrow:hover {
+    transform: scale(1.04);    
+    cursor: pointer;
+} */
 
 .left-arrow {
     position: absolute;
@@ -199,28 +208,68 @@
     .menu-enter.map{
         padding: 50px;
     }
+    .menu-enter.map>p {
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .menu-enter.map>img {
+        height: 50px;
+        margin-top: 0px;
+    }
 
     .photo-info>p {
         padding: 50px;
+        font-size: 24px;
     }
 
     .link {
-        bottom: 50px;
+        bottom: 5%;
         left: 50px;
+        font-size: 24px;
     }
     .photographer {
         left: 50px;
-        bottom: 80px;
+        bottom: 18%;
+        font-size: 24px;
     }
 
     .map-question-btn-box {
         position: absolute;
         right: 50px;
-        bottom: 50px;
+        bottom: 5%;
         padding: 0px;
     }
+    .map-random-btn-text {
+        font-size: 28px;
+        line-height: 32px;
+        padding-top: 80px;
+        /* text-shadow: 5px 5px 15px #003B6F; */
+    
+        }
+        
+        .map-question-mark {
+            padding-left: 150px;
+            height: 180px;
+        }
 
     .arrow {
-        right: 50px;
+        visibility: hidden;
+    }
+    .city {
+        margin-top: 20px;
+        /* text-shadow: 1px 1px 5px #021D34; */
+    }
+    
+    .country {
+        top: 30px;
+        /* text-shadow: 1px 1px 5px #021D34; */
+    }
+    
+    .name {
+        top: 60px;
+        /* text-shadow: 1px 1px 5px #021D34; */
+    }
+    .menu-save {
+        display: block;
     }
 }

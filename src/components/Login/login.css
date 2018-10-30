@@ -100,7 +100,12 @@
 
 @media all and (min-width: 920px) {
     .login-heading {
-        padding-top: 8%;
+        padding-top: 10%;
+        font-size: 60px;
+    }
+    .login-box {
+        top: 8%;
+        padding: 30px;
     }
 
 

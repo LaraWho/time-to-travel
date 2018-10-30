@@ -51,7 +51,9 @@ class Landing extends Component {
     toMap = () => {
         document.querySelector('.info-btn').classList.add('leave');
         document.querySelector('.landing-enter').classList.add('leave');
-        document.querySelector('.question-btn-box').classList.remove('appear');
+        // document.querySelector('.question-btn-box').classList.remove('appear');
+        document.querySelector('.question-btn-box').classList.add('leave');
+
         document.querySelector('.door1').classList.add('door1Open');
         document.querySelector('.door2').classList.add('door2Open');
         document.querySelector('.landing-tardis.appear').classList.add('scale');

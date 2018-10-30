@@ -17,14 +17,14 @@
     width: 100%;
     background-color: #8BA3B8;
     margin-top: 10px;
-    height: 350px;
+    height: 358px;
 }
 
 .line2 {
     position: absolute;
     background-color: #2B455C;
     width: 5px;
-    height: 350px;
+    height: 358px;
     left: 0;
 }
 
@@ -130,7 +130,7 @@
 }
 
 .menu-h3.logout {
-    bottom: 18px;
+    bottom: 10px;
     position: absolute;
     color: #2B455C;
 }
@@ -189,11 +189,20 @@
 }
 
 @media all and (min-width: 920px) {
+
+    .menu-note>h3 {
+    padding-top: 10px;
+    }
+
     .menu-note {
-        height: 515px;
+        height: 585px;
 
     }
     .line2 {
-        height: 515px;
+        height: 585px;
+    }
+
+    .menu-h3.logout {
+        bottom: 8px;
     }
 }

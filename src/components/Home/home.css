@@ -72,16 +72,37 @@
         top: 190px;
         left: 80px;
         width: 160px;
-    
+    }
+    .home-tardis-box>p {
+        bottom: 20px !important;
     }
 }
 
 @media all and (min-width: 920px) {
 
 .button>img {
-    top: 60px;
+    top: 90px;
     left: 40px;
     width: 160px;
-
 }
+.home-tardis-box>p {
+    bottom: 3% !important;
+    font-size: 22px !important;
+}
+.home-tardis {
+    height: 90%;
+    margin-top: 30px;
+}
+.home-heading h1 {
+    font-size: 48px;
+}
+.button>img:hover {
+    transform: rotate(-25deg)
+                translateY(-35px)
+                translateX(10px) ; 
+    transition: 300ms linear all;
+}
+
+
+
 }
