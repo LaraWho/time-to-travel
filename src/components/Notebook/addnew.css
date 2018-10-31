@@ -18,28 +18,28 @@
     height: 400px;
 }
 .menu-note.menu>input {
-    width: 45%;
+    width: 57%;
 }
 .menu-note.menu>textarea {
-    width: 45%;
+    width: 57%;
 }
 
 .menu-save {
-    width: 45%;
+    width: 59%;
 
 }
 }
 
-@media all and (min-width: 1400px) {
+@media all and (min-width: 1366px) {
     .menu-note.menu>input {
-        width: 45%;
+        width: 43%;
     }
     .menu-note.menu>textarea {
-        width: 45%;
+        width: 43%;
     }
 
     .menu-save {
-        width: 45%;
+        width: 44%;
 
     }
 

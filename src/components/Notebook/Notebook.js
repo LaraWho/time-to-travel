@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import open from '../../assets/menu-open.svg';
 import down from './down.svg';
 import up from './up.svg';
+import tardis from '../best-tardis-full.svg';
 import './notebook.css';
 import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
@@ -20,7 +21,10 @@ class Notebook extends Component {
             DWquote: '',
             sourceQ: '',
             input: '',
-            unchangedNotes: []
+            unchangedNotes: [],
+            count: 0,
+            page: 1,
+            reqComplete: false
         }
     }
 
@@ -41,8 +45,12 @@ class Notebook extends Component {
                     })
                     this.setState({
                         allNotes: res.data,
-                        unchangedNotes: res.data
+                        unchangedNotes: res.data,
+                        reqComplete: true
                     })
+                    this.countNotes()
+        }).catch((err) => {
+            console.log(err)
         })
     }
 
@@ -55,6 +63,33 @@ class Notebook extends Component {
             })
         })
             
+    }
+
+    countNotes = () => {
+        axios.get(`/allnotes/count`)
+        .then(res => {
+            this.setState({
+                count: Math.ceil(res.data[0].count / 8)
+            })
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
+    nextPage = (page) => {
+        let offset = page * 8 - 8
+
+        axios.get(`/allnotes/${offset}`)
+        .then(res => {
+            this.setState({
+                allNotes: res.data,
+            })
+            this.setState({
+                page: page
+                }) 
+            }).catch((err) => {
+                console.log(err)
+            })
     }
 
     enterMenu = () => {
@@ -165,6 +200,7 @@ class Notebook extends Component {
     this.setState({
         allNotes: this.state.unchangedNotes
     })
+    
 }
 this.top.scrollTo({
     'behavior': 'smooth',
@@ -184,9 +220,25 @@ this.top.scrollTo({
             'behavior': 'smooth',
         })
     }
+
+    toMap = () => {
+        document.querySelector('.note-tardis').classList.add('leave');
+        // document.querySelector('.note-tardis').classList.remove('appear');
+
+        setTimeout(() => {
+            this.props.history.push('/map');
+        }, 1000)
+    }
      
 
     render() {
+        // console.log(this.state.allNotes)
+        // console.log(this.state.page)
+
+        let countedPages = []
+        for (let i = 1; i <= this.state.count; i++) {
+            countedPages.push(<button className="page-btns" key={i} onClick={e => this.nextPage(i)}>{i}</button>);
+          }
                
         let mappedNotes = this.state.allNotes.map((note, i) => {
             // console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
@@ -290,8 +342,25 @@ this.top.scrollTo({
                 <div>
                     <input type="text" id="filter" placeholder="SEARCH NOTES"
                     onKeyUp={this.handleFilter}/>
-                    {mappedNotes}
 
+                     {
+
+                        !this.state.allNotes[0] && this.state.reqComplete ?
+                        <div>
+                            <img className="note-tardis" onClick={this.toMap} src={tardis} alt="TARDIS"/>
+                            <p className="no-matches-text">Sorry, nothing to see! <br /> Don't worry, the TARDIS is here to take you somewhere nice</p>
+                            <NotebookBackground />
+                        </div>
+
+                        :
+
+                        <div>
+                            { mappedNotes }
+                        </div>
+
+                        }
+
+                    {countedPages}
                 </div>
                     <div ref={(el) => (this.bottom = el)}></div>
             </div>

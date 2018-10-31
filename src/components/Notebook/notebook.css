@@ -1,3 +1,45 @@
+.no-matches-text {
+    font-family: 'Futura';
+    position: relative;
+    top: 105px;
+    left: 30px;
+    color: #FFFFFF;
+    font-size: 18px;
+    z-index: 2;
+    height: 350px;
+    width: 220px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(187, 93, 74, 0.774);
+    text-align: center;
+    margin-bottom: -391px;
+    line-height: 26px;
+}
+
+.note-tardis {
+    height: 42%;
+    position: absolute;
+    top: 240px;
+    left: 100px;
+    z-index: 9;
+    cursor: pointer;
+    /* opacity: 0; */
+    transition: all 1s ease;
+    animation: floating 6s 10s infinite alternate ease-in-out;
+}
+
+.appear {
+    opacity: 1;
+}
+
+.leave {
+    opacity: 0;
+    } 
+
+.no-matches-text>p {
+    padding-top: 20px;
+}
+
 .menu-enter.nb {
     position: absolute;
     z-index: 5;
@@ -216,15 +258,21 @@ margin-bottom: 6px;
 
 @media all and (min-width: 325px) and (max-width: 920px){
 
-/* 
-.intro-text {
-    margin: auto;
-    margin-bottom: -397px;
+.no-matches-text {
+    top: 220px;
+    left: 155px;
+    height: 620px;
+    width: 420px;
+    margin-bottom: -660px;
+    line-height: 30px;
+    font-size: 24px;
 }
-.onenote-bg {
-    top: -550px;
-    
-} */
+
+.note-tardis {
+    height: 48%;
+    top: 345px;
+    left: 256px;
+}
 
 .menu-enter.nb {
     padding: 15px;
@@ -255,14 +303,14 @@ margin-bottom: 6px;
     font-size: 24px;
     margin: auto;
     margin-bottom: -451px;
-    top: 158px;
+    top: 280px;
     padding: 50px;
     height: 350px;
     width: 365px;
 }
 #filter {
 left: 180px;
-bottom: 20px;
+bottom: 35px;
 width: 400px;
 }
 
@@ -311,6 +359,22 @@ font-size: 24px;
 
 @media all and (min-width: 920px){
 
+    .no-matches-text {
+        top: 130px;
+        left: 256px;
+        height: 495px;
+        width: 500px;
+        margin-bottom: -536px;
+        line-height: 30px;
+        font-size: 24px;
+    }
+    
+    .note-tardis {
+        height: 48%;
+        top: 258px;
+        left: 418px;
+    }
+
     .menu-enter.nb {
         padding: 15px;
     }
@@ -346,7 +410,7 @@ font-size: 24px;
         font-size: 24px;
     }
 #filter {
-    left: 330px;
+    left: 311px;
     bottom: 20px;
     width: 400px;
 }
@@ -389,7 +453,20 @@ font-size: 24px;
 
 @media all and (min-width: 1300px) {
     #filter {
-        left: 500px;
+        left: 482px;
+    }
+    .no-matches-text {
+        left: 446px;
+    }
+    .note-tardis {
+        left: 600px;
     }
         
+}
+
+
+@media all and (min-width: 1380px) {
+    #filter {
+        left: 519px;
+    }
 }
