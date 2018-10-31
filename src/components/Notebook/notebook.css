@@ -187,7 +187,6 @@ margin-bottom: 6px;
     height: 24px;
     font-family: Futura;
     font-weight: bold;
-    line-height: 22px;
     font-size: 18px;
     color: #7F1816;
     margin-left: auto;
@@ -226,9 +225,9 @@ margin-bottom: 6px;
     transition: 300ms linear all;
 }
 
-@media all and (min-width: 920px) {
+@media all and (min-width: 325px) and (max-width: 920px){
 
-
+/* 
 .intro-text {
     margin: auto;
     margin-bottom: -397px;
@@ -236,6 +235,88 @@ margin-bottom: 6px;
 .onenote-bg {
     top: -550px;
     
+} */
+
+.menu-enter.nb {
+    padding: 15px;
+}
+
+.menu-enter.nb>p {
+    font-size: 24px;
+    line-height: 26px;
+}
+.menu-enter.nb>img {
+    height: 50px;
+    padding-right: 40px;
+
+}
+.menu-enter.nb>img.up {
+    padding: 12px;
+    height: 30px !important;
+    left: 120px !important;
+}
+
+.menu-enter.nb>img.down {
+    padding: 18px;
+    height: 30px !important;
+    left: 180px !important;
+    top: 22px !important;
+}
+.intro-text {
+    font-size: 24px;
+    margin: auto;
+    margin-bottom: -451px;
+    top: 158px;
+    padding: 50px;
+    height: 350px;
+    width: 365px;
+}
+#filter {
+left: 180px;
+bottom: 20px;
+width: 400px;
+}
+
+.onenote-bg {
+top: -750px !important;
+width: 580px;
+height: 555px;
+}
+
+.note {
+width: 510px;
+height: 500px;
+}
+.delete-note {
+margin-right: 34px;
+width: 155px;
+font-size: 22px;
+
+}
+.note-inputs2 {
+width: 400px;
+font-size: 24px;
+}
+.note-inputs {
+width: 400px;
+font-size: 24px;
+
+}
+.note-edit {
+width: 400px;
+}
+.note-save {
+width: 400px;
+}
+
+.note-photo {
+height: 265px;
+}
+
+.note-text {
+width: 400px;
+font-size: 24px;
+
 }
 }
 
@@ -273,9 +354,10 @@ margin-bottom: 6px;
         padding: 50px;
         height: 350px;
         width: 365px;
+        font-size: 24px;
     }
 #filter {
-    left: 311px;
+    left: 330px;
     bottom: 20px;
     width: 400px;
 }
@@ -318,7 +400,7 @@ margin-bottom: 6px;
 
 @media all and (min-width: 1300px) {
     #filter {
-        left: 482px;
+        left: 500px;
     }
         
 }

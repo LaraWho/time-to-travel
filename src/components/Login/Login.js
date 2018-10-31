@@ -71,7 +71,7 @@ class Login extends Component {
                         params={particleConfig}                        
                     />
 
-                    <Media query="(min-width: 920px)">
+                    <Media query="(min-width: 420px)">
                             {matches =>
                             matches ? (
                             <div className="login-heading">

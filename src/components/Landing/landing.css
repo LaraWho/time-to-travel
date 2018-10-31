@@ -79,12 +79,12 @@
     position: absolute;
     padding: 20px;
     z-index: 3;
-    margin-top: 100%;
-    background-color: rgba(5, 99, 182, 0.4);
+    margin-top: 75%;
+    /* background-color: rgba(5, 99, 182, 0.1); */
     height: 155px;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 1px 1px 1px #021D34;
+    /* box-shadow: 1px 1px 1px #021D34; */
     opacity: 0;
     transition: all .6s ease;
 }
@@ -180,7 +180,7 @@
     position: absolute;
     color: #ffffff;
     font-family: 'Futura';
-    padding-top: 55px;
+    padding-top: 53px;
     font-size: 24px;
     text-align: right;
     line-height: 33px;
@@ -188,12 +188,12 @@
 
 .question-mark {
     position: relative;
-    padding-left: 120px;
+    padding-left: 130px;
     z-index: 2;
     height: 150px;
 }
 
-@media all and (min-width: 320px) and (max-width: 490px) {
+/* @media all and (min-width: 320px) and (max-width: 490px) {
     .question-btn-box {
         margin-top: 75%;
     }
@@ -209,18 +209,54 @@
     .question-btn-box {
         margin-top: 55%;
     }
-}
+} */
 
-@media all and (min-width: 690px) and (max-width: 790px) {
+@media all and (min-width: 325px) and (max-width: 920px) {
     .question-btn-box {
-        margin-top: 45%;
+        position: relative;
+        margin-top: 75%;
+        margin-left: 480px;
+        height: 160px;
+        width: 215px;
+        padding: 30px;
+    }
+    .landing-tardis {
+        right: 155px;
+        bottom: 60px;
+    }
+
+    .door2 {
+        height: 590px;
+        right: 188px;
+        top: 329px;
+    }
+    .door1 {
+        height: 590px;
+        left: 216px;
+        top: 329px; 
+    }
+    .landing-enter {
+        padding: 30px;
+    }
+    .landing-enter>p {
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .landing-enter>img {
+        height: 50px;
+    }
+    
+    .info-btn {
+        bottom: 3% !important;
+        font-size: 22px !important;
+        margin-left: 10px;    
     }
 }
 @media all and (min-width: 920px) {
 
 .question-btn-box {
     margin-top: 30%;
-    margin-left: 4px;
+    margin-left: 300px;
     height: 160px;
     width: 215px;
     padding: 30px;
