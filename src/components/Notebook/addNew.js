@@ -67,8 +67,6 @@ class Menu extends Component {
                         onChange={this.handleAddLoc} disabled={true}/>
                         <input type="text" placeholder="THOUGHTS..."
                         onChange={this.handleAddTitle}/>
-                        {/* <textarea cols="20" rows="10" placeholder="THOUGHTS..."
-                        onChange={this.handleAddContent}></textarea> */}
                         <img className="addnew-photo" src={this.state.photo} alt=""/>
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>
                     </div>

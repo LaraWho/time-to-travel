@@ -50,15 +50,10 @@ html {
     left: 6%;
     border-radius: 20px;
     width: 280px;
-    /* background-color: rgba(187, 93, 74, 0.8); */
-    /* color: #FFFFFF; */
     color: #021D34;
 }
 #filter:focus {
-    /* color: #FFFFFF; */
     background-color: rgba(255, 255, 255, 0.9);
-
-    /* background-color: #C46352; */
 }
 
 .onenote-bg {
@@ -66,15 +61,11 @@ width: 275px;
 height: 445px;
 margin: 0 auto;
 position: relative;
-/* margin-bottom: 20px; */
 background: #C46352;
 border-radius: 20px;
 padding-top: 15px;
-/* position: absolute; */
-    /* left: 7%; */
 z-index: 5;
 top: -490px !important;
-/* top: 82px; */
 }
 
 .intro-box {
@@ -118,8 +109,6 @@ margin: 5px auto;
 padding-top: 8px;
 width: 235px;
 height: 388px;
-
-/* height: 375px; */
 background: #BB5C4A;
 border-radius: 20px;
 }

@@ -324,11 +324,32 @@
     }
     .question-btn-box {
         margin-top: 22%;
-        margin-left: -10px;
+        margin-left: 180px;
         /* margin-right: 5px; */
         height: 160px;
         width: 215px;
         padding: 30px;
+    }
+
+}
+
+@media all and (min-width: 1400px) {
+    .landing-tardis {
+        margin-right: 36%;
+        margin-bottom: 4%;
+    }
+    .door2 {
+        height: 424px;
+        right: 584px;
+        top: 186px;        
+    }
+    .door1 {
+        height: 424px;
+        left: 596px;
+        top: 185px;
+    }
+    .question-btn-box {
+        margin-left: 200px;
     }
 
 }

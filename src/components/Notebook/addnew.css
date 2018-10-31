@@ -17,6 +17,39 @@
 .addnew-photo {
     height: 400px;
 }
+.menu-note.menu>input {
+    width: 45%;
+}
+.menu-note.menu>textarea {
+    width: 45%;
+}
+
+.menu-save {
+    width: 45%;
+
+}
+}
+
+@media all and (min-width: 1400px) {
+    .menu-note.menu>input {
+        width: 45%;
+    }
+    .menu-note.menu>textarea {
+        width: 45%;
+    }
+
+    .menu-save {
+        width: 45%;
+
+    }
+
+    .menu-note.menu {
+        height: 650px;
+    }
+    .line2 {
+        height: 650px;
+
+    }
 }
 
 
