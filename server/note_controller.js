@@ -1,5 +1,18 @@
+const axios = require('axios');
+
 module.exports = {
     
+
+getQuotes: (req, res) => {
+        axios.get('http://api.chrisvalleskey.com/fillerama/get.php?count=1&format=json&show=doctorwho')
+        .then((quote) => {
+            res.status(200).send(quote.data)
+        }).catch( err => {
+            res.sendStatus(401)
+            console.log(err)
+        })    
+},
+
 create: (req, res) => {
     const dbInstance = req.app.get('db')
     const { user_id } = req.session.user

@@ -53,7 +53,7 @@ class Notebook extends Component {
     }
 
     getQuote = () => {
-        axios.get('http://api.chrisvalleskey.com/fillerama/get.php?count=1&format=json&show=doctorwho')
+        axios.get('/api/getQuote')
         .then(res => {
             this.setState({
                 DWquote: res.data.db[0].quote,
