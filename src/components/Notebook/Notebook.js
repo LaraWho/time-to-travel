@@ -22,8 +22,6 @@ class Notebook extends Component {
             sourceQ: '',
             input: '',
             unchangedNotes: [],
-            count: 0,
-            page: 1,
             reqComplete: false
         }
     }
@@ -48,7 +46,6 @@ class Notebook extends Component {
                         unchangedNotes: res.data,
                         reqComplete: true
                     })
-                    this.countNotes()
         }).catch((err) => {
             console.log(err)
         })
@@ -63,33 +60,6 @@ class Notebook extends Component {
             })
         })
             
-    }
-
-    countNotes = () => {
-        axios.get(`/allnotes/count`)
-        .then(res => {
-            this.setState({
-                count: Math.ceil(res.data[0].count / 8)
-            })
-        }).catch((err) => {
-            console.log(err)
-        })
-    }
-
-    nextPage = (page) => {
-        let offset = page * 8 - 8
-
-        axios.get(`/allnotes/${offset}`)
-        .then(res => {
-            this.setState({
-                allNotes: res.data,
-            })
-            this.setState({
-                page: page
-                }) 
-            }).catch((err) => {
-                console.log(err)
-            })
     }
 
     enterMenu = () => {
@@ -234,12 +204,7 @@ this.top.scrollTo({
     render() {
         // console.log(this.state.allNotes)
         // console.log(this.state.page)
-
-        let countedPages = []
-        for (let i = 1; i <= this.state.count; i++) {
-            countedPages.push(<button className="page-btns" key={i} onClick={e => this.nextPage(i)}>{i}</button>);
-          }
-               
+  
         let mappedNotes = this.state.allNotes.map((note, i) => {
             // console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
             //  console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
@@ -360,7 +325,6 @@ this.top.scrollTo({
 
                         }
 
-                    {countedPages}
                 </div>
                     <div ref={(el) => (this.bottom = el)}></div>
             </div>

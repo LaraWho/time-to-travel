@@ -57,8 +57,6 @@ app.post('/allnotes/addphoto', note_cntrl.addphoto);
 app.get('/allnotes', note_cntrl.read);
 app.patch('/allnotes/:note_id', note_cntrl.update);
 app.delete('/allnotes/:note_id', note_cntrl.delete);
-app.get('/allnotes/:page', note_cntrl.limitView);
-app.get('/allnotes/count', note_cntrl.countNotes);
 
 
 app.listen(SERVER_PORT, ( ) => {

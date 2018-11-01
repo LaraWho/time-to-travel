@@ -68,31 +68,6 @@ delete: (req, res) => {
         res.sendStatus(500)
         console.log(err)
     } )
-},
-
-limitView: (req, res) => {
-    const dbInstance = req.app.get('db');
-    const { user_id } = req.session.user;
-    let { page } = req.params;
-
-    dbInstance.limit_view([user_id, page])
-        .then(response => {
-            res.status(200).send(response) 
-    }).catch( err => {
-        console.log(err)
-    }) 
-},
-
-countNotes: (req, res) => {
-    const dbInstance = req.app.get('db');
-    const { user_id } = req.session.user;
-
-        dbInstance.count_notes([user_id])
-        .then(response => {
-            res.status(200).send(response) 
-    }).catch( err => {
-        console.log(err)
-    }) 
 }
 
 }

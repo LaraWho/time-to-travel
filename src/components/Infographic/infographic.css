@@ -47,49 +47,43 @@
     opacity: 1;
 }
 
-@media all and (min-width: 420px) and (max-width: 920px) {
+@media all and (min-width: 325px) and (max-width: 920px) {
 
 .back-btn {
     bottom: 58px !important;
     left: 124px !important;
+    font-size: 24px;
 }
 
 .title {
     position: absolute;
-    height: 20%;
-    left: 20%;
+    height: 16%;
+    left: 16%;
 }
 .one {
     position: absolute;
-    /* right: 160px; */
-    left: 50px;
-    top: 290px;
-    /* width: 25%; */
-    height: 22%;
+    right: 140px;
+    top: 171px;
+    height: 20%;
 }
 
 .two {
     position: relative;
-    left: 36%;
-    top: 200px;
+    left: 100px;
+    top: 210px;
     height: 66%;
-
 }
 .three {
     position: absolute;
-    right: 80px;
-    top: 200px;
-    /* width: 20%; */
-    height: 22%;
-
+    right: 65px;
+    top: 353px;
+    height: 20%;
 }
 .tardis {
-    position: relative; 
-    /* width: 22%; */
-    top: 275px;
-    left: 355px;
+    position: relative;
+    top: 361px;
+    left: 148px;
     height: 50%;
-
 } 
 
 }
@@ -99,7 +93,8 @@
 @media all and (min-width: 920px) {
     .back-btn {
         bottom: 50px !important;
-        left: 20% !important;
+        left: 14% !important;
+        font-size: 24px;
     }
     
     .title {
@@ -109,29 +104,27 @@
     }
     .one {
         position: absolute;
-        /* right: 160px; */
+        height: 23%; 
         left: 10%;
-        top: 260px;
-        height: 23%;    
-}
+        top: 155px;  
+    }
     
     .two {
         position: relative;
         left: 36%;
-        top: 180px;
-        height: 70%;
+        top: 161px;
+        height: 75%;
     }
     .three {
         position: absolute;
-        right: 20%;
-        top: 180px;
+        right: 5%;
+        top: 125px;
         height: 22%
     }
     .tardis {
-        position: relative; 
-        top: 30%;
-        left: 40%;
-        height: 55%;
+        top: 26%;
+        height: 70%;
+        left: 38%;
     } 
 
 

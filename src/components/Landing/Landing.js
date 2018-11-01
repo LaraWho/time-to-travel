@@ -25,17 +25,17 @@ class Landing extends Component {
 
     fancyLoad = () => {
         console.time('image-load')
-        const tardis = document.querySelector('.landing-tardis')
-        const tardisBox = document.querySelector('.landing-tardis-box')
+        // const tardisBox = document.querySelector('.landing-tardis-box')
+        const box = document.querySelector('.question-btn-box')
         const door1 = document.querySelector('.door1')
         const door2 = document.querySelector('.door2')
-        const box = document.querySelector('.question-btn-box')
+        const tardis = document.querySelector('.landing-tardis')
 
-        tardis.addEventListener('load', onLoad)
-        tardisBox.addEventListener('load', onLoad)
+        // tardisBox.addEventListener('load', onLoad)
         box.addEventListener('load', onLoad)
         door1.addEventListener('load', onLoad)
         door2.addEventListener('load', onLoad)
+        tardis.addEventListener('load', onLoad)
 
         function onLoad(){
             console.timeEnd('image-load')
@@ -43,7 +43,7 @@ class Landing extends Component {
             door1.classList.add('appear')
             door2.classList.add('appear')
             tardis.classList.add('appear')
-            tardisBox.classList.add('appear')
+            // tardisBox.classList.add('appear')
 
         }
     }
