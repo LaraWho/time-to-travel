@@ -44,7 +44,6 @@
 .login-btn {
     margin-top: 25px;
     height: 20px;
-    /* width: 210px; */
     background-color: #0563B6;
     padding: 10px;
     padding-bottom: 14px;
@@ -64,13 +63,11 @@
     margin: 20px 0px;
     padding: 10px;
     height: 20px;
-    /* width: 180px; */
 }
 
 .register-btn {
     margin-top: 10px;
     height: 20px;
-    /* width: 180px; */
     background-color: #012646;
     padding: 10px;
     padding-bottom: 14px;
@@ -90,7 +87,6 @@
     text-align: center;
     color: #ffffff;
     font-family: 'Futura';
-    /* font-weight: bold; */
     font-size: 48px;
     padding-top: 5%;
     line-height: 60px;
@@ -119,6 +115,15 @@
         padding: 30px;
     }
 
-
+    @media all and (min-width: 1300px) {
+        .login-heading {
+            padding-top: 6%;
+            font-size: 60px;
+        }
+        .login-box {
+            top: 5%;
+            padding: 30px;
+        }
+    }
 
 }
