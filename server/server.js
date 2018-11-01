@@ -3,7 +3,8 @@ axios = require('axios'),
 massive = require('massive'),
 session = require('express-session'),
 bodyParser = require('body-parser'),
-bcrypt = require('bcryptjs');
+bcrypt = require('bcryptjs'),
+path = require('path');
 
 require('dotenv').config();
 const app = express();
@@ -16,6 +17,7 @@ let {
 } = process.env
 
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, './../build')));
 
 const login_cntrl = require('./login_controller');
 const note_cntrl = require('./note_controller');
@@ -58,6 +60,9 @@ app.get('/allnotes', note_cntrl.read);
 app.patch('/allnotes/:note_id', note_cntrl.update);
 app.delete('/allnotes/:note_id', note_cntrl.delete);
 
+// app.get('*', (req, res)=>{
+//     res.sendFile(path.join(__dirname, '../build/index.html'));
+// });
 
 app.listen(SERVER_PORT, ( ) => {
     console.log(`Listening on port: ${SERVER_PORT}`)

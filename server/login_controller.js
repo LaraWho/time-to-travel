@@ -37,14 +37,10 @@ module.exports = {
         let transporter = nodemailer.createTransport({
             host: 'mail.gmx.com',
             port: 587,
-            // secure: false,
             auth: {
               user: 'larapotjewyd@gmx.com',
               pass: process.env.REACT_APP_PASSWORD
             },
-            // tls: {
-            //   rejectUnauthorized: false
-            // }
           });
           
           let HelperOptions = {
