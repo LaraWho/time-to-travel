@@ -8,6 +8,7 @@ import './notebookbackground.css';
 import NotebookBackground from './Notebookbackground';
 import axios from 'axios';
 import sweetie from 'sweetalert2';
+import { debounce } from 'lodash';
 
 class Notebook extends Component {
     constructor(props) {
@@ -157,7 +158,8 @@ class Notebook extends Component {
     handleFilter = (e) => {
         this.searchNotes(e.target.value)
     }
-    searchNotes = (query) => {
+
+    searchNotes = debounce((query) => {
         if(query) {
         this.setState({
             allNotes: this.state.allNotes.filter(response => {
@@ -166,17 +168,17 @@ class Notebook extends Component {
                     response.country.toLowerCase().includes(query.toLowerCase()) 
         })
     })
-} else {
-    this.setState({
-        allNotes: this.state.unchangedNotes
+    } else {
+        this.setState({
+            allNotes: this.state.unchangedNotes
+        })
+    }
+    this.top.scrollTo({
+        'behavior': 'smooth',
+        'top': window.innerHeight,
     })
-    
-}
-this.top.scrollTo({
-    'behavior': 'smooth',
-    'top': window.innerHeight,
-})
-}
+    }, 800)
+
 
     scrollTop = () => {
         this.top.scrollTo({

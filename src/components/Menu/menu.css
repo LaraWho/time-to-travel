@@ -159,13 +159,17 @@
 /* @media all and (min-width: 768px) { */
 
     .menu-note>textarea {
-        width: 55%;
+        width: 60%;
         height: 350px;
+    margin-top: 10px;
+
     }
 
     .menu-note>input {
-    width: 55%;
+    width: 60%;
     height: 40px;
+    margin-top: 10px;
+
     }
     .menu-note {
         height: 750px;
@@ -176,8 +180,10 @@
         height: 750px;
     }
     .menu-save {
-        width: 56%;
+        width: 62%;
         height: 40px;
+        margin-top: 10px;
+        display: block;
 
     }
     .menu-exit {

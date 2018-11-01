@@ -166,7 +166,23 @@
     transform: scale(1.10);            
     } */
 
-    @media all and (min-width: 500px) and (max-width: 920px) {
+    @media all and (min-width: 325px) and (max-width: 920px) {
+        p {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        .city {
+            margin-top: 20px;
+        }
+        
+        .country {
+            top: 40px;
+        }
+        
+        .name {
+            top: 80px;
+        }
 
     .photo {
        display: flex;
@@ -183,16 +199,29 @@
         left: 40px;
     }
     .photographer {
+        bottom: 120px;
         left: 40px;
-        bottom: 40px;
     }
     
     .map-question-btn-box {
-        top: 580px;
+        bottom: 30px;
         position: absolute;
         right: 20px;
     }
+.map-random-btn-text {
+    font-size: 24px;
+    line-height: 33px;
+    padding-top: 70px;
+}
 
+.map-question-mark {
+    height: 170px;
+    padding-left: 125px;
+}
+
+.menu-enter.map>img {
+    height: 50px;
+}
 
     .arrow {
         right: 40px;
