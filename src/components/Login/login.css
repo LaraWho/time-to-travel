@@ -24,6 +24,7 @@
 
 .username {
     margin: 2px 0px;
+    margin-top: 8px;
     color: #000814;
     height: 20px;
     width: 230px;
@@ -35,7 +36,7 @@
 
 .password {
     margin: 2px 0px;
-    margin-top: 5px;
+    margin-top: 8px;
     color: #000814;
     height: 20px;
     width: 230px;
@@ -47,7 +48,7 @@
 }
 
 .login-btn {
-    margin-top: 20px;
+    margin-top: 30px;
     height: 20px;
     background-color: #0563B6;
     padding: 10px;
@@ -65,7 +66,7 @@
 }
 
 .or-text {
-    margin: 20px 0px;
+    margin: 10px 0px;
     padding: 10px;
     height: 20px;
 }
