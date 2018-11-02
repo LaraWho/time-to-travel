@@ -1,12 +1,12 @@
 const axios = require('axios');
 const quotes = require('./quotes');
-const allquotes = quotes.quotes
+// const allquotes = quotes.quotes
 
 module.exports = {
     
 
 getQuotes: (req, res) => {
-        res.status(200).send(allquotes)
+        res.status(200).send(quotes.quotes)
 },
 
 create: (req, res) => {

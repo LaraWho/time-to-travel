@@ -326,7 +326,7 @@ class Notebook extends Component {
                      {
 
                         !this.state.allNotes[0] && this.state.reqComplete ?
-                        <div>
+                        <div style={{position: 'relative'}}>
                             <img className="note-tardis" onClick={this.toMap} src={tardis} alt="TARDIS"/>
                             <p className="no-matches-text">Sorry, nothing to see! <br /> Don't worry, the TARDIS is here to take you somewhere nice</p>
                             <NotebookBackground />
