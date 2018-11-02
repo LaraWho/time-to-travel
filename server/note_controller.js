@@ -1,16 +1,12 @@
 const axios = require('axios');
+const quotes = require('./quotes');
+const allquotes = quotes.quotes
 
 module.exports = {
     
 
 getQuotes: (req, res) => {
-        axios.get('http://api.chrisvalleskey.com/fillerama/get.php?count=1&format=json&show=doctorwho')
-        .then((quote) => {
-            res.status(200).send(quote.data)
-        }).catch( err => {
-            res.sendStatus(401)
-            console.log(err)
-        })    
+        res.status(200).send(allquotes)
 },
 
 create: (req, res) => {

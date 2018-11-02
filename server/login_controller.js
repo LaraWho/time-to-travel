@@ -31,10 +31,10 @@ module.exports = {
     },
 
     register: (req, res) => {
-        if (username.length && password.length >= 5) {
-
-        const dbInstance = req.app.get('db')
         let {username, password} = req.body;
+        if (username.length && password.length >= 5) {
+            
+        const dbInstance = req.app.get('db')
 
         let transporter = nodemailer.createTransport({
             host: 'mail.gmx.com',

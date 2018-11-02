@@ -54,7 +54,10 @@ class Login extends Component {
             setTimeout(() => {
             this.props.history.push('/landing');
             }, 100)
-        }).catch(err => console.log(err))
+        }).catch(() => sweetie({
+            title: "Your password needs to be longer than that!"
+            // text: "5 character minimum here"
+        }))
     }
 
     render() {
@@ -92,12 +95,12 @@ class Login extends Component {
                         <div >
                             <input className="username" type="text" placeholder="EMAIL"
                             onChange={this.handleUsername} />
-                            <span style={{fontSize: '12px'}}>please enter your email address</span>
+                            <p style={{fontSize: '14px', marginBottom: '10px'}}>please enter your email address</p>
                         </div>
                         <div >
                             <input className="password" type="password" placeholder="PASSWORD"
                             onChange={this.handlePassword}/>
-                            <p style={{fontSize: '12px'}}>minimum of 5 characters, please </p>
+                            <p style={{fontSize: '14px', marginBottom: '10px'}}>minimum of 5 characters, please </p>
                         </div>
                         <div className="login-btn"
                         onClick={this.handleLoginRequest}>

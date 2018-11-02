@@ -58,13 +58,24 @@ class Notebook extends Component {
     getQuote = () => {
         axios.get('/api/getQuote')
         .then(res => {
+            let num = Math.floor(Math.random() * Math.floor(36))
             this.setState({
-                DWquote: res.data.db[0].quote,
-                sourceQ: res.data.db[0].source
+                DWquote: res.data[num].quote,
+                sourceQ: res.data[num].source
             })
         })
-            
     }
+
+    // getQuote = () => {
+    //     axios.get('http://api.chrisvalleskey.com/fillerama/get.php?count=1&format=json&show=doctorwho')
+    //     .then(res => {
+    //         this.setState({
+    //             DWquote: res.data.db[0].quote,
+    //             sourceQ: res.data.db[0].source
+    //         })
+    //     })
+            
+    // }
 
     enterMenu = () => {
         this.props.history.push('/notebookmenu')

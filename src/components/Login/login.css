@@ -8,8 +8,14 @@
     width: 250px;
     background: #003B6F;
     border-radius: 20px;
-    animation: floating 6s infinite alternate ease-in-out;
+    animation: login-float 2s infinite alternate ease-in-out;
 }
+
+@keyframes login-float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(5px); } 
+}
+
 .login-text {
     color: #ffffff;
     font-family: 'Futura';
@@ -17,8 +23,7 @@
 }
 
 .username {
-    margin-bottom: 5px;
-    margin-top: 2px;
+    margin: 2px 0px;
     color: #000814;
     height: 20px;
     width: 230px;
@@ -30,6 +35,7 @@
 
 .password {
     margin: 2px 0px;
+    margin-top: 5px;
     color: #000814;
     height: 20px;
     width: 230px;
@@ -41,7 +47,7 @@
 }
 
 .login-btn {
-    margin-top: 25px;
+    margin-top: 20px;
     height: 20px;
     background-color: #0563B6;
     padding: 10px;
