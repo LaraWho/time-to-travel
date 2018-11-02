@@ -118,7 +118,7 @@ a:hover, a:visited, a:link, a:active
 }
 
 .swal2-popup {
-    background: #003B6F !important;
+    background: rgba(0, 59, 111, 1) !important;
     border-radius: 20px !important;
 }
 

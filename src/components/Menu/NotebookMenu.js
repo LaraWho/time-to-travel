@@ -10,7 +10,7 @@ class Menu extends Component {
         super(props)
 
         this.state = {
-            title: '',
+            country: '',
             location: '',
             content: '',
         }
@@ -39,9 +39,9 @@ class Menu extends Component {
         this.props.history.push('/notebook');
     }
 
-    handleAddTitle = (e) => {
+    handleAddCountry = (e) => {
         this.setState({
-            title: e.target.value
+            country: e.target.value
         })
     }
     handleAddLoc = (e) => {
@@ -57,8 +57,8 @@ class Menu extends Component {
     }
 
     addNote = () => {
-        let { title, location, content } = this.state
-        axios.post('/allnotes/new', { title, location, content })
+        let { country, location, content } = this.state
+        axios.post('/allnotes/new', { country, location, content })
         .then(res => {
             setTimeout(() => {
                 this.props.history.push('/landing');
@@ -93,9 +93,9 @@ class Menu extends Component {
                         <div className="line2 menu"></div>
                         <h3 style={{paddingTop: '15px'}}>QUICK NOTE</h3>
                         <input type="text" placeholder="COUNTRY"
-                        onChange={this.handleAddLoc}/>
+                        onChange={this.handleAddCountry}/>
                         <input type="text" placeholder="LOCATION"
-                        onChange={this.handleAddTitle}/>
+                        onChange={this.handleAddLoc}/>
                         <textarea cols="20" rows="10" placeholder="THOUGHTS..."
                         onChange={this.handleAddContent}></textarea>
                         <button className="menu-save" onClick={this.addNote}>SAVE</button>

@@ -92,10 +92,12 @@ class Login extends Component {
                         <div >
                             <input className="username" type="text" placeholder="EMAIL"
                             onChange={this.handleUsername} />
+                            <span style={{fontSize: '12px'}}>please enter your email address</span>
                         </div>
                         <div >
                             <input className="password" type="password" placeholder="PASSWORD"
                             onChange={this.handlePassword}/>
+                            <p style={{fontSize: '12px'}}>minimum of 5 characters, please </p>
                         </div>
                         <div className="login-btn"
                         onClick={this.handleLoginRequest}>

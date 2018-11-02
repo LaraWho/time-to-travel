@@ -16,9 +16,9 @@ getQuotes: (req, res) => {
 create: (req, res) => {
     const dbInstance = req.app.get('db')
     const { user_id } = req.session.user
-    const { title, location, content } = req.body;
+    const { country, location, content } = req.body;
 
-    dbInstance.add_note([ title, location, content, user_id ])
+    dbInstance.add_note([ country, location, content, user_id ])
     .then((note) => res.status(200).send(note) )
     .catch( err => {
         res.sendStatus(401)
@@ -56,9 +56,9 @@ addphoto: (req, res) => {
 update: (req, res) => {
     const dbInstance = req.app.get('db');
     const { note_id } = req.params;
-    const { title, country, location, content, photo } = req.body;
+    const { title, country, location, content } = req.body;
 
-    dbInstance.edit_note([ title, country, location, content, photo, note_id ])
+    dbInstance.edit_note([ title, country, location, content, note_id ])
     .then( (note) => {
         res.status(200).send(note) 
         })

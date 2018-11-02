@@ -54,7 +54,6 @@ app.post('/auth/login', login_cntrl.login);
 app.post('/auth/register', login_cntrl.register);
 app.delete('/auth/logout', login_cntrl.logout);
 
-
 // note endpoints
 app.get('/api/getQuote', note_cntrl.getQuotes);
 app.post('/allnotes/new', note_cntrl.create);

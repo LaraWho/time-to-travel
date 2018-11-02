@@ -42,6 +42,9 @@ class Notebook extends Component {
                     res.data.content = res.data.map(note => {
                         return note.content === null ? note.content = '' : note.content
                     })
+                    res.data.title = res.data.map(note => {
+                        return note.title === null ? note.title = '' : note.title
+                    })
                     this.setState({
                         allNotes: res.data,
                         unchangedNotes: res.data,
@@ -163,8 +166,10 @@ class Notebook extends Component {
         if(query) {
         this.setState({
             allNotes: this.state.allNotes.filter(response => {
-            return response.location.toLowerCase().includes(query.toLowerCase()) ||
+
+            return  response.location.toLowerCase().includes(query.toLowerCase()) ||
                     response.title.toLowerCase().includes(query.toLowerCase()) || 
+                    response.content.toLowerCase().includes(query.toLowerCase()) || 
                     response.country.toLowerCase().includes(query.toLowerCase()) 
         })
     })
@@ -195,7 +200,6 @@ class Notebook extends Component {
 
     toMap = () => {
         document.querySelector('.note-tardis').classList.add('leave');
-        // document.querySelector('.note-tardis').classList.remove('appear');
 
         setTimeout(() => {
             this.props.history.push('/map');
@@ -204,14 +208,12 @@ class Notebook extends Component {
      
 
     render() {
-        // console.log(this.state.allNotes)
-        // console.log(this.state.page)
   
         let mappedNotes = this.state.allNotes.map((note, i) => {
             // console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
             //  console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
             //  console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
-            //  console.log('this.state.allNotes[i].content', this.state.allNotes[i].content)
+            //  console.log('this.state.allNotes[i].location', this.state.allNotes[i].location)
             return(
 
                 <div key={i} className="first">

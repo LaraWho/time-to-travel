@@ -1,9 +1,9 @@
 @keyframes floating {
-    from { transform: translate(0px,  -0px); }
-    45%  { transform: translate(2px, 4px); }
-    65%  { transform: translate(3px, 2px); }
+    0% { transform: translate(0px, -0px); }
+    45% { transform: translate(2px, 4px); }
+    65% { transform: translate(3px, 2px); }
     85% { transform: translate(-3px, 6px); }
-    to   { transform: translate(0px, -0px); } 
+    100% { transform: translate(0px, -0px); } 
 }
 
     @keyframes materialise {
@@ -30,7 +30,7 @@
 }
 
 .home-tardis {
-    height: 85%;
+    height: 70vh;
     width: auto;
     margin: 10px auto;
     margin-top: 15px;
@@ -67,7 +67,7 @@
     transform: rotate(15deg);
 }
 
-@media all and (min-width: 325px) and (max-width: 920px){
+@media all and (min-width: 425px) and (max-width: 920px){
 
     .button>img {
         top: 200px;
@@ -83,9 +83,9 @@
         font-size: 48px;
         margin: 20px auto;
     }
-    .home-tardis {
+    /* .home-tardis {
         height: 95%;
-    }
+    } */
 }
 
 @media all and (min-width: 920px) {
@@ -100,7 +100,7 @@
     font-size: 22px !important;
 }
 .home-tardis {
-    height: 90%;
+    /* height: 90%; */
     margin-top: 30px;
 }
 .home-heading h1 {
@@ -113,6 +113,24 @@
     transition: 300ms linear all;
 }
 
-
-
 }
+
+@media all and (min-height: 850px) {
+    .button>img {
+        /* top: 90px; */
+        left: 40px;
+        width: 160px;
+    }
+    .home-tardis-box>p {
+        bottom: 3% !important;
+        font-size: 22px !important;
+    }
+    .home-tardis {
+        height: 90%;
+        margin-top: 10px;
+    }
+    .home-heading h1 {
+        font-size: 48px;
+    }
+}
+

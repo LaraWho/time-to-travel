@@ -31,6 +31,8 @@ module.exports = {
     },
 
     register: (req, res) => {
+        if (username.length && password.length >= 5) {
+
         const dbInstance = req.app.get('db')
         let {username, password} = req.body;
 
@@ -77,6 +79,9 @@ module.exports = {
                     res.status(200).send(user)
                 }).catch( err => res.sendStatus(500))
             })
+        } else {
+            return res.sendStatus(406)
+        }
         },
 
     logout: (req, res) => {
