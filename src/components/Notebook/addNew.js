@@ -62,7 +62,7 @@ class Menu extends Component {
                     
                     <div className="menu-note menu">
                         <div className="line2 menu"></div>
-                        <h3>QUICK NOTE</h3>
+                        <h3>ADD PLACE</h3>
                         <input type="text" placeholder="LOCATION" value={`${this.state.country}, ${this.state.location}`}
                         onChange={this.handleAddLoc} disabled={true}/>
                         <input type="text" placeholder="THOUGHTS..."

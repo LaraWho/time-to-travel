@@ -99,7 +99,8 @@ class Landing extends Component {
                         <img className="question-mark" src={question} alt=""/>
                     </div>
 
-                        <div className="tardis-anim-box" onClick={this.toMap} style={{width: '400px', cursor: 'pointer'}}>
+                        <div className="tardis-anim-box" onClick={this.toMap} 
+                        style={{width: '400px', cursor: 'pointer'}}>
                             <img className="landing-tardis" src={tardisCutout} alt="TARDIS"/>
                             <img className="door1" src={door1} alt="TARDIS"/>
                             <img className="door2" src={door2} alt="TARDIS"/>

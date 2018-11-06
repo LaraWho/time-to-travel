@@ -36,17 +36,17 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
 }).catch( error => console.error('ERROR!', error))
 
-// app.use((req, res, next) => {
-//         if(ENVIRONMENT === 'dev') {
-//             req.app.get('db').set_data().then(userData => {
-//                 req.session.user = userData[0]
+app.use((req, res, next) => {
+        if(ENVIRONMENT === 'dev') {
+            req.app.get('db').set_data().then(userData => {
+                req.session.user = userData[0]
                 
-//                 next()
-//             })    
-//         } else {
-//             next();
-//         }    
-//         })
+                next()
+            })    
+        } else {
+            next();
+        }    
+        })
 
 
 // authorisation endpoints

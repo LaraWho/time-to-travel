@@ -100,7 +100,7 @@
     justify-content: center;
 }
 
-@media all and (min-width: 325px) and (max-width: 920px) {
+@media all and (min-width: 425px) and (max-width: 920px) {
 .login-heading {
     padding-top: 20%;
 }

@@ -43,8 +43,7 @@
     height: 90%;
     display: flex;
     justify-content: center;
-    /* opacity: 0;
-    transition: all .6s ease; */
+    
 }
 
 .door1 {
@@ -193,7 +192,7 @@
     height: 150px;
 }
 
-@media all and (min-width: 325px) and (max-width: 920px) {
+@media all and (min-width: 425px) and (max-width: 920px) {
     .question-btn-box {
         position: relative;
         margin-top: 75%;
@@ -294,20 +293,17 @@
     }
     .door2 {
         height: 57.5%;
-        /* right: 39.4%; */
         right: 555px;
         top: 205px;
     }
     .door1 {
         height: 57.5%;
-        /* left: 40.7%; */
         left: 543px;
         top: 205px;
     }
     .question-btn-box {
         margin-top: 22%;
         margin-left: 180px;
-        /* margin-right: 5px; */
         height: 160px;
         width: 215px;
         padding: 30px;

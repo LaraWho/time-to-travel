@@ -84,14 +84,14 @@ class Menu extends Component {
                 <div className="menu-items">
                     <div className="menu-h3">
                         <div className="line"></div>
-                        <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
+                        <h3 onClick={this.toNotes}>WANDERLUST JOURNAL</h3>
                     </div>
 
                 <div className="menu-items menu">
                     
                     <div className="menu-note menu">
                         <div className="line2 menu"></div>
-                        <h3 style={{paddingTop: '15px'}}>QUICK NOTE</h3>
+                        <h3 style={{paddingTop: '15px'}}>ADD ENTRY</h3>
                         <input type="text" placeholder="COUNTRY"
                         onChange={this.handleAddCountry}/>
                         <input type="text" placeholder="LOCATION"

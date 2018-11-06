@@ -56,7 +56,7 @@ class Menu extends Component {
                 <div className="menu-items">
                     <div className="menu-h3">
                         <div className="line"></div>
-                        <h3 onClick={this.toNotes}>SEE ALL NOTES</h3>
+                        <h3 onClick={this.toNotes}>WANDERLUST JOURNAL</h3>
                     </div>
                     
                     <AddNew history={this.props.history} name={this.props.name} country={this.props.country} photo={this.props.photo}/>

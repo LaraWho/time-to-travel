@@ -47,7 +47,7 @@
     opacity: 1;
 }
 
-@media all and (min-width: 325px) and (max-width: 920px) {
+@media all and (min-width: 425px) and (max-width: 920px) {
 
 .back-btn {
     bottom: 58px !important;
