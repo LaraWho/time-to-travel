@@ -15,6 +15,9 @@ module.exports = {
                 if(response) {
                     dbInstance.login_user([username, myHash])
                         .then(loginResults => {
+
+                            console.log('loginResults', loginResults[0])
+
                         if(loginResults[0]) {
                             req.session.user = loginResults[0]
                             res.status(200).send(loginResults[0]);
@@ -26,7 +29,7 @@ module.exports = {
                     }).catch( err => res.sendStatus(500))
                 }
             })
-        })
+        }).catch( err => res.sendStatus(500))
 
     },
 

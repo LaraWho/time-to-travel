@@ -101,10 +101,6 @@ class Map extends Component {
     }
             
         render() {
-                // console.log(this.state.city)
-                // console.log(this.state.country)
-
-                
                 let arrow = []
                 if(this.state.width >= 320) {
                     {!this.state.showLeft ?

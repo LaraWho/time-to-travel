@@ -221,10 +221,6 @@ class Notebook extends Component {
     render() {
   
         let mappedNotes = this.state.allNotes.map((note, i) => {
-            // console.log('this.state.allNotes[i].title: ', this.state.allNotes[i].title)
-            //  console.log('this.state.allNotes[i].photo', this.state.allNotes[i].photo)
-            //  console.log('this.state.allNotes[i].country', this.state.allNotes[i].country)
-            //  console.log('this.state.allNotes[i].location', this.state.allNotes[i].location)
             return(
 
                 <div key={i} className="first">
