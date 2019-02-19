@@ -11,26 +11,13 @@
         height: 320px;
         margin-top: 10px;
     }
-    }
+}
 
 
 @media all and (min-width: 920px) {
 .addnew-photo {
     height: 400px;
     margin-top: 10px;
-
-}
-/* .menu-note.menu>input {
-    width: 57%;
-
-}
-.menu-note.menu>textarea {
-    width: 57%;
-
-} */
-
-.menu-save {
-    width: 59%;
 
 }
 }
