@@ -2,7 +2,6 @@
     font-family: 'Futura';
     position: relative;
     top: 105px;
-    left: 30px;
     color: #FFFFFF;
     font-size: 18px;
     z-index: 2;
@@ -261,8 +260,6 @@ margin-bottom: 6px;
 @media all and (min-width: 425px) and (max-width: 920px){
 
 .no-matches-text {
-    top: 220px;
-    left: 155px;
     height: 620px;
     width: 420px;
     margin-bottom: -660px;
@@ -272,8 +269,8 @@ margin-bottom: 6px;
 
 .note-tardis {
     height: 48%;
-    top: 345px;
-    left: 256px;
+    top: 30%;
+    left: 30%;
 }
 
 .menu-enter.nb {
@@ -318,7 +315,7 @@ height: 40px;
 }
 
 .onenote-bg {
-top: -750px !important;
+top: -670px !important;
 width: 580px;
 height: 555px;
 }
@@ -363,8 +360,6 @@ font-size: 24px;
 @media all and (min-width: 920px){
 
     .no-matches-text {
-        top: 130px;
-        left: 256px;
         height: 495px;
         width: 500px;
         margin-bottom: -536px;
@@ -374,8 +369,8 @@ font-size: 24px;
     
     .note-tardis {
         height: 48%;
-        top: 258px;
-        left: 418px;
+        top: 30%;
+        left: 32%;
     }
 
     .menu-enter.nb {
@@ -454,23 +449,3 @@ font-size: 24px;
 }
 
 }
-
-@media all and (min-width: 1300px) {
-    /* #filter {
-        left: 482px;
-    } */
-    .no-matches-text {
-        left: 446px;
-    }
-    .note-tardis {
-        left: 600px;
-    }
-        
-}
-
-/* 
-@media all and (min-width: 1380px) {
-    #filter {
-        left: 519px;
-    }
-} */

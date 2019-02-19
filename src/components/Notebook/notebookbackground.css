@@ -1,7 +1,3 @@
-/* .book-body { */
-    /* position: absolute; */
-    /* top: -20px; */
-/* } */
 
 .note-bg {
     height: 100vh;
@@ -9,17 +5,11 @@
     background-position: center;
     background-repeat: repeat-x;
     background-size: cover;
-    /* position: relative; */
     z-index: 1;
     margin: 1px auto;
-    /* opacity: 0; */
-    /* transition: all .6s ease;  */
+    width: 100vw;
 }
 
-/* .appear {
-    opacity: 1;
-
-} */
 
 @media all and (min-width: 500px) {
 
