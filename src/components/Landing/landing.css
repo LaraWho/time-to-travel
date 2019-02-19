@@ -15,11 +15,13 @@
     text-align: right;
     padding-right: 10px; 
     color: #ffffff;
+    z-index: 5;
 }
 
 .landing-enter>img {
     height: 36px;
     cursor: pointer;
+    z-index: 5;
 }
 .landing-enter>p:hover {
     transform: scale(1.1);    
