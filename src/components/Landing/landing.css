@@ -7,7 +7,7 @@
     padding: 20px;
     padding-bottom: 10px;
     color: #ffffff;
-    position: relative;
+    /* position: relative; */
     z-index: 2;
 }
 
@@ -43,42 +43,46 @@
     height: 90%;
     display: flex;
     justify-content: center;
-    
+}
+
+.tardis-anim-box {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.doors {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    top: 3%;
 }
 
 .door1 {
-    position: absolute;
-    /* height: 326px;
-    left: 59px;
-    top: 189px; */
     opacity: 0;
     transition: all .6s ease;
     animation: floating 6s infinite alternate ease-in-out;
     transform-origin: left;
-    height: 330px;
-    left: 57px;
-    top: 183px;
+    height: 53%;
 }
 
 .door2 {
-    position: absolute;
-    /* height: 326px;
-    right: 59px;
-    top: 189px; */
     opacity: 0;
     transition: all .6s ease;
     animation: floating 6s infinite alternate ease-in-out;
     transform-origin: right;
-    height: 330px;
-    right: 59px;
-    top: 183px;
+    height: 53%;
 }
 
 .question-btn-box {
     position: absolute;
     padding: 20px;
     z-index: 3;
-    margin-top: 75%;
+    top: 60%;
+    right: 20%;
     /* background-color: rgba(5, 99, 182, 0.1); */
     height: 155px;
     border-radius: 20px;
@@ -91,9 +95,7 @@
     height: 85%;
     /* width: auto; */
     margin: 0 auto;
-    bottom: 33px;
-    right: 39px;
-    position: fixed;
+    /* position: fixed; */
     animation: floating 6s infinite alternate ease-in-out;
     opacity: 0;
     transition: all .4s ease;
@@ -192,7 +194,7 @@
     height: 150px;
 }
 
-@media all and (min-width: 425px) and (max-width: 920px) {
+/* @media all and (min-width: 425px) and (max-width: 920px) {
     .question-btn-box {
         position: relative;
         margin-top: 75%;
@@ -330,4 +332,4 @@
         margin-left: 200px;
     }
 
-}
+} */
