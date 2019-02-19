@@ -84,12 +84,17 @@ html {
     
 }
 
+.filter-box {
+    display: flex;
+    justify-content: center;
+}
+
 #filter {
     position: absolute;
     z-index: 10;
     bottom: 10px;
     height: 32px;
-    left: 6%;
+    /* left: 6%; */
     border-radius: 20px;
     width: 280px;
     color: #021D34;
@@ -114,11 +119,8 @@ top: -490px !important;
     position: relative;
     bottom: 0;
 }
-/* .intro-inner {
-    margin: auto;   
-}  */
+
 .intro-text {
-    margin-bottom: -396px;
     color: #FFFFFF;
     font-family: 'Futura';
     font-size: 22px;
@@ -131,8 +133,9 @@ top: -490px !important;
     background-color: rgba(187, 93, 74, 0.774);
     text-align: center;
     top: 100px;
-    left: 22px;
     line-height: 1.4;
+    margin: auto;   
+    margin-bottom: -396px;
 }
 
 .first{
@@ -303,13 +306,13 @@ margin-bottom: 6px;
     font-size: 24px;
     margin: auto;
     margin-bottom: -451px;
-    top: 280px;
+    /* top: 280px; */
     padding: 50px;
     height: 350px;
     width: 365px;
 }
 #filter {
-left: 180px;
+/* left: 180px; */
 bottom: 35px;
 width: 400px;
 height: 40px;
@@ -404,14 +407,14 @@ font-size: 24px;
     .intro-text {
         margin: auto;
         margin-bottom: -451px;
-        top: 158px;
+        /* top: 158px; */
         padding: 50px;
         height: 350px;
         width: 365px;
         font-size: 24px;
     }
 #filter {
-    left: 311px;
+    /* left: 311px; */
     bottom: 20px;
     width: 400px;
     height: 40px;
@@ -454,9 +457,9 @@ font-size: 24px;
 }
 
 @media all and (min-width: 1300px) {
-    #filter {
+    /* #filter {
         left: 482px;
-    }
+    } */
     .no-matches-text {
         left: 446px;
     }
@@ -466,9 +469,9 @@ font-size: 24px;
         
 }
 
-
+/* 
 @media all and (min-width: 1380px) {
     #filter {
         left: 519px;
     }
-}
+} */

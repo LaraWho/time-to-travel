@@ -3,7 +3,7 @@
     background-color: #6F8EA9;
     height: 100vh;
     width: 100vw;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 .menu-items {
@@ -216,7 +216,6 @@
 
 }
     .menu-note>h3 {
-        padding-top: 60px !important;
         font-size: 28px;
         padding-bottom: 15px;
     }

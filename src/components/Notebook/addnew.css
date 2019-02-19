@@ -36,10 +36,10 @@
 }
 
 @media all and (min-width: 1366px) {
-    .menu-note.menu>input {
+    .menu>input {
         width: 43%;
     }
-    .menu-note.menu>textarea {
+    .menu>textarea {
         width: 43%;
     }
 
@@ -48,7 +48,7 @@
 
     }
 
-    .menu-note.menu {
+    .menu {
         height: 650px;
     }
     .line2 {

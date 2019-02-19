@@ -69,8 +69,6 @@ class Menu extends Component {
 
     render() {
 
-        // console.log(this.props.propsName)
-        
         return(
             <div className="menu-bg">
                     <div className="logout">

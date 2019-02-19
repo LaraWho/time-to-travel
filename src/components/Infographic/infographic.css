@@ -3,12 +3,12 @@
     transition: 300ms linear all;
 }
 .info-g-bg {
+    position: relative; 
     background-color: #6F8EA9; 
     height: 100vh; 
-    
 }
 .title {
-    position: relative; 
+    position: absolute; 
     top: 10px; 
     left: 6%;
     opacity: 0;
@@ -23,23 +23,23 @@
 }
 
 .two {
-    position: relative; 
-    left: 12px; 
-    top: 24px;
+    position: absolute; 
+    left: 5%;
+    top: 20%;
     opacity: 0;
     transition: all .4s ease;
 }
 .three {
     position: absolute; 
-    right: 18px; 
-    top: 210px;
+    right: 5%;
+    top: 35%;
     opacity: 0;
     transition: all .4s ease;
 }
 .tardis {
-    position: relative; 
-    top: 95px; 
-    left: 18px;
+    position: absolute; 
+    bottom: 5%;
+    left: 40%;
     opacity: 0;
     transition: all .4s ease;
 }
@@ -51,38 +51,33 @@
 
 .back-btn {
     bottom: 58px !important;
-    left: 124px !important;
+    left: 70% !important;
     font-size: 24px;
 }
 
 .title {
-    position: absolute;
     height: 16%;
     left: 16%;
 }
 .one {
-    position: absolute;
     right: 140px;
     top: 171px;
     height: 20%;
 }
 
 .two {
-    position: relative;
     left: 100px;
     top: 210px;
     height: 66%;
 }
 .three {
-    position: absolute;
     right: 65px;
     top: 353px;
     height: 20%;
 }
 .tardis {
-    position: relative;
     top: 361px;
-    left: 148px;
+    left: 40%;
     height: 50%;
 } 
 
@@ -98,33 +93,29 @@
     }
     
     .title {
-        position: absolute;
         left: 26%;
         height: 18%;
     }
     .one {
-        position: absolute;
         height: 23%; 
         left: 10%;
         top: 155px;  
     }
     
     .two {
-        position: relative;
         left: 36%;
         top: 161px;
         height: 75%;
     }
     .three {
-        position: absolute;
         right: 5%;
         top: 125px;
         height: 22%
     }
     .tardis {
-        top: 26%;
+        top: 30%;
         height: 70%;
-        left: 38%;
+        left: 60%;
     } 
 
 
@@ -139,6 +130,6 @@
 }
 .three {
     right: 18%;
-    top: 160px;
+    top: 5%;
 }
 }

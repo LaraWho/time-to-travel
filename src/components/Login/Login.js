@@ -39,9 +39,9 @@ class Login extends Component {
         }).then(res => {
             console.log('res.data: ', res.data)
            
-            // setTimeout(() => {
-            //     this.props.history.push('/landing');
-            //     }, 500)
+            setTimeout(() => {
+                this.props.history.push('/landing');
+                }, 500)
         }).catch(() => sweetie("Please Register, you don't seem to exist yet!"))
     }
 

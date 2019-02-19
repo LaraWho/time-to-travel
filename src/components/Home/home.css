@@ -53,11 +53,11 @@
     position: absolute;
     width: 130px;
     left: 20px;
+    transition: 300ms linear all;
 }
 
 .button>img:hover {
-    transform: rotate(-25deg); 
-    transition: 300ms linear all;
+    opacity: 0.9;
 }
 
 .button {
@@ -70,8 +70,8 @@
 @media all and (min-width: 425px) and (max-width: 920px){
 
     .button>img {
-        top: 200px;
-        left: 90px;
+        /* top: 200px;
+        left: 90px; */
         width: 175px;
     }
     .home-tardis-box>p {
@@ -106,12 +106,12 @@
 .home-heading h1 {
     font-size: 48px;
 }
-.button>img:hover {
+/* .button>img:hover {
     transform: rotate(-25deg)
                 translateY(-35px)
                 translateX(10px) ; 
     transition: 300ms linear all;
-}
+} */
 
 }
 

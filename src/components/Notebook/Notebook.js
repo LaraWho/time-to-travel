@@ -315,7 +315,7 @@ class Notebook extends Component {
                     </div>
                 </div>
 
-                <div>
+                <div className="filter-box">
                     <input type="text" id="filter" placeholder="SEARCH NOTES"
                     onKeyUp={this.handleFilter}/>
 
